@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: master
+
+# publish_mode: editorial_workflow
+
+# media_folder: static/img
+# public_folder: /img
+
+collections:
+  - name: "shops"
+    label: "Shop"
+    create: true
+    slug: "{{title}}" # this will be filename
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}

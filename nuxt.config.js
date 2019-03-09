@@ -50,6 +50,11 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options
   },
 
+  netlifyCms: {
+    adminPath: 'admin',
+    adminTitle: 'Stuible Portfolio Manager'
+  },
+
   /*
   ** Build configuration
   */
