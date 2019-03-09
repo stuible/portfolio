@@ -1,17 +1,20 @@
+
 backend:
-  name: git-gateway
-  branch: master
+  name: github
+  repo: stuible/portfolio
 
-# publish_mode: editorial_workflow
+media_folder: "static/portfolio"
 
-# media_folder: static/img
-# public_folder: /img
-
-collections:
-  - name: "piece"
-    label: "Portfolio Piece"
-    slug: "{{title}}" # this will be filename
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+collections: # A list of collections the CMS should be able to edit
+  - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "content/posts"
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
       - {label: "Body", name: "body", widget: "markdown"}
+    meta:
+      - {label: "SEO Description", name: "description", widget: "text"}
