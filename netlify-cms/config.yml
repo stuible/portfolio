@@ -8,9 +8,8 @@ backend:
 # public_folder: /img
 
 collections:
-  - name: "shops"
-    label: "Shop"
-    create: true
+  - name: "piece"
+    label: "Portfolio Piece"
     slug: "{{title}}" # this will be filename
     fields:
       - {label: "Title", name: "title", widget: "string"}
