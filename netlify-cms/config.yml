@@ -18,3 +18,16 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
     meta:
       - {label: "SEO Description", name: "description", widget: "text"}
+  - label: "Custom Pages"
+    name: "pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/pages/home.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
+      - label: "Resume"
+        name: "resume"
+        file: "content/pages/resume.yml"
+        fields:
+          - {label: Title, name: title, widget: string}
