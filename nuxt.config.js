@@ -40,16 +40,23 @@ module.exports = {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
+    '@dinamomx/nuxtent',
     'nuxt-netlify-cms'
   ],
   /*
   ** Axios module configuration
   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+  nuxtent: {
+    content: {
+      page: '/_post',
+      permalink: ':slug',
+      generate: [
+        // assets to generate static build
+        'get',
+        'getAll'
+      ]
+    }
   },
-
   netlifyCms: {
     adminPath: 'admin',
     adminTitle: 'Stuible Portfolio Manager'
