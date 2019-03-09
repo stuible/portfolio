@@ -39,13 +39,10 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
     '@dinamomx/nuxtent',
     'nuxt-netlify-cms'
   ],
-  /*
-  ** Axios module configuration
-  */
+
   nuxtent: {
     content: {
       page: '/_post',
