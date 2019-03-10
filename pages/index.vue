@@ -7,6 +7,7 @@
       <div class="links">
         <ul>
           <li v-for="post in posts" v-bind:key="post.meta.index">
+            <!-- {{post}} -->
             <nuxt-link :to="post.permalink">{{ post.title }}</nuxt-link>
           </li>
         </ul>
@@ -24,7 +25,7 @@ export default {
   },
   async asyncData({ app }) {
     return {
-      posts: await app.$content('/').getAll()
+      posts: await app.$content('posts').getAll()
     }
   }
 }

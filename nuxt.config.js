@@ -44,15 +44,17 @@ module.exports = {
   ],
 
   nuxtent: {
-    content: {
-      page: '/_post',
-      permalink: ':slug',
-      generate: [
-        // assets to generate static build
-        'get',
-        'getAll'
-      ]
-    }
+    content: [
+      ["posts", {
+        page: 'posts/_post',
+        permalink: ':slug',
+        generate: [
+          // assets to generate static build
+          'get',
+          'getAll'
+        ]
+      }]
+    ]
   },
   netlifyCms: {
     adminPath: 'admin',
