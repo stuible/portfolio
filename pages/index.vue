@@ -6,7 +6,7 @@
       <h2 class="subtitle">My personal portfolio website</h2>
       <div class="links">
         <ul>
-          <li v-for="post in posts" v-bind:key="post.meta.index">
+          <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
             <!-- {{post}} -->
             <nuxt-link :to="post.permalink">{{ post.title }}</nuxt-link>
           </li>
@@ -26,6 +26,11 @@ export default {
   async asyncData({ app }) {
     return {
       posts: await app.$content('posts').getAll()
+    }
+  },
+  computed: {
+    orderedPosts(){
+      return this.posts.sort((a, b) => (a.order > b.order) ? 1 : -1)
     }
   }
 }
