@@ -9,12 +9,13 @@ collections: # A list of collections the CMS should be able to edit
   - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
     label: "Post" # Used in the UI, ie.: "New Post"
     folder: "content/posts"
+    publish_mode: editorial_workflow
     slug: "{{slug}}"
     create: true # Allow users to create new documents in this collection
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
-      # - {label: "Order", name: "order", widget: "number"}
+      - {label: "Order", name: "order", widget: "number"}
       - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
       - {label: "Body", name: "body", widget: "markdown"}
     meta:
