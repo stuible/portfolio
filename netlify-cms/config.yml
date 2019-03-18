@@ -3,7 +3,8 @@ backend:
   name: github
   repo: stuible/portfolio
 
-media_folder: "static/uploads"
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
 
 collections: # A list of collections the CMS should be able to edit
   - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit

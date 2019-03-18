@@ -40,7 +40,30 @@ module.exports = {
   */
   modules: [
     '@dinamomx/nuxtent',
-    'nuxt-netlify-cms'
+    'nuxt-netlify-cms',
+    ['@reallifedigital/nuxt-image-loader-module', {
+      imagesBaseDir: 'static/images',
+      imageStyles: {
+        thumb: { actions: ['resize|320', 'quality|50' ] },
+        small: { actions: [ 'resize|512', 'quality|100'] },
+        medium: { actions: [ 'resize|756', 'quality|100'] },
+        large: { actions: [ 'resize|1080', 'quality|100'] },
+      },
+      // Optional responsive style profiles:
+      // responsiveStyles: {
+      //   thumb: {
+      //     srcset: 'small 160w, medium 320w, large 640w',
+      //     sizes: '(min-width: 1280px) 100vw, 50vw',
+      //   },
+      // },
+      forceGenerateImages: {
+        // imageStyle: globPattern
+        thumb: '**/*',
+        small: '**/*',
+        medium: '**/*',
+        large: '**/*'
+      }
+    }]
   ],
 
   nuxtent: {

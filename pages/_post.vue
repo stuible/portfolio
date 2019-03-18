@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>{{ post.title }}</h1>
-    <img :src="post.image" alt="">
+    <!-- <img :src="post.image + '?style=small'" alt=""> -->
+    <nuxt-img :src="post.image" image-style="small" alt="Never forget alt tags!" />
     <div v-html="post.body" />
     <!-- {{post}} -->
   </div>
