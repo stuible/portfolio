@@ -27,6 +27,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '~/assets/scss/_base.scss'
   ],
 
   /*
@@ -41,13 +42,14 @@ module.exports = {
   modules: [
     '@dinamomx/nuxtent',
     'nuxt-netlify-cms',
+    '@nuxtjs/style-resources',
     ['@reallifedigital/nuxt-image-loader-module', {
       imagesBaseDir: 'static/images',
       imageStyles: {
-        thumb: { actions: ['resize|320', 'quality|50' ] },
-        small: { actions: [ 'resize|512', 'quality|100'] },
-        medium: { actions: [ 'resize|756', 'quality|100'] },
-        large: { actions: [ 'resize|1080', 'quality|100'] },
+        thumb: { actions: ['resize|320', 'quality|50'] },
+        small: { actions: ['resize|512', 'quality|100'] },
+        medium: { actions: ['resize|756', 'quality|100'] },
+        large: { actions: ['resize|1080', 'quality|100'] },
       },
       // Optional responsive style profiles:
       // responsiveStyles: {
@@ -88,6 +90,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    styleResources: {
+      scss: './assets/scss/variables.scss'
+    },
     /*
     ** You can extend webpack config here
     */
