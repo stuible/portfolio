@@ -70,6 +70,15 @@ module.exports = {
 
   nuxtent: {
     content: [
+      ["pages", {
+        page: 'pages/_page',
+        permalink: ':slug',
+        generate: [
+          // assets to generate static build
+          'get',
+          'getAll'
+        ]
+      }],
       ["posts", {
         page: 'posts/_post',
         permalink: ':slug',
