@@ -46,10 +46,10 @@ module.exports = {
     ['@reallifedigital/nuxt-image-loader-module', {
       imagesBaseDir: 'static/images',
       imageStyles: {
-        thumb: { actions: ['resize|320', 'quality|50'] },
-        small: { actions: ['resize|512', 'quality|100'] },
-        medium: { actions: ['resize|756', 'quality|100'] },
-        large: { actions: ['resize|1080', 'quality|100'] },
+        thumb: { actions: ['adaptive-resize|320', 'quality|100'] },
+        small: { actions: ['adaptive-resize|512', 'quality|100'] },
+        medium: { actions: ['adaptive-resize|756', 'quality|100'] },
+        large: { actions: ['adaptive-resize|1080', 'quality|100'] },
       },
       // Optional responsive style profiles:
       // responsiveStyles: {
