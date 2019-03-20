@@ -2,6 +2,7 @@
 title: DLM
 date: '2019-03-19 02:24pm'
 order: -1
+image: /images/uploads/dlmlogo.png
 ---
 The Distribution List Manager is a web based application that integrates with Fraser Health's current SharePoint and Active Directory environment to display a list of distribution lists that an employee is subscribed to. It also provides a one click solution to request removal from any distribution list listed.
 
