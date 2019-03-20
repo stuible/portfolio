@@ -1,42 +1,65 @@
 <template>
   <div id="content" class="container">
     <div class="sidebar">
-      <img src="/logo.svg" alt="">
+      <div class="wrapper">
+        <img src="/logo.svg" alt>
+      </div>
     </div>
-    <nuxt />
+    <div class="scrollable">
+      <nav>
+        <ul>
+          <li>
+            <nuxt-link to="/">Josh Stuible</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/">Portfolio</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/">Freelance</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/">Resume</nuxt-link>
+          </li>
+        </ul>
+      </nav>
+      <nuxt/>
+    </div>
     <div class="sidebar"></div>
   </div>
 </template>
 
 <style lang="scss">
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-#content{
+nav {
+  height: $topNavHeight;
   display: flex;
-}
-.sidebar{
-  width: 100px;
-  img{
-    width: 100px;
+  justify-content: center;
+  flex-direction: column;
+  ul {
+    list-style: none;
+  }
+  li {
+    display: inline-block;
+
+    a {
+      text-decoration: none;
+    }
   }
 }
 
+#content {
+  display: flex;
+  padding-top: 5em;
+}
+.sidebar {
+  min-width: 150px;
+  max-width: 150px;
 
+  img {
+    max-width: 100%;
+    height: $topNavHeight;
+  }
+}
+.scrollable {
+  flex-grow: 1;
+}
 </style>
