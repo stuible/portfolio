@@ -4,7 +4,6 @@
     <div class="posts">
       <ul>
         <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
-          <!-- {{post}} -->
           <nuxt-link :to="post.permalink">{{ post.title }}</nuxt-link>
         </li>
       </ul>
@@ -39,15 +38,21 @@ export default {
 
   ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     list-style: none;
   }
 
   li {
+    // flex-basis: auto;
+    width: 33%;
+    margin-bottom: 20px;
     a {
       display: inline-block;
       height: 100px;
+      width: 100px;
       background-color: lightgrey;
-      margin: 5px;
+      // margin: 5px;
     }
   }
 }
