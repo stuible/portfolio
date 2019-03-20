@@ -34,14 +34,18 @@ nav {
   display: flex;
   justify-content: center;
   flex-direction: column;
+
   ul {
     list-style: none;
+    display: flex;
+    justify-content: space-between;
   }
   li {
     display: inline-block;
-
     a {
       text-decoration: none;
+      color: $colourDark;
+      text-transform: uppercase;
     }
   }
 }
