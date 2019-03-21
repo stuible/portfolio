@@ -1,7 +1,7 @@
 <template>
   <div id="content" class="container">
     <div class="sidebar">
-      <div class="wrapper">
+      <div class="absolute-wrapper">
         <img src="/logo.svg" alt>
       </div>
     </div>
@@ -57,6 +57,13 @@ nav {
 .sidebar {
   min-width: 150px;
   max-width: 150px;
+  // position: relative;
+
+  .absolute-wrapper{
+    position: fixed;
+    width: 150px;
+    display: block;
+  }
 
   img {
     max-width: 100%;
