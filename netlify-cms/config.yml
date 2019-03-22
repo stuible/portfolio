@@ -29,6 +29,7 @@ collections: # A list of collections the CMS should be able to edit
         file: "content/pages/home.yml"
         fields:
           - {label: Title, name: title, widget: string}
+          - {label: Bio, name: bio, widget: text}
       - label: "Resume"
         name: "resume"
         file: "content/pages/resume.yml"
