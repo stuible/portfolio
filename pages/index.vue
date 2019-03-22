@@ -1,13 +1,24 @@
 <template>
   <section>
-    <div class="bio">{{ home.body.bio }}</div>
-    <div class="posts">
+    <section id="about-me">
+      <nuxt-img
+        v-if="home.body.image"
+        :src="home.body.image"
+        image-style="small"
+        alt="Never forget alt tags!"
+        class="profile"
+      />
+      <div class="title">{{ home.body.title }}</div>
+      <div class="subtitle">{{ home.body.subtitle }}</div>
+      <div class="bio">{{ home.body.bio }}</div>
+    </section>
+    <section class="posts">
       <ul>
         <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
           <nuxt-link :to="post.permalink">{{ post.title }}</nuxt-link>
         </li>
       </ul>
-    </div>
+    </section>
   </section>
 </template>
 
@@ -63,6 +74,12 @@ export default {
       text-align: center;
       background-color: lightgray;
     }
+  }
+}
+
+#about-me{
+  img{
+    width: 150px;
   }
 }
 </style>
