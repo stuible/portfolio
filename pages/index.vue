@@ -37,22 +37,31 @@ export default {
   padding-top: 15px;
 
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 2em;
   }
 
   li {
-    // flex-basis: auto;
-    width: 33%;
-    margin-bottom: 20px;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: "";
+      display: block;
+      padding-top: 100%;
+    }
+
     a {
-      display: inline-block;
-      height: 100px;
-      width: 100px;
-      background-color: lightgrey;
-      // margin: 5px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      background-color: lightgray;
     }
   }
 }
