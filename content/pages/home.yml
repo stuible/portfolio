@@ -11,4 +11,9 @@ technologies:
   - name: CSS3
   - name: HTML5
   - name: Vue.js
+  - name: Javascript
+  - name: PHP
+  - name: SQL
+  - name: Nuxt.js
+  - name: Thing
 services: []
