@@ -9,21 +9,33 @@ bio: >-
   user to experience what is truly important.
 technologies:
   - name: CSS3
+    image: /uploads/rectangle-copy-23.svg
   - name: HTML5
+    image: /uploads/rectangle-copy-23.svg
   - image: /uploads/rectangle-copy-23.svg
     name: Javascript
   - image: /uploads/rectangle-copy-23.svg
     name: PHP
   - name: SQL
+    image: /uploads/rectangle-copy-23.svg
   - name: Vue.js
+    image: /uploads/rectangle-copy-23.svg
   - name: Nuxt.js
+    image: /uploads/rectangle-copy-23.svg
   - name: Wordpress
+    image: /uploads/rectangle-copy-23.svg
   - name: Java
+    image: /uploads/rectangle-copy-23.svg
   - name: 'C#'
+    image: /uploads/rectangle-copy-23.svg
   - name: Illustrator
+    image: /uploads/rectangle-copy-23.svg
   - name: Photoshop
+    image: /uploads/rectangle-copy-23.svg
   - name: Sketch
+    image: /uploads/rectangle-copy-23.svg
   - name: BASH
+    image: /uploads/rectangle-copy-23.svg
 services:
   - name: Web Design
     technology:
