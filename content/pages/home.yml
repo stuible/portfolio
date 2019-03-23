@@ -18,4 +18,8 @@ technologies:
   - name: SQL
   - name: Nuxt.js
   - name: Thing
-services: []
+services:
+  - name: Web Design
+    technology:
+      - name: CSS3
+      - name: HTML5
