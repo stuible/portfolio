@@ -10,14 +10,20 @@ bio: >-
 technologies:
   - name: CSS3
   - name: HTML5
-  - name: Vue.js
   - image: /uploads/rectangle-copy-23.svg
     name: Javascript
   - image: /uploads/rectangle-copy-23.svg
     name: PHP
   - name: SQL
+  - name: Vue.js
   - name: Nuxt.js
-  - name: Thing
+  - name: Wordpress
+  - name: Java
+  - name: 'C#'
+  - name: Illustrator
+  - name: Photoshop
+  - name: Sketch
+  - name: BASH
 services:
   - name: Web Design
     technology:
