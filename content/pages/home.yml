@@ -11,8 +11,10 @@ technologies:
   - name: CSS3
   - name: HTML5
   - name: Vue.js
-  - name: Javascript
-  - name: PHP
+  - image: /uploads/rectangle-copy-23.svg
+    name: Javascript
+  - image: /uploads/rectangle-copy-23.svg
+    name: PHP
   - name: SQL
   - name: Nuxt.js
   - name: Thing
