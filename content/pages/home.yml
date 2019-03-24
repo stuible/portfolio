@@ -8,36 +8,54 @@ bio: >-
   design should both create a narrative and get out of the way, allowing the
   user to experience what is truly important.
 technologies:
-  - name: CSS3
-    image: /uploads/rectangle-copy-23.svg
-  - name: HTML5
-    image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/rectangle-copy-23.svg
+    name: CSS3
+  - image: /uploads/rectangle-copy-23.svg
+    name: HTML5
   - image: /uploads/rectangle-copy-23.svg
     name: Javascript
   - image: /uploads/rectangle-copy-23.svg
     name: PHP
-  - name: SQL
-    image: /uploads/rectangle-copy-23.svg
-  - name: Vue.js
-    image: /uploads/rectangle-copy-23.svg
-  - name: Nuxt.js
-    image: /uploads/rectangle-copy-23.svg
-  - name: Wordpress
-    image: /uploads/rectangle-copy-23.svg
-  - name: Java
-    image: /uploads/rectangle-copy-23.svg
-  - name: 'C#'
-    image: /uploads/rectangle-copy-23.svg
-  - name: Illustrator
-    image: /uploads/rectangle-copy-23.svg
-  - name: Photoshop
-    image: /uploads/rectangle-copy-23.svg
-  - name: Sketch
-    image: /uploads/rectangle-copy-23.svg
-  - name: BASH
-    image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/rectangle-copy-23.svg
+    name: SQL
+  - image: /uploads/rectangle-copy-23.svg
+    name: Vue.js
+  - image: /uploads/rectangle-copy-23.svg
+    name: Nuxt.js
+  - image: /uploads/rectangle-copy-23.svg
+    name: Wordpress
+  - image: /uploads/rectangle-copy-23.svg
+    name: Java
+  - image: /uploads/rectangle-copy-23.svg
+    name: 'C#'
+  - image: /uploads/rectangle-copy-23.svg
+    name: Illustrator
+  - image: /uploads/rectangle-copy-23.svg
+    name: Photoshop
+  - image: /uploads/rectangle-copy-23.svg
+    name: Sketch
+  - image: /uploads/rectangle-copy-23.svg
+    name: BASH
 services:
   - name: Web Design
     technology:
       - name: CSS3
       - name: HTML5
+  - name: Brand Design
+    technology:
+      - name: Sketch
+      - name: Illustrator
+      - name: Photoshop
+  - name: Front-End
+    technology:
+      - name: Nuxt.js
+      - name: CSS3
+      - name: HTML5
+      - name: Vue.js
+      - name: Javascript
+  - name: Back-End
+    technology:
+      - name: Laravel
+      - name: PHP
+      - name: SQL
+      - name: BASH
