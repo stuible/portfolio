@@ -32,6 +32,22 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Subtitle, name: subtitle, widget: string}
           - {label: "Profile Image", name: "image", widget: "image", required: false, tagname: ""}
           - {label: Bio, name: bio, widget: text}
+          - label: "Technologies"
+            name: "technologies"
+            widget: "list"
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: "Image", name: "image", widget: "image", required: false, default: "/uploads/rectangle-copy-23.svg"}
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: Name, name: name, widget: string}
+              - label: "Technology Used"
+                name: "technology"
+                widget: "list"
+                fields:
+                  - {label: Name, name: name, widget: string}
       - label: "Resume"
         name: "resume"
         file: "content/pages/resume.yml"
