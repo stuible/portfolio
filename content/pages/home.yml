@@ -8,9 +8,9 @@ bio: >-
   design should both create a narrative and get out of the way, allowing the
   user to experience what is truly important.
 technologies:
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/css-3.svg
     name: CSS3
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/html-5-1-.svg
     name: HTML5
   - image: /uploads/rectangle-copy-23.svg
     name: Javascript
