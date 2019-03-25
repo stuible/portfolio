@@ -1,20 +1,18 @@
 <template>
   <section>
     <section id="about">
+      <nuxt-img
+        v-if="home.body.image"
+        :src="home.body.image"
+        image-style="small"
+        alt="Never forget alt tags!"
+        class="profile"
+      />
       <div id="titles">
-        <nuxt-img
-          v-if="home.body.image"
-          :src="home.body.image"
-          image-style="small"
-          alt="Never forget alt tags!"
-          class="profile"
-        />
-        <div>
-          <h1 class="title">{{ home.body.title }}</h1>
-          <h2 class="subtitle">{{ home.body.subtitle }}</h2>
-        </div>
+        <h1 class="title">{{ home.body.title }}</h1>
+        <h2 class="subtitle">{{ home.body.subtitle }}</h2>
       </div>
-      <div class="bio">{{ home.body.bio }}</div>
+      <div id="bio">{{ home.body.bio }}</div>
     </section>
     <section id="services">
       <section id="what">
@@ -74,7 +72,10 @@ export default {
     isHighlighted(tech) {
       // If the technology is found in the list of tech or the list of tech is empty
       // Return true
-      if (this.highlightedTech.length == 0 || this.highlightedTech.some(e => e.name === tech)) {
+      if (
+        this.highlightedTech.length == 0 ||
+        this.highlightedTech.some(e => e.name === tech)
+      ) {
         return true;
       }
       return false;
@@ -91,7 +92,6 @@ export default {
   padding-top: 15px;
 
   ul {
-    // list-style: none;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -121,25 +121,37 @@ export default {
 }
 
 #about {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2em;
+  grid-template-areas: ". titles titles titles" "bio bio bio bio";
+  margin-bottom: 2em;
+
   #titles {
-    display: flex;
+      grid-area: titles;
+  }
+
+  #bio {
+    grid-area: bio;
   }
 
   img {
-    width: 150px;
+    width: 100%;
     height: 100%;
   }
 }
 
 #services {
-  display: flex;
-
-  > * {
-    flex: 1 1 0;
-    flex-basis: 0;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2em;
+  grid-template-areas: "what what how how";
+  margin-bottom: 2em;
 
   #what {
+    grid-area: what;
     ul {
       // list-style: none;
     }
@@ -150,8 +162,8 @@ export default {
   }
 
   #how {
+    grid-area: how;
     ul {
-      // list-style: none;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr;
