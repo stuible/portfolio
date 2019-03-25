@@ -1,24 +1,37 @@
 <template>
-  <div id="content" class="container">
+  <div id="content" class="container" v-on:scroll="onScroll(event)">
     <div class="sidebar">
       <div class="absolute-wrapper">
-        <img src="/logo.svg" alt>
+        <nuxt-link
+          to="/"
+          @click.native="scrollTo('__layout')"
+        >
+          <img src="/logo.svg" alt>
+        </nuxt-link>
+        <nav :style="{opacity: sidebarNavOpacity}">
+          <ul>
+            <li v-for="item in nav" v-bind:key="item.name">
+              <nuxt-link
+                v-if="item.scroll != undefined"
+                :to="item.link + item.hash"
+                @click.native="scrollTo(item.scroll)"
+              >{{item.name}}</nuxt-link>
+              <nuxt-link v-else :to="item.link">{{item.name}}</nuxt-link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
     <div class="scrollable">
       <nav>
         <ul>
-          <li>
-            <nuxt-link to="/" @click.native="scrollTo('__layout')">Josh Stuible</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/#portfolio" @click.native="scrollTo('portfolio')">Portfolio</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="freelance">Freelance</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="resume">Resume</nuxt-link>
+          <li v-for="item in nav" v-bind:key="item.name">
+            <nuxt-link
+              v-if="item.scroll != undefined"
+              :to="item.link + item.hash"
+              @click.native="scrollTo(item.scroll)"
+            >{{item.name}}</nuxt-link>
+            <nuxt-link v-else :to="item.link">{{item.name}}</nuxt-link>
           </li>
         </ul>
       </nav>
@@ -31,6 +44,33 @@
 
 <script>
 export default {
+  data() {
+    return {
+      nav: [
+        {
+          name: "Josh Stuible",
+          link: "/",
+          scroll: "__layout",
+          hash: ""
+        },
+        {
+          name: "Portfolio",
+          link: "/",
+          scroll: "portfolio",
+          hash: "#portfolio"
+        },
+        {
+          name: "Freelance",
+          link: "/freelance"
+        },
+        {
+          name: "Resume",
+          link: "/resume"
+        }
+      ],
+      sidebarNavOpacity: 0
+    };
+  },
   methods: {
     scrollTo(anchor) {
       // Scroll to a certain element
@@ -39,35 +79,27 @@ export default {
           behavior: "smooth"
         });
       }
+    },
+    onScroll(event) {
+      // console.log(event.pageY);
+      this.sidebarNavOpacity = this.map(event.pageY, 0, 100, 0, 124) / 100;
+    },
+    map(value, low1, high1, low2, high2) {
+      // if(value < low2) return 0;
+      return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1);
     }
-  }
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  // destroyed() {
+  //   window.removeEventListener("scroll", this.onScroll);
+  // }
 };
 </script>
 
 
 <style lang="scss">
-nav {
-  height: $topNavHeight;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-bottom: 4em;
-
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-  }
-  li {
-    display: inline-block;
-    a {
-      text-decoration: none;
-      color: $colourDark;
-      text-transform: uppercase;
-    }
-  }
-}
-
 #content {
   display: flex;
   padding-top: 5em;
@@ -87,9 +119,37 @@ nav {
     max-width: 100%;
     height: $topNavHeight;
   }
+
+  nav {
+    text-align: right;
+    padding: 3.5em 2em;
+    opacity: 0;
+  }
 }
 .scrollable {
   flex-grow: 1;
+
+  nav {
+    height: $topNavHeight;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 4em;
+
+    ul {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+    }
+    li {
+      display: inline-block;
+      a {
+        text-decoration: none;
+        color: $colourDark;
+        text-transform: uppercase;
+      }
+    }
+  }
 }
 
 footer {
