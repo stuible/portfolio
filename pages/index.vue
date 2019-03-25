@@ -145,6 +145,7 @@ export default {
     }
     li {
       font-size: 2em;
+      cursor: pointer;
     }
   }
 
@@ -169,15 +170,15 @@ export default {
       }
 
       &.fade {
-        opacity: 0.5;
+        opacity: 0.4;
       }
 
       img {
         position: absolute;
-        top: 15%;
-        left: 15%;
-        height: 70%;
-        width: 70%;
+        top: 25%;
+        left: 25%;
+        height: 50%;
+        width: 50%;
         text-align: center;
       }
     }
