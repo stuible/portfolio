@@ -2,10 +2,7 @@
   <div id="content" class="container" v-on:scroll="onScroll(event)">
     <div class="sidebar">
       <div class="absolute-wrapper">
-        <nuxt-link
-          to="/"
-          @click.native="scrollTo('__layout')"
-        >
+        <nuxt-link to="/" @click.native="scrollTo('__layout')">
           <img src="/logo.svg" alt>
         </nuxt-link>
         <nav :style="{opacity: sidebarNavOpacity}">
@@ -82,16 +79,22 @@ export default {
     },
     onScroll(event) {
       // console.log(event.pageY);
-      this.sidebarNavOpacity = this.map(event.pageY, 0, 100, 0, 124) / 100;
+      // console.log(this.map(event.pageY, 70, 124, 0, 100) / 100);
+      this.sidebarNavOpacity = this.map(event.pageY, 90, 150, 0, 100) / 100;
     },
-    map(value, low1, high1, low2, high2) {
-      // if(value < low2) return 0;
-      return low2 + ((high2 - low2) * (value - low1)) / (high1 - low1);
+    map(value, r0, r1, r2, r3) {
+      var mag = value - r0,
+        sgn = value < 0 ? -1 : 1;
+      var map = (sgn * mag * (r3 - r2)) / (r1 - r0);
+      // console.log(map);
+      if(map < r2) return r2
+      else if(map > r3) return r3
+      else return map;
     }
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
-  },
+  }
   // destroyed() {
   //   window.removeEventListener("scroll", this.onScroll);
   // }
