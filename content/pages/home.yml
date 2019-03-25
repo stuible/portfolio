@@ -12,29 +12,29 @@ technologies:
     name: CSS3
   - image: /uploads/html-5-1-.svg
     name: HTML5
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/javascriptlogo.svg
     name: Javascript
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/phplogo.svg
     name: PHP
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/mysql.svg
     name: SQL
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/vuejslogo.svg
     name: Vue.js
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/nuxtlogo.svg
     name: Nuxt.js
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/wordpress-logo-button.svg
     name: Wordpress
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/java.svg
     name: Java
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/csharplogo.svg
     name: 'C#'
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/logo.svg
     name: Illustrator
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/adobe-photoshop-svgrepo-com.svg
     name: Photoshop
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/sketch-1-.svg
     name: Sketch
-  - image: /uploads/rectangle-copy-23.svg
+  - image: /uploads/7fdd22a0-2dec-11e7-88fd-151e710b2934-bash.svg
     name: BASH
 services:
   - name: Web Design
