@@ -100,7 +100,10 @@ module.exports = {
   */
   build: {
     styleResources: {
-      scss: './assets/scss/variables.scss'
+      scss: [
+        './assets/scss/variables.scss', 
+        './assets/scss/breakpoints.scss'
+      ],
     },
     /*
     ** You can extend webpack config here

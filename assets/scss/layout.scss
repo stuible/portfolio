@@ -13,15 +13,15 @@
     }
 
     @include breakpoint(tablet){
-        max-width: map-get($breakpoints, tablet) - 50;
+        max-width: map-get($breakpoints, tablet);
         padding: 0;
     }
 
     @include breakpoint(desktop){
-        max-width: map-get($breakpoints, desktop) - 50;
+        max-width: map-get($breakpoints, desktop);
     }
 
     @include breakpoint(desktophd){
-        max-width: map-get($breakpoints, desktophd) - 50;
+        max-width: map-get($breakpoints, desktophd);
     }
 }

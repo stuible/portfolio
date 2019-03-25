@@ -3,9 +3,9 @@
     <div class="sidebar">
       <div class="absolute-wrapper">
         <nuxt-link to="/" @click.native="scrollTo('__layout')">
-          <img src="/logo.svg" alt>
+          <img id="logo" src="/logo.svg" alt="JS Logo">
         </nuxt-link>
-        <nav :style="{opacity: sidebarNavOpacity}">
+        <nav :style="{opacity: sidebarNavOpacity, display: sidebarNavDisplay}">
           <ul>
             <li v-for="item in nav" v-bind:key="item.name">
               <nuxt-link
@@ -68,6 +68,12 @@ export default {
       sidebarNavOpacity: 0
     };
   },
+  computed: {
+    sidebarNavDisplay(){
+      if(this.sidebarNavOpacity === 0) return 'none';
+      else return '';
+    }
+  },
   methods: {
     scrollTo(anchor) {
       // Scroll to a certain element
@@ -84,7 +90,7 @@ export default {
         //$('.container-fluid.SideNav').fadeIn();
         var scrollPercent = (startY - y + 75) / startY;
         // $(".container-fluid.SideNav").show();
-        this.sidebarNavOpacity = Math.min(1, Math.max(0,-scrollPercent));
+        this.sidebarNavOpacity = Math.min(1, Math.max(0, -scrollPercent));
       } else {
         //$('.container-fluid.SideNav').fadeOut();
         this.sidebarNavOpacity = 0;
@@ -106,31 +112,65 @@ export default {
   display: flex;
   padding-top: 5em;
 }
-$sidebarWidth: 200px;
+$sidebarWidthSmall: 150px;
+$sidebarWidthMedium: 200px;
+$sidebarWidthLarge: 200px;
 .sidebar {
-  min-width: $sidebarWidth;
-  max-width: $sidebarWidth;
+  min-width: $sidebarWidthSmall;
+  max-width: $sidebarWidthSmall;
   // position: relative;
+  display: none;
+
+  @include breakpoint(phablet) {
+    display: block;
+  }
+
+  @include breakpoint(tablet) {
+    min-width: $sidebarWidthMedium;
+    max-width: $sidebarWidthMedium;
+  }
+
+  // @include breakpoint(desktop) {
+  //   // display: block;
+  // }
+
+  @include breakpoint(desktophd) {
+    min-width: $sidebarWidthLarge;
+    max-width: $sidebarWidthLarge;
+  }
 
   .absolute-wrapper {
     position: fixed;
-    width: $sidebarWidth;
+    width: $sidebarWidthSmall;
     display: block;
-    text-align: center;
+    text-align: right;
+    padding-right: 2em;
+
+    @include breakpoint(tablet) {
+      width: $sidebarWidthMedium;
+      padding-right: 4em;
+    }
+
+    @include breakpoint(desktophd) {
+      width: $sidebarWidthLarge;
+      padding-right: 5em;
+    }
   }
 
-  img {
-    max-width: 100%;
+  img#logo {
+    width: auto;
+    // max-width: 100%;
     height: $topNavHeight;
   }
 
   nav {
-    text-align: right;
-    padding: 3.5em 4em 0 0;
+    // text-align: right;
+    padding: 1.5em 0.3em 0 0;
     opacity: 0;
     transition: opacity 200ms;
     line-height: 1.75em;
     text-transform: uppercase;
+    font-size: 14px;
   }
 }
 .scrollable {
