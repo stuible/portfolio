@@ -51,6 +51,7 @@ nav {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 4em;
 
   ul {
     list-style: none;
