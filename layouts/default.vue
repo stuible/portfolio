@@ -23,7 +23,7 @@
         </ul>
       </nav>
       <nuxt/>
-      <footer>Footer</footer>
+      <footer>{{"Design & Implementation by Josh Stuible in Vancouver"}}</footer>
     </div>
     <div class="sidebar"></div>
   </div>
@@ -93,5 +93,6 @@ nav {
 
 footer {
   text-align: center;
+  padding: 5em 0;
 }
 </style>
