@@ -78,18 +78,17 @@ export default {
       }
     },
     onScroll(event) {
-      // console.log(event.pageY);
-      // console.log(this.map(event.pageY, 70, 124, 0, 100) / 100);
-      this.sidebarNavOpacity = this.map(event.pageY, 90, 150, 0, 100) / 100;
-    },
-    map(value, r0, r1, r2, r3) {
-      var mag = value - r0,
-        sgn = value < 0 ? -1 : 1;
-      var map = (sgn * mag * (r3 - r2)) / (r1 - r0);
-      // console.log(map);
-      if(map < r2) return r2
-      else if(map > r3) return r3
-      else return map;
+      var y = window.scrollY;
+      var startY = 35;
+      if (y > startY) {
+        //$('.container-fluid.SideNav').fadeIn();
+        var scrollPercent = (startY - y + 75) / startY;
+        // $(".container-fluid.SideNav").show();
+        this.sidebarNavOpacity = Math.min(1, Math.max(0,-scrollPercent));
+      } else {
+        //$('.container-fluid.SideNav').fadeOut();
+        this.sidebarNavOpacity = 0;
+      }
     }
   },
   mounted() {
@@ -107,15 +106,17 @@ export default {
   display: flex;
   padding-top: 5em;
 }
+$sidebarWidth: 200px;
 .sidebar {
-  min-width: 150px;
-  max-width: 150px;
+  min-width: $sidebarWidth;
+  max-width: $sidebarWidth;
   // position: relative;
 
   .absolute-wrapper {
     position: fixed;
-    width: 150px;
+    width: $sidebarWidth;
     display: block;
+    text-align: center;
   }
 
   img {
@@ -125,8 +126,11 @@ export default {
 
   nav {
     text-align: right;
-    padding: 3.5em 2em;
+    padding: 3.5em 4em 0 0;
     opacity: 0;
+    transition: opacity 200ms;
+    line-height: 1.75em;
+    text-transform: uppercase;
   }
 }
 .scrollable {
