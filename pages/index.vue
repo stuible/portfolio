@@ -89,7 +89,6 @@ export default {
 
 <style lang="scss">
 #portfolio {
-  padding-top: 15px;
 
   ul {
     display: grid;
@@ -163,7 +162,7 @@ export default {
     ul {
       display: grid;
       grid-template-columns: $mainGridColumns;
-      grid-gap: 1em;
+      grid-gap: 2em;
     }
 
     li {
