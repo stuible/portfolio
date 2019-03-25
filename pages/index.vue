@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <main>
     <section id="about">
       <nuxt-img
         v-if="home.body.image"
@@ -39,14 +39,14 @@
         </ul>
       </section>
     </section>
-    <section id="posts">
+    <section id="portfolio">
       <ul>
         <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
           <nuxt-link :to="post.permalink">{{ post.title }}</nuxt-link>
         </li>
       </ul>
     </section>
-  </section>
+  </main>
 </template>
 
 <script>
@@ -88,14 +88,13 @@ export default {
 </script>
 
 <style lang="scss">
-#posts {
+#portfolio {
   padding-top: 15px;
 
   ul {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 2em;
+    grid-template-columns: $mainGridColumns;
+    grid-gap: $mainGridGap;
   }
 
   li {
@@ -122,14 +121,13 @@ export default {
 
 #about {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 2em;
+  grid-template-columns: $mainGridColumns;
+  grid-gap: $mainGridGap;
   grid-template-areas: ". titles titles titles" "bio bio bio bio";
-  margin-bottom: 2em;
+  margin-bottom: $mainGridGap;
 
   #titles {
-      grid-area: titles;
+    grid-area: titles;
   }
 
   #bio {
@@ -138,17 +136,16 @@ export default {
 
   img {
     width: 100%;
-    height: 100%;
+    // height: 100%;
   }
 }
 
 #services {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-gap: 2em;
+  grid-template-columns: $mainGridColumns;
+  grid-gap: $mainGridGap;
   grid-template-areas: "what what how how";
-  margin-bottom: 2em;
+  margin-bottom: $mainGridGap;
 
   #what {
     grid-area: what;
@@ -165,8 +162,7 @@ export default {
     grid-area: how;
     ul {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: $mainGridColumns;
       grid-gap: 1em;
     }
 

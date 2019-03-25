@@ -9,24 +9,41 @@
       <nav>
         <ul>
           <li>
-            <nuxt-link to="/">Josh Stuible</nuxt-link>
+            <nuxt-link to="/" @click.native="scrollTo('__layout')">Josh Stuible</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/">Portfolio</nuxt-link>
+            <nuxt-link to="/#portfolio" @click.native="scrollTo('portfolio')">Portfolio</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/">Freelance</nuxt-link>
+            <nuxt-link to="freelance">Freelance</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/">Resume</nuxt-link>
+            <nuxt-link to="resume">Resume</nuxt-link>
           </li>
         </ul>
       </nav>
       <nuxt/>
+      <footer>Footer</footer>
     </div>
     <div class="sidebar"></div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    scrollTo(anchor) {
+      // Scroll to a certain element
+      if (document.querySelector("#" + anchor)) {
+        document.querySelector("#" + anchor).scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    }
+  }
+};
+</script>
+
 
 <style lang="scss">
 nav {
@@ -59,7 +76,7 @@ nav {
   max-width: 150px;
   // position: relative;
 
-  .absolute-wrapper{
+  .absolute-wrapper {
     position: fixed;
     width: 150px;
     display: block;
@@ -72,5 +89,9 @@ nav {
 }
 .scrollable {
   flex-grow: 1;
+}
+
+footer {
+  text-align: center;
 }
 </style>
