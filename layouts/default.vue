@@ -3,7 +3,7 @@
     <div class="sidebar">
       <div class="absolute-wrapper">
         <nuxt-link to="/" @click.native="scrollTo('__layout')">
-          <img id="logo" src="/logo.svg" alt="JS Logo">
+          <img id="logo" src="/logo.svg" alt="JS">
         </nuxt-link>
         <nav :style="{opacity: sidebarNavOpacity, display: sidebarNavDisplay}">
           <ul>
