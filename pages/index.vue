@@ -34,6 +34,7 @@
             v-bind:key="tech.name"
             :class="{ fade: !isHighlighted(tech.name)  }"
           >
+            <h6>{{tech.name}}</h6>
             <img v-if="tech.image" :src="'images/' + tech.image" :alt="tech.name">
           </li>
         </ul>
@@ -167,7 +168,7 @@ export default {
   grid-template-areas: "what what how how";
   margin-bottom: $mainGridGap;
 
-  h3{
+  h3 {
     font-size: 2em;
     margin-bottom: 1em;
   }
@@ -191,10 +192,24 @@ export default {
       grid-gap: 2em;
     }
 
+    h6 {
+      position: absolute;
+      top: -10px;
+      opacity: 0;
+      transition: all 100ms ease-in;
+    }
+
     li {
       position: relative;
       width: 100%;
       background-color: $colourMedium;
+
+      &:hover {
+        h6 {
+          top: -20px;
+          opacity: 1;
+        }
+      }
 
       &::before {
         content: "";
