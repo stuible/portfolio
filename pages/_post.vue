@@ -46,6 +46,7 @@ export default {
 
     img {
       margin-bottom: 1em;
+      width: 100%;
     }
 
     h1,
