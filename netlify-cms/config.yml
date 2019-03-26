@@ -19,13 +19,12 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Order", name: "order", widget: "number"}
       - {label: "Icon", name: "icon", widget: "image", required: false}
       - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - label: "Body"
-            name: "body"
-            widget: "list"
-            fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Text, name: text, widget: "markdown"}
+      - label: "Content"
+        name: "content"
+        widget: "list"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Text, name: text, widget: "markdown"}
     meta:
       - {label: "SEO Description", name: "description", widget: "text"}
   - label: "Custom Sections"
