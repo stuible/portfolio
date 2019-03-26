@@ -19,5 +19,18 @@ content:
       jobs or locations. This means that some get a substantial amount of
       unnecessary email.
     title: Justification
+  - text: >-
+      Because the Fraser Health organization was already utilizing Microsoft
+      server technology, I intergrated my solution with Sharepoint.  I developed
+      a custom SharePoint application that would hook into active directory and
+      display the information to the user.
+    title: Tooling
+  - text: >-
+      The biggest challenge was getting the project approved.  In such a large
+      corperation, creating a tool like this meant interfacing with multiple
+      teams in an attempt to get approval.  I reached out to the Server Team,
+      the Exchange Team and the security team in order to get all the
+      information neccesary to make this a functional utility.
+    title: Challenges
 ---
 
