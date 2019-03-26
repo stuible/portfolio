@@ -5,6 +5,3 @@ order: 1
 icon: /uploads/nuxtlogo.svg
 image: /uploads/snafulogo@3x.png
 ---
-Very Hype
-
-Hehe
