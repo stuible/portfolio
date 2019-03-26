@@ -39,7 +39,7 @@ export default {
   section {
     display: grid;
     grid-template-columns: 1fr 6fr;
-    grid-template-rows: 1auto 1auto;
+    grid-template-rows: auto auto;
     grid-template-areas: "title title" ". content";
     row-gap: 1em;
     margin-bottom: 2em;
