@@ -21,6 +21,7 @@ content:
       customizable personal preferences can also be set through an NFC sensor
       and the user’s phone.
     title: Interaction
+    image: /uploads/interactiondiagrammoodlamp.png
   - text: >-
       The light is constructed within the metal frame of a Japanese pagoda. With
       translucent paper cladding that emulated a Shoji screen, light from LED
@@ -28,6 +29,7 @@ content:
       well within the context of this project while giving it a recognizable
       look.
     title: Design
+    image: /uploads/moodlampinlight.jpg
   - text: >-
       The light is controlled by an Arduino attached to multiple sensors. Our
       Arduino code keeps track of a motion level, determined by how often the
@@ -36,6 +38,7 @@ content:
       creates am atmosphere index, which results in the different colours,
       pulses, and brightness in the LED ring.
     title: Schematics
+    image: /uploads/moodlampdiagram.jpg
   - text: >-
       The biggest challenge was calibrating the values from the motion sensor
       and microphone to get useful data about the room. In future iterations, we
