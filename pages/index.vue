@@ -21,8 +21,8 @@
           <li
             v-for="service in home.body.services"
             v-bind:key="service.name"
-            @mouseover=" setTechHighlights(service.technology)"
-            @mouseleave=" setTechHighlights([])"
+            @mouseover="setTechHighlights(service.technology)"
+            @mouseleave="setTechHighlights([])"
           >{{service.name}}</li>
         </ul>
       </section>
@@ -42,7 +42,13 @@
     <section id="portfolio">
       <ul>
         <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
-          <nuxt-link :to="post.permalink">{{ post.title }}</nuxt-link>
+          <div class="info">
+            <h5>{{ post.title }}</h5>
+            <h6>Web Design</h6>
+          </div>
+          <nuxt-link :to="post.permalink">
+            <img v-if="post.icon" :src="'images/' + post.icon" :alt="post.title">
+          </nuxt-link>
         </li>
       </ul>
     </section>
@@ -89,7 +95,6 @@ export default {
 
 <style lang="scss">
 #portfolio {
-
   ul {
     display: grid;
     grid-template-columns: $mainGridColumns;
@@ -106,7 +111,23 @@ export default {
       padding-top: 100%;
     }
 
+    .info {
+      color: black;
+      position: absolute;
+      top: -25px;
+      opacity: 0;
+      transition: all 100ms ease-in;
+    }
+
+    &:hover {
+      .info {
+        top: -35px;
+        opacity: 1;
+      }
+    }
+
     a {
+      padding: 2em;
       position: absolute;
       top: 0;
       left: 0;
@@ -145,6 +166,11 @@ export default {
   grid-gap: $mainGridGap;
   grid-template-areas: "what what how how";
   margin-bottom: $mainGridGap;
+
+  h3{
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
 
   #what {
     grid-area: what;
