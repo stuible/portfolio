@@ -5,7 +5,7 @@
         v-if="home.body.image"
         :src="home.body.image"
         image-style="small"
-        alt="Never forget alt tags!"
+        alt="JS"
         class="profile"
       />
       <div id="titles">
