@@ -2,8 +2,10 @@
   <main id="post">
     <section>
       <h1>{{ post.title }}</h1>
-      <nuxt-img v-if="post.image" :src="post.image" image-style="small" :alt="post.title"/>
-      <p>{{post.description}}</p>
+      <div class="content">
+        <nuxt-img v-if="post.image" :src="post.image" image-style="small" :alt="post.title"/>
+        <p>{{post.description}}</p>
+      </div>
     </section>
     <section v-for="content in post.content" v-bind:key="content.title">
       <h2>{{content.title}}</h2>
@@ -51,7 +53,8 @@ export default {
       grid-area: title;
     }
 
-    .content, p {
+    .content,
+    p {
       grid-area: content;
     }
   }
