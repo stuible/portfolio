@@ -1,9 +1,22 @@
 <template>
-  <main>
-    <h1>{{ post.title }}</h1>
-    <!-- <img :src="post.image + '?style=small'" alt=""> -->
-    <nuxt-img v-if="post.image" :src="post.image" image-style="small" alt="Never forget alt tags!" />
-    <div v-html="post.body" />
+  <main id="post">
+    <section>
+      <h1>{{ post.title }}</h1>
+      <nuxt-img v-if="post.image" :src="post.image" image-style="small" :alt="post.title"/>
+      <p>{{post.description}}</p>
+    </section>
+    <section v-for="content in post.content" v-bind:key="content.title">
+      <h2>{{content.title}}</h2>
+      <div class="content">
+        <nuxt-img
+          v-if="content.image"
+          :src="content.image"
+          image-style="small"
+          :alt="content.title"
+        />
+        <p v-html="content.text"/>
+      </div>
+    </section>
     <!-- {{post}} -->
   </main>
 </template>
@@ -11,16 +24,36 @@
 <script>
 export default {
   async asyncData({ app, route }) {
-    const post = await app.$content('posts').get(route.path)
+    const post = await app.$content("posts").get(route.path);
     return {
-      post: post,
-    }
+      post: post
+    };
   }
-}
+};
 </script>
 
-<style>
-img {
-  width: 100%;
+<style lang="scss">
+#post {
+  section {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1auto 1auto;
+    grid-template-areas: "title title" ". content";
+    row-gap: 1em;
+    margin-bottom: 2em;
+
+    img {
+      margin-bottom: 1em;
+    }
+
+    h1,
+    h2 {
+      grid-area: title;
+    }
+
+    .content, p {
+      grid-area: content;
+    }
+  }
 }
 </style>

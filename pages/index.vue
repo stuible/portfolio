@@ -102,6 +102,10 @@ export default {
     grid-gap: $mainGridGap;
   }
 
+  img{
+    width: 100%;
+  }
+
   li {
     position: relative;
     width: 100%;
