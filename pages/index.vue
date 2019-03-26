@@ -143,7 +143,8 @@ export default {
 #about {
   display: grid;
   grid-template-columns: $mainGridColumns;
-  grid-gap: $mainGridGap;
+  column-gap: $mainGridGap;
+  row-gap: $mainGridGap / 2;
   grid-template-areas: ". titles titles titles" "bio bio bio bio";
   margin-bottom: $mainGridGap;
 
@@ -188,8 +189,15 @@ export default {
     grid-area: how;
     ul {
       display: grid;
-      grid-template-columns: $mainGridColumns;
+      grid-template-columns: 1fr 1fr;
       grid-gap: 2em;
+
+      @include breakpoint(tablet) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      @include breakpoint(desktop) {
+        grid-template-columns: $mainGridColumns;
+      }
     }
 
     h6 {
