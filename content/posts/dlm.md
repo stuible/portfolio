@@ -3,7 +3,7 @@ title: DLM
 date: '2019-03-19 02:24pm'
 order: -1
 icon: /uploads/nuxtlogo.svg
-image: /uploads/dlmlogo.png
+image: /uploads/distribution-list-manager-beta-home.png
 description: >-
   The Distribution List Manager is a web based application that integrates with
   Fraser Health's current SharePoint and Active Directory environment to display
@@ -19,6 +19,7 @@ content:
       jobs or locations. This means that some get a substantial amount of
       unnecessary email.
     title: Justification
+    image: /uploads/dlmlogo.png
   - text: >-
       Because the Fraser Health organization was already utilizing Microsoft
       server technology, I intergrated my solution with Sharepoint.  I developed
