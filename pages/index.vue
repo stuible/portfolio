@@ -5,7 +5,7 @@
         v-if="home.body.image"
         :src="home.body.image"
         image-style="small"
-        alt="JS"
+        alt="Josh Stuible's Beautiful Face"
         class="profile"
       />
       <div id="titles">
