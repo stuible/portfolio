@@ -190,6 +190,9 @@ $sidebarWidthLarge: 200px;
     }
     li {
       display: inline-block;
+      border-bottom: 5px solid #EDEAEA;
+      padding-bottom: 0.25em;
+      cursor: pointer;
       a {
         text-decoration: none;
         color: $colourDark;
