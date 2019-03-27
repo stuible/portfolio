@@ -21,7 +21,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#000' },
 
   /*
   ** Global CSS
@@ -43,6 +43,7 @@ module.exports = {
     '@dinamomx/nuxtent',
     'nuxt-netlify-cms',
     '@nuxtjs/style-resources',
+    "nuxt-svg",
     ['@reallifedigital/nuxt-image-loader-module', {
       imagesBaseDir: 'static/images',
       imageStyles: {
@@ -101,7 +102,7 @@ module.exports = {
   build: {
     styleResources: {
       scss: [
-        './assets/scss/variables.scss', 
+        './assets/scss/variables.scss',
         './assets/scss/breakpoints.scss'
       ],
     },

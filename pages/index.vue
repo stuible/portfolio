@@ -35,7 +35,8 @@
             :class="{ fade: !isHighlighted(tech.name)  }"
           >
             <h6>{{tech.name}}</h6>
-            <img v-if="tech.image" :src="'images/' + tech.image" :alt="tech.name">
+            <!-- <img v-if="tech.image" :src="'images/' + tech.image" :alt="tech.name"> -->
+            <img :src="require(`~/static/images${tech.image}?data`)" alt="">
           </li>
         </ul>
       </section>
