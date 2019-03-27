@@ -4,7 +4,7 @@
       <nuxt-img
         v-if="home.body.image"
         :src="home.body.image"
-        image-style="small"
+        image-style="thumb"
         alt="Josh Stuible's Beautiful Face"
         class="profile"
       />
