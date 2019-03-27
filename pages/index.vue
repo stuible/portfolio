@@ -49,7 +49,7 @@
             <h6>Web Design</h6>
           </div>
           <nuxt-link :to="post.permalink">
-            <img v-if="post.icon" :src="'images/' + post.icon" :alt="post.title">
+            <img v-if="post.icon" :src="require(`~/static/images${post.icon}?data`)" :alt="post.title">
           </nuxt-link>
         </li>
       </ul>
