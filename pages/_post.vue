@@ -3,7 +3,7 @@
     <section>
       <h1>{{ post.title }}</h1>
       <div class="content">
-        <nuxt-img v-if="post.image" :src="post.image" image-style="small" :alt="post.title"/>
+        <nuxt-img v-if="post.image" :src="post.image" image-style="medium" :alt="post.title"/>
         <p>{{post.description}}</p>
       </div>
     </section>
