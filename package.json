@@ -20,7 +20,8 @@
     "cross-env": "^5.2.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.4.0",
-    "nuxt-svg": "^0.1.4"
+    "nuxt-svg": "^0.1.4",
+    "vue-lazyload": "^1.2.6"
   },
   "devDependencies": {
     "@nuxt/common": "^2.3.4",
