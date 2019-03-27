@@ -13,7 +13,7 @@
         <nuxt-img
           v-if="content.image"
           :src="content.image"
-          image-style="small"
+          image-style="medium"
           :alt="content.title"
         />
         <p v-html="content.text"/>
