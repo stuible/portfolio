@@ -25,23 +25,22 @@ technologies:
 services:
   - name: Web Design
     technology:
-      - name: CSS3
-      - name: HTML5
+      - CSS3
+      - HTML5
   - name: Brand Design
     technology:
-      - name: Sketch
-      - name: Illustrator
-      - name: Photoshop
+      - Photoshop
+      - Sketch
+      - Illustrator
   - name: Front-End
     technology:
-      - name: Nuxt.js
-      - name: CSS3
-      - name: HTML5
-      - name: Vue.js
-      - name: Javascript
+      - Nuxt.js
+      - CSS3
+      - HTML5
+      - Vue.js
+      - Javascript
   - name: Back-End
     technology:
-      - name: Laravel
-      - name: PHP
-      - name: SQL
-      - name: BASH
+      - BASH
+      - PHP
+      - SQL
