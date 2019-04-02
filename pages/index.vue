@@ -126,6 +126,7 @@ export default {
 
   img {
     width: 100%;
+    height: 100%;
   }
 
   li {
@@ -168,11 +169,16 @@ export default {
 
 #about {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   column-gap: $mainGridGap;
   row-gap: $mainGridGap / 2;
-  grid-template-areas: ". titles titles" "bio bio bio";
+  grid-template-areas: "." "titles" "bio";
   margin-bottom: $mainGridGap;
+
+  @include breakpoint(phone) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". titles titles" "bio bio bio";
+  }
 
   @include breakpoint(phablet) {
     grid-template-columns: 1fr 1fr 1fr;

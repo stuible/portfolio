@@ -178,14 +178,14 @@ $sidebarWidthLarge: 200px;
 
   nav {
     height: $topNavHeight;
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     margin-bottom: 4em;
 
     ul {
       list-style: none;
-      display: none;
+      display: flex;
       justify-content: space-between;
     }
     li {
@@ -201,9 +201,9 @@ $sidebarWidthLarge: 200px;
     }
 
     @include breakpoint(phone) {
-      ul {
+      // nav {
         display: flex;
-      }
+      // }
     }
   }
 }

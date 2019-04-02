@@ -7,6 +7,22 @@
         <p>{{post.description}}</p>
       </div>
     </section>
+    <section>
+      <h2>Tools</h2>
+      <div class="content">
+        <ul class="tools">
+          <li v-for="techName in post.technologies" v-bind:key="techName">
+            <figure>
+              <img
+                :src="require(`~/static/images${getTechByName(techName).image}?data`)"
+                :alt="techName"
+              >
+              <figcaption>{{techName}}</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
     <section v-for="content in post.content" v-bind:key="content.title">
       <h2>{{content.title}}</h2>
       <div class="content">
@@ -26,10 +42,20 @@
 <script>
 export default {
   async asyncData({ app, route }) {
-    const post = await app.$content("posts").get(route.path);
     return {
-      post: post
+      post: await app.$content("posts").get(route.path),
+      tech: await app.$content("tech").getAll()
     };
+  },
+  methods: {
+    getTechByName(name) {
+      return this.tech.find(obj => {
+        return obj.title === name;
+      });
+    }
+  },
+  mounted(){
+    // require(`~/static/images${getTechByName('CSS3').image}?inline`)
   }
 };
 </script>
@@ -57,6 +83,21 @@ export default {
     .content,
     p {
       grid-area: content;
+    }
+  }
+
+  .tools {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    li {
+      width: 75px;
+      margin: 0 1em;
+      text-align: center;
+      // display: inline;
+    }
+    img {
+      width: 70%;
     }
   }
 }
