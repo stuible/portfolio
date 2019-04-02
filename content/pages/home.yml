@@ -39,6 +39,7 @@ services:
       - HTML5
       - Vue.js
       - Javascript
+      - Wordpress
   - name: Back-End
     technology:
       - BASH
