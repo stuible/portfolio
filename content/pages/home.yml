@@ -8,34 +8,20 @@ bio: >-
   design should both create a narrative and get out of the way, allowing the
   user to experience what is truly important.
 technologies:
-  - image: /uploads/css-3.svg
-    name: CSS3
-  - image: /uploads/html-5-1-.svg
-    name: HTML5
-  - image: /uploads/javascriptlogo.svg
-    name: Javascript
-  - image: /uploads/phplogo.svg
-    name: PHP
-  - image: /uploads/mysql.svg
-    name: SQL
-  - image: /uploads/vuejslogo.svg
-    name: Vue.js
-  - image: /uploads/nuxtlogo.svg
-    name: Nuxt.js
-  - image: /uploads/wordpress-logo-button.svg
-    name: Wordpress
-  - image: /uploads/java.svg
-    name: Java
-  - image: /uploads/csharplogo.svg
-    name: 'C#'
-  - image: /uploads/logo.svg
-    name: Illustrator
-  - image: /uploads/adobe-photoshop-svgrepo-com.svg
-    name: Photoshop
-  - image: /uploads/sketch-1-.svg
-    name: Sketch
-  - image: /uploads/7fdd22a0-2dec-11e7-88fd-151e710b2934-bash.svg
-    name: BASH
+  - BASH
+  - CSS3
+  - 'C#'
+  - HTML5
+  - Illustrator
+  - Java
+  - Javascript
+  - Nuxt.js
+  - Photoshop
+  - PHP
+  - Sketch
+  - SQL
+  - Vue.js
+  - Wordpress
 services:
   - name: Web Design
     technology:
