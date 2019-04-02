@@ -21,13 +21,13 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
       - {label: Description, name: description, widget: "markdown"}
       - label: "Technologies"
-            name: "technologies"
-            widget: "relation"
-            collection: "tech"
-            searchFields: ["title"]
-            valueField: "title"
-            multiple: true
-            displayFields: ["title"]
+        name: "technologies"
+        widget: "relation"
+        collection: "tech"
+        searchFields: ["title"]
+        valueField: "title"
+        multiple: true
+        displayFields: ["title"]
       - label: "Content"
         name: "content"
         widget: "list"
