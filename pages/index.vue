@@ -30,13 +30,13 @@
         <h3>How I do</h3>
         <ul>
           <li
-            v-for="tech in home.body.technologies"
-            v-bind:key="tech.name"
-            :class="{ fade: !isHighlighted(tech.name)  }"
+            v-for="techName in home.body.technologies"
+            v-bind:key="techName.title"
+            :class="{ fade: !isHighlighted(getTechByName(techName).title)  }"
           >
-            <h6>{{tech.name}}</h6>
-            <!-- <img v-if="tech.image" :src="'images/' + tech.image" :alt="tech.name"> -->
-            <img :src="require(`~/static/images${tech.image}?data`)" alt="">
+            <h6>{{getTechByName(techName).title}}</h6>
+           
+            <img :src="require(`~/static/images${getTechByName(techName).image}?data`)" alt>
           </li>
         </ul>
       </section>
@@ -49,7 +49,11 @@
             <h6>Web Design</h6>
           </div>
           <nuxt-link :to="post.permalink">
-            <img v-if="post.icon" :src="require(`~/static/images${post.icon}?data`)" :alt="post.title">
+            <img
+              v-if="post.icon"
+              :src="require(`~/static/images${post.icon}?data`)"
+              :alt="post.title"
+            >
           </nuxt-link>
         </li>
       </ul>
@@ -67,6 +71,7 @@ export default {
   async asyncData({ app }) {
     return {
       posts: await app.$content("posts").getAll(),
+      tech: await app.$content("tech").getAll(),
       home: await app.$content("pages").get("home"),
       highlightedTech: []
     };
@@ -82,7 +87,7 @@ export default {
       // Return true
       if (
         this.highlightedTech.length == 0 ||
-        this.highlightedTech.some(e => e.name === tech)
+        this.highlightedTech.some(e => e === tech)
       ) {
         return true;
       }
@@ -90,6 +95,11 @@ export default {
     },
     setTechHighlights(tech) {
       this.highlightedTech = tech;
+    },
+    getTechByName(name) {
+      return this.tech.find(obj => {
+        return obj.title === name;
+      });
     }
   }
 };
@@ -99,11 +109,22 @@ export default {
 #portfolio {
   ul {
     display: grid;
-    grid-template-columns: $mainGridColumns;
+    grid-template-columns: 1fr 1fr;
     grid-gap: $mainGridGap;
+
+    @include breakpoint(phablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include breakpoint(phablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    @include breakpoint(desktop) {
+      grid-template-columns: $mainGridColumns;
+    }
   }
 
-  img{
+  img {
     width: 100%;
   }
 
@@ -147,11 +168,24 @@ export default {
 
 #about {
   display: grid;
-  grid-template-columns: $mainGridColumns;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: $mainGridGap;
   row-gap: $mainGridGap / 2;
-  grid-template-areas: ". titles titles titles" "bio bio bio bio";
+  grid-template-areas: ". titles titles" "bio bio bio";
   margin-bottom: $mainGridGap;
+
+  @include breakpoint(phablet) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". titles titles" "bio bio bio";
+  }
+
+  // @include breakpoint(phablet) {
+  //   grid-template-columns: 1fr 1fr 1fr;
+  // }
+  @include breakpoint(desktop) {
+    grid-template-columns: $mainGridColumns;
+    grid-template-areas: ". titles titles titles" "bio bio bio bio";
+  }
 
   #titles {
     grid-area: titles;
@@ -169,10 +203,19 @@ export default {
 
 #services {
   display: grid;
-  grid-template-columns: $mainGridColumns;
+  grid-template-columns: 1fr;
   grid-gap: $mainGridGap;
-  grid-template-areas: "what what how how";
+  grid-template-areas: "what" "how";
   margin-bottom: $mainGridGap;
+
+  @include breakpoint(phone) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: "what what how how how";
+  }
+  @include breakpoint(desktop) {
+    grid-template-columns: $mainGridColumns;
+    grid-template-areas: "what what how how";
+  }
 
   h3 {
     font-size: 2em;
@@ -187,6 +230,11 @@ export default {
     li {
       font-size: 2em;
       cursor: pointer;
+      color: darkgray;
+
+      &:hover {
+        color: black;
+      }
     }
   }
 
@@ -194,10 +242,14 @@ export default {
     grid-area: how;
     ul {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-gap: 2em;
 
-      @include breakpoint(tablet) {
+      @include breakpoint(phone) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @include breakpoint(phablet) {
         grid-template-columns: 1fr 1fr 1fr;
       }
       @include breakpoint(desktop) {

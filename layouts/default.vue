@@ -69,9 +69,9 @@ export default {
     };
   },
   computed: {
-    sidebarNavDisplay(){
-      if(this.sidebarNavOpacity === 0) return 'none';
-      else return '';
+    sidebarNavDisplay() {
+      if (this.sidebarNavOpacity === 0) return "none";
+      else return "";
     }
   },
   methods: {
@@ -144,7 +144,7 @@ $sidebarWidthLarge: 200px;
     width: $sidebarWidthSmall;
     display: block;
     text-align: right;
-    padding-right: 2em;
+    padding-right: 3em;
 
     @include breakpoint(tablet) {
       width: $sidebarWidthMedium;
@@ -185,18 +185,24 @@ $sidebarWidthLarge: 200px;
 
     ul {
       list-style: none;
-      display: flex;
+      display: none;
       justify-content: space-between;
     }
     li {
       display: inline-block;
-      border-bottom: 5px solid #EDEAEA;
+      border-bottom: 5px solid #edeaea;
       padding-bottom: 0.25em;
       // cursor: pointer;
       a {
         text-decoration: none;
         color: $colourDark;
         text-transform: uppercase;
+      }
+    }
+
+    @include breakpoint(phone) {
+      ul {
+        display: flex;
       }
     }
   }

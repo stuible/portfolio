@@ -89,6 +89,15 @@ module.exports = {
           'get',
           'getAll'
         ]
+      }],
+      ["tech", {
+        page: 'tech/_tech',
+        permalink: ':slug',
+        generate: [
+          // assets to generate static build
+          'get',
+          'getAll'
+        ]
       }]
     ]
   },
