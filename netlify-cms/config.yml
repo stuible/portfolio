@@ -42,20 +42,25 @@ collections: # A list of collections the CMS should be able to edit
           - {label: Bio, name: bio, widget: text}
           - label: "Technologies"
             name: "technologies"
-            widget: "list"
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: "Image", name: "image", widget: "image", required: false, default: "/uploads/rectangle-copy-23.svg"}
+            widget: "relation"
+            collection: "tech"
+            searchFields: ["title"]
+            valueField: "title"
+            multiple: true
+            displayFields: ["title"]
           - label: "Services"
             name: "services"
             widget: "list"
             fields:
               - {label: Name, name: name, widget: string}
-              - label: "Technology Used"
+              - label: "Technologies Used"
                 name: "technology"
-                widget: "list"
-                fields:
-                  - {label: Name, name: name, widget: string}
+                widget: "relation"
+                collection: "tech"
+                searchFields: ["title"]
+                valueField: "title"
+                multiple: true
+                displayFields: ["title"]
       - label: "Resume"
         name: "resume"
         file: "content/pages/resume.yml"
@@ -66,3 +71,11 @@ collections: # A list of collections the CMS should be able to edit
         file: "content/pages/footer.yml"
         fields:
           - {label: Message, name: message, widget: string}
+  - name: "tech" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Tools" # Used in the UI, ie.: "New Post"
+    folder: "content/tech"
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: title, name: title, widget: string}
+      - {label: "Image", name: "image", widget: "image", required: false, default: "/uploads/rectangle-copy-23.svg"}
