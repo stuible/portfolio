@@ -128,6 +128,7 @@ module.exports = {
       //   test: /\.svg$/,
       //   loader: 'vue-svg-loader',
       // });
+
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         // config.module.rules.push({

@@ -225,6 +225,7 @@ export default {
 
   h3 {
     font-size: 2em;
+    text-transform: uppercase;
     margin-bottom: 1em;
   }
 
@@ -237,6 +238,9 @@ export default {
       font-size: 2em;
       cursor: pointer;
       color: darkgray;
+      padding: 0.25em 0;
+      font-weight: 700;
+      letter-spacing: 0.05em;
 
       &:hover {
         color: black;

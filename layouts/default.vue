@@ -21,6 +21,7 @@
     </div>
     <div class="scrollable">
       <nav>
+        <button>☰</button>
         <ul>
           <li v-for="item in nav" v-bind:key="item.name">
             <nuxt-link
@@ -110,7 +111,11 @@ export default {
 <style lang="scss">
 #content {
   display: flex;
-  padding-top: 5em;
+  padding-top: 1em;
+
+  @include breakpoint(phone) {
+    padding-top: 5em;
+  }
 }
 $sidebarWidthSmall: 150px;
 $sidebarWidthMedium: 200px;
@@ -178,14 +183,29 @@ $sidebarWidthLarge: 200px;
 
   nav {
     height: $topNavHeight;
-    display: none;
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 4em;
+    margin-bottom: 1em;
+
+    // Hamburger Menu
+    button {
+      display: block;
+      width: 60px + 15px;
+      left: 0;
+      text-align: right;
+      background-color: $colourMedium;
+      border: none;
+      padding: 1em;
+      position: fixed;
+      cursor: pointer;
+      z-index: 2;
+      box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.23);
+    }
 
     ul {
       list-style: none;
-      display: flex;
+      display: none;
       justify-content: space-between;
     }
     li {
@@ -197,13 +217,27 @@ $sidebarWidthLarge: 200px;
         text-decoration: none;
         color: $colourDark;
         text-transform: uppercase;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+
+         @include breakpoint(phablet) {
+           font-size: 15px;
+         }
       }
     }
 
     @include breakpoint(phone) {
-      // nav {
+
+      margin-bottom: 4em;
+
+      button {
+        display: none;
+      }
+
+      ul {
         display: flex;
-      // }
+      }
     }
   }
 }
