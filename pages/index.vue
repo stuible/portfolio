@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section id="about">
+    <section id="about" data-love="nadine">
       <nuxt-img
         v-if="home.body.image"
         :src="home.body.image"
@@ -35,7 +35,7 @@
             :class="{ fade: !isHighlighted(getTechByName(techName).title)  }"
           >
             <h6>{{getTechByName(techName).title}}</h6>
-           
+
             <img :src="require(`~/static/images${getTechByName(techName).image}?data`)" alt>
           </li>
         </ul>
@@ -155,7 +155,7 @@ export default {
     }
 
     a {
-      padding: 2em;
+      padding: 25%;
       position: absolute;
       top: 0;
       left: 0;
@@ -193,18 +193,43 @@ export default {
     grid-template-areas: ". titles titles titles" "bio bio bio bio";
   }
 
-  #titles {
-    grid-area: titles;
-  }
-
-  #bio {
-    grid-area: bio;
-  }
-
   img {
     width: 100%;
     // height: 100%;
   }
+}
+
+#titles {
+  grid-area: titles;
+
+  // font-size: 1em;
+  font-size: 0.75em;
+
+  .title {
+    // color: $colourDark;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 4em;
+    letter-spacing: 0.05em;
+  }
+
+  .subtitle {
+    color: #777777;
+  }
+
+  @include breakpoint(tablet) {
+    font-size: 0.75em;
+  }
+  @include breakpoint(desktop) {
+    font-size: 1em;
+  }
+  @include breakpoint(desktophd) {
+    font-size: 1em;
+  }
+}
+
+#bio {
+  grid-area: bio;
 }
 
 #services {
