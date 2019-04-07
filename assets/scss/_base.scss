@@ -14,8 +14,18 @@
 @import "breakpoints";
 @import "layout";
 
+//Hamburger Menu
+$hamburger-padding-x: 0px;
+$hamburger-padding-y: 0px;
+$hamburger-types: squeeze;
+$hamburger-layer-spacing: 8px;
+$hamburger-layer-width: 30px;
+$hamburger-layer-height: 1px;
+
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+
 html {
-    font-family: 'Neue Haas Grotesk', sans-serif ;
+    font-family: "Neue Haas Grotesk", sans-serif;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
