@@ -41,6 +41,8 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    'nuxt-rfg-icon',
+    '@nuxtjs/manifest', 
     '@dinamomx/nuxtent',
     'nuxt-netlify-cms',
     '@nuxtjs/style-resources',
@@ -105,6 +107,12 @@ module.exports = {
     adminPath: 'admin',
     adminTitle: 'Stuible Portfolio Manager'
   },
+  'rfg-icon': {
+    static: true,
+    staticPath: '/_favicons/',
+    masterPicture: 'static/logo.svg',
+    // rfg: <faviconDescription.json from realfavicongenerator.net>
+ },
 
   /*
   ** Build configuration
