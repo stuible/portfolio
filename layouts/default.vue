@@ -2,37 +2,16 @@
   <div id="content" class="container" v-on:scroll="onScroll(event)">
     <div class="sidebar">
       <div class="absolute-wrapper">
+        <!-- LOGO -->
         <nuxt-link to="/" @click.native="scrollTo('__layout')">
           <img id="logo" src="~static/logo.svg?data" alt="JS">
         </nuxt-link>
-        <nav :style="{opacity: sidebarNavOpacity, display: sidebarNavDisplay}">
-          <ul>
-            <li v-for="item in nav" v-bind:key="item.name">
-              <nuxt-link
-                v-if="item.scroll != undefined"
-                :to="item.link + item.hash"
-                @click.native="scrollTo(item.scroll)"
-              >{{item.name}}</nuxt-link>
-              <nuxt-link v-else :to="item.link">{{item.name}}</nuxt-link>
-            </li>
-          </ul>
-        </nav>
+        <!-- /LOGO -->
+        <side-nav :nav="nav" :opacity="sidebarNavOpacity" :display="sidebarNavDisplay" @clicked="scrollTo"/>
       </div>
     </div>
     <div class="scrollable">
-      <nav>
-        <button>☰</button>
-        <ul>
-          <li v-for="item in nav" v-bind:key="item.name">
-            <nuxt-link
-              v-if="item.scroll != undefined"
-              :to="item.link + item.hash"
-              @click.native="scrollTo(item.scroll)"
-            >{{item.name}}</nuxt-link>
-            <nuxt-link v-else :to="item.link">{{item.name}}</nuxt-link>
-          </li>
-        </ul>
-      </nav>
+      <top-nav :nav="nav" @clicked="scrollTo"/>
       <nuxt/>
       <footer>{{"Design & Implementation by Josh Stuible in Vancouver"}}</footer>
     </div>
@@ -41,7 +20,13 @@
 </template>
 
 <script>
+import sideNav from '~/components/global/SideNav.vue';
+import topNav from '~/components/global/TopNav.vue';
 export default {
+  components: {
+    sideNav,
+    topNav
+  },
   data() {
     return {
       nav: [
@@ -66,7 +51,8 @@ export default {
           link: "/resume"
         }
       ],
-      sidebarNavOpacity: 0
+      sidebarNavOpacity: 0,
+      mobileNavOpen: false
     };
   },
   computed: {
@@ -135,10 +121,6 @@ $sidebarWidthLarge: 200px;
     max-width: $sidebarWidthMedium;
   }
 
-  // @include breakpoint(desktop) {
-  //   // display: block;
-  // }
-
   @include breakpoint(desktophd) {
     min-width: $sidebarWidthLarge;
     max-width: $sidebarWidthLarge;
@@ -168,78 +150,10 @@ $sidebarWidthLarge: 200px;
     height: $topNavHeight;
   }
 
-  nav {
-    // text-align: right;
-    padding: 1.5em 0.3em 0 0;
-    opacity: 0;
-    transition: opacity 200ms;
-    line-height: 1.75em;
-    text-transform: uppercase;
-    font-size: 14px;
-  }
 }
 .scrollable {
   flex-grow: 1;
 
-  nav {
-    height: $topNavHeight;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 1em;
-
-    // Hamburger Menu
-    button {
-      display: block;
-      width: 60px + 15px;
-      left: 0;
-      text-align: right;
-      background-color: $colourMedium;
-      border: none;
-      padding: 1em;
-      position: fixed;
-      cursor: pointer;
-      z-index: 2;
-      box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.23);
-    }
-
-    ul {
-      list-style: none;
-      display: none;
-      justify-content: space-between;
-    }
-    li {
-      display: inline-block;
-      border-bottom: 5px solid #edeaea;
-      padding-bottom: 0.25em;
-      // cursor: pointer;
-      a {
-        text-decoration: none;
-        color: $colourDark;
-        text-transform: uppercase;
-        font-size: 12px;
-        font-weight: 700;
-        letter-spacing: 0.06em;
-
-         @include breakpoint(phablet) {
-           font-size: 15px;
-         }
-      }
-    }
-
-    @include breakpoint(phone) {
-
-      margin-bottom: 4em;
-
-      button {
-        display: none;
-      }
-
-      ul {
-        display: flex;
-      }
-    }
-  }
 }
 
 footer {
