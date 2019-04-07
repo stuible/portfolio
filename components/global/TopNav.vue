@@ -124,7 +124,8 @@ export default {
 
     li {
       display: inline-block;
-      position: relative;
+	  position: relative;
+	  padding-bottom: 0em;
       &:hover {
         &:before {
           content: "";
