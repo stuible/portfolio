@@ -11,6 +11,7 @@
 
     @include breakpoint(phablet){
         max-width: map-get($breakpoints, phablet) + 100;
+        padding: 0;
     }
 
     @include breakpoint(tablet){
