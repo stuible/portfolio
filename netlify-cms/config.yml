@@ -74,6 +74,12 @@ collections: # A list of collections the CMS should be able to edit
         file: "content/pages/resume.yml"
         fields:
           - {label: Title, name: title, widget: string}
+          - label: "PDF"
+            name: "pdf"
+            widget: "file"
+            media_library:
+              config:
+                multiple: false
       - label: "Footer"
         name: "footer"
         file: "content/pages/footer.yml"

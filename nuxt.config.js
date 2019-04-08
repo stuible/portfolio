@@ -42,7 +42,7 @@ module.exports = {
   */
   modules: [
     'nuxt-rfg-icon',
-    '@nuxtjs/manifest', 
+    '@nuxtjs/manifest',
     '@dinamomx/nuxtent',
     'nuxt-netlify-cms',
     '@nuxtjs/style-resources',
@@ -112,7 +112,7 @@ module.exports = {
     staticPath: '/_favicons/',
     masterPicture: 'static/logo.svg',
     // rfg: <faviconDescription.json from realfavicongenerator.net>
- },
+  },
 
   /*
   ** Build configuration
@@ -131,6 +131,11 @@ module.exports = {
       // const svgRule = config.module.rules.find(rule => rule.test.test('.svg'));
 
       // svgRule.test = /\.(png|jpe?g|gif|webp)$/;
+
+      // config.module.rules.push({
+      //   test: /\.svg$/,
+      //   loader: 'vue-svg-loader',
+      // });
 
       // config.module.rules.push({
       //   test: /\.svg$/,
