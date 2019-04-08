@@ -30,6 +30,7 @@ export default {
   transition: opacity 200ms;
   line-height: 1.75em;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 0.01em;
 }
 </style>
