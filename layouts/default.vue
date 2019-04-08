@@ -158,6 +158,7 @@ $sidebarWidthLarge: 200px;
 
 footer {
   text-align: center;
-  padding: 5em 0;
+  padding: calc(4em + 20vh) 0 5em 0;
+  min-height: 50px;
 }
 </style>
