@@ -26,7 +26,7 @@ $hamburger-layer-height: 1px;
 
 html {
     font-family: "Neue Haas Grotesk", sans-serif;
-    word-spacing: 1px;
+    word-spacing: 0.01em;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
@@ -38,8 +38,9 @@ body {
     background-color: $colourLight;
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    letter-spacing: 0.05em;
 }
 
 h1 {
