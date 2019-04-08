@@ -42,6 +42,7 @@
       </section>
     </section>
     <section id="portfolio">
+      <h3>What I've Done</h3>
       <ul>
         <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
           <div class="info">
@@ -124,6 +125,12 @@ export default {
     }
   }
 
+  h3 {
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 2em;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -145,6 +152,12 @@ export default {
       top: -25px;
       opacity: 0;
       transition: all 100ms ease-in;
+      text-transform: uppercase;
+
+      h5,
+      h6 {
+        font-weight: 300;
+      }
     }
 
     &:hover {
@@ -243,7 +256,7 @@ export default {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: "what what how how how";
   }
-  @include breakpoint(desktop) {
+  @include breakpoint(phablet) {
     grid-template-columns: $mainGridColumns;
     grid-template-areas: "what what how how";
   }
@@ -257,18 +270,32 @@ export default {
   #what {
     grid-area: what;
     ul {
-      // list-style: none;
+      // list-style: square;
+      // list-style-position: inside;
     }
     li {
       font-size: 2em;
       cursor: pointer;
       color: darkgray;
       padding: 0.25em 0;
-      font-weight: 700;
+      font-weight: 400;
       letter-spacing: 0.05em;
 
       &:hover {
         color: black;
+      }
+
+      @include breakpoint(phone) {
+        font-size: 1.15em;
+      }
+      @include breakpoint(phablet) {
+        font-size: 1.5em;
+      }
+      @include breakpoint(tablet) {
+        font-size: 2em;
+      }
+      @include breakpoint(desktop) {
+        font-size: 2em;
       }
     }
   }
