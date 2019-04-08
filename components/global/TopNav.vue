@@ -126,7 +126,7 @@ export default {
       display: inline-block;
 	  position: relative;
 	  padding-bottom: 0em;
-      &:hover {
+      &:hover, &:focus-within {
         &:before {
           content: "";
           border-bottom: 2px solid #edeaea;
