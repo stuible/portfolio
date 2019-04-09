@@ -1,5 +1,5 @@
 ---
 title: Vue.js
-image: /uploads/vuejslogo.svg
+image: /uploads/vue.svg
 ---
 
