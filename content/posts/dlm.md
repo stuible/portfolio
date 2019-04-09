@@ -12,6 +12,7 @@ description: >-
   listed.
 technologies:
   - 'C#'
+  - SharePoint
 content:
   - text: >-
       Fraser Health has a problem with the amount of email distribution lists
