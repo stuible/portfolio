@@ -1,5 +1,5 @@
 ---
 title: Sketch
-image: /uploads/sketch-1-.svg
+image: /uploads/sketch.svg
 ---
 
