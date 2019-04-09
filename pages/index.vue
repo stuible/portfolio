@@ -11,8 +11,9 @@
       <div id="titles">
         <h1 class="title">{{ home.body.title }}</h1>
         <h2 class="subtitle">{{ home.body.subtitle }}</h2>
+        <p id="bio">{{ home.body.bio }}</p>
       </div>
-      <div id="bio">{{ home.body.bio }}</div>
+      
     </section>
     <section id="services">
       <h3 class="hide-visually">Services</h3>
@@ -245,7 +246,7 @@ export default {
   // }
   @include breakpoint(desktop) {
     grid-template-columns: $mainGridColumns;
-    grid-template-areas: ". titles titles titles" "bio bio bio bio";
+    grid-template-areas: ". titles titles titles";
     column-gap: map-get($mainGridGap, desktophd);
     row-gap: map-get($mainGridGap, desktophd) / 2;
   }
@@ -273,7 +274,12 @@ export default {
   .subtitle {
     color: #777777;
   }
-
+  @include breakpoint(phone) {
+    font-size: 0.75em;
+  }
+  @include breakpoint(phablet) {
+    font-size: 0.6em;
+  }
   @include breakpoint(tablet) {
     font-size: 0.75em;
   }
@@ -286,7 +292,20 @@ export default {
 }
 
 #bio {
-  grid-area: bio;
+  margin-top: 1.5em;
+  // grid-area: bio;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Helvetica", "Neue Haas Grotesk";
+  letter-spacing: -0.01em;
+  // border-left: 5px solid lightgrey;
+  // padding-left: 15px;
+
+  // &::before{
+  //   content: '';
+  //   width: 100%;
+  //   border-top: 2px black solid;
+  // }
 }
 
 #services {
