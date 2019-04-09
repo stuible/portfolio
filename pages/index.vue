@@ -107,33 +107,56 @@ export default {
 </script>
 
 <style lang="scss">
+#services,
 #portfolio {
-  ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: $mainGridGap;
-
-    @include breakpoint(phablet) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    @include breakpoint(phablet) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-    @include breakpoint(desktop) {
-      grid-template-columns: $mainGridColumns;
-    }
-  }
-
   h3 {
     font-size: 2em;
     text-transform: uppercase;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    font-weight: 500;
+
+    &::before {
+      content: "< ";
+    }
+    &::after {
+      content: " />";
+    }
+    &::before, &::after{
+      color: #777777;
+    }
+  }
+}
+
+#portfolio {
+  padding-top: map-get($mainGridGap, desktophd);
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: map-get($mainGridGap, phone);
+
+    @include breakpoint(phone) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: map-get($mainGridGap, phablet);
+    }
+
+    @include breakpoint(phablet) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: map-get($mainGridGap, tablet);
+    }
+    @include breakpoint(desktop) {
+      grid-template-columns: $mainGridColumns;
+      grid-gap: map-get($mainGridGap, desktophd);
+    }
   }
 
   img {
     width: 100%;
     height: 100%;
+  }
+
+  h3{
+    margin-bottom: 2em;
   }
 
   li {
@@ -157,10 +180,12 @@ export default {
       h5,
       h6 {
         font-weight: 300;
+        white-space: nowrap;
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus-within {
       .info {
         top: -35px;
         opacity: 1;
@@ -168,7 +193,7 @@ export default {
     }
 
     a {
-      padding: 25%;
+      padding: 30%;
       position: absolute;
       top: 0;
       left: 0;
@@ -183,19 +208,22 @@ export default {
 #about {
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: $mainGridGap;
-  row-gap: $mainGridGap / 2;
+  column-gap: map-get($mainGridGap, phone);
+  row-gap: map-get($mainGridGap, phone) / 2;
   grid-template-areas: "." "titles" "bio";
-  margin-bottom: $mainGridGap;
 
   @include breakpoint(phone) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: ". titles titles" "bio bio bio";
+    column-gap: map-get($mainGridGap, phablet);
+    row-gap: map-get($mainGridGap, phablet) / 2;
   }
 
   @include breakpoint(phablet) {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: ". titles titles" "bio bio bio";
+    column-gap: map-get($mainGridGap, tablet);
+    row-gap: map-get($mainGridGap, tablet) / 2;
   }
 
   // @include breakpoint(phablet) {
@@ -204,6 +232,8 @@ export default {
   @include breakpoint(desktop) {
     grid-template-columns: $mainGridColumns;
     grid-template-areas: ". titles titles titles" "bio bio bio bio";
+    column-gap: map-get($mainGridGap, desktophd);
+    row-gap: map-get($mainGridGap, desktophd) / 2;
   }
 
   img {
@@ -248,9 +278,9 @@ export default {
 #services {
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: $mainGridGap;
+  grid-gap: map-get($mainGridGap, desktophd);
   grid-template-areas: "what" "how";
-  margin-bottom: $mainGridGap;
+  padding-top: map-get($mainGridGap, desktophd);
 
   @include breakpoint(phone) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -261,12 +291,6 @@ export default {
     grid-template-areas: "what what how how";
   }
 
-  h3 {
-    font-size: 2em;
-    text-transform: uppercase;
-    margin-bottom: 1em;
-  }
-
   #what {
     grid-area: what;
     ul {
@@ -275,7 +299,7 @@ export default {
     }
     li {
       font-size: 2em;
-      cursor: pointer;
+      cursor: default;
       color: darkgray;
       padding: 0.25em 0;
       font-weight: 400;
