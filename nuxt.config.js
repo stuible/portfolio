@@ -7,7 +7,10 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: pkg.name,
+    title: 'Josh Stuible',
+    htmlAttrs: {
+      lang: 'en',
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -50,20 +53,22 @@ module.exports = {
     ['@reallifedigital/nuxt-image-loader-module', {
       imagesBaseDir: 'static/images',
       imageStyles: {
+        load: { actions: ['scale|10', 'quality|100'] },
         thumb: { actions: ['scale|320', 'quality|100'] },
         small: { actions: ['scale|512', 'quality|100'] },
         medium: { actions: ['scale|756', 'quality|100'] },
         large: { actions: ['scale|1080', 'quality|100'] },
       },
       // Optional responsive style profiles:
-      // responsiveStyles: {
-      //   thumb: {
-      //     srcset: 'small 160w, medium 320w, large 640w',
-      //     sizes: '(min-width: 1280px) 100vw, 50vw',
-      //   },
-      // },
+      responsiveStyles: {
+        medium: {
+          srcset: 'load 10w, medium 756w',
+          sizes: '100vw',
+        },
+      },
       forceGenerateImages: {
         // imageStyle: globPattern
+        load: '**/*',
         thumb: '**/*',
         small: '**/*',
         medium: '**/*',
