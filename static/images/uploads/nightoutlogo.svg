@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="100px" height="125px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.71 75.29">
-  <defs>
-    <style>.a{fill:none;stroke:#4f4f4f;stroke-miterlimit:10;stroke-width:3px;}</style>
-  </defs>
-  <title>nightOutLogo</title>
-  <polygon class="a" points="58.21 1.5 6.64 1.5 58.21 53.23 58.21 1.5"/>
-  <polygon class="a" points="1.5 73.79 54.34 73.79 1.5 21.11 1.5 73.79"/>
+<svg width="719px" height="906px" viewBox="0 0 719 906" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>nightOutLogo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-1521.000000, -237.000000)" stroke="#000000" stroke-width="35">
+            <g id="nightOutLogo" transform="translate(1539.000000, 255.000000)">
+                <polygon id="Path" points="683 2.27373675e-13 62 2.27373675e-13 683 622"></polygon>
+                <polygon id="Path" points="0 870 636 870 0 236"></polygon>
+            </g>
+        </g>
+    </g>
 </svg>

@@ -1,7 +1,11 @@
 ---
-title: Snafu Test Post
+title: Snafu
 date: '2019-03-09 12:23am'
 order: 1
-icon: /uploads/nuxtlogo.svg
+icon: /uploads/snafu.svg
 image: /uploads/snafulogo@3x.png
+description: Description
+technologies:
+  - Vue.js
 ---
+
