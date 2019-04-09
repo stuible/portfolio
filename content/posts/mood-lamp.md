@@ -1,7 +1,7 @@
 ---
 title: Mood Lamp
 date: '2019-03-19 02:27pm'
-order: -2
+order: 4
 icon: /uploads/nuxtlogo.svg
 description: >-
   Mood Lamp is an interactive ambient lantern. By gathering data from its

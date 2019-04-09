@@ -1,11 +1,13 @@
 ---
-title: Snafu
+title: Fauxbook
 date: '2019-03-09 12:23am'
-order: 1
-icon: /uploads/snafu.svg
+order: 3
+icon: /uploads/fauxbooklogo.svg
 image: /uploads/snafulogo@3x.png
 description: Description
 technologies:
-  - Vue.js
+  - Javascript
+  - CSS3
+  - HTML5
 ---
 
