@@ -15,6 +15,7 @@
       <div id="bio">{{ home.body.bio }}</div>
     </section>
     <section id="services">
+      <h3 class="hide-visually">Services</h3>
       <section id="what">
         <h3>What I do</h3>
         <ul>
