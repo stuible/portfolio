@@ -1,5 +1,5 @@
 <template>
-  <nav id="side-nav" :style="{opacity: opacity, display: display}">
+  <nav id="side-nav" ref="sidebarNav">
     <ul>
       <li v-for="item in nav" v-bind:key="item.name">
         <nuxt-link
@@ -16,9 +16,28 @@
 <script>
 export default {
   props: {
-    opacity: Number,
-    display: String,
     nav: Array
+  },
+  methods: {
+    onScroll(event) {
+      var y = window.scrollY;
+      var startY = 35;
+      if (y > startY) {
+        this.$refs.sidebarNav.style.display = 'unset';
+        var scrollPercent = (startY - y + 75) / startY;
+        this.$refs.sidebarNav.style.opacity = Math.min(1, Math.max(0, -scrollPercent));
+      } else {
+        this.$refs.sidebarNav.style.opacity = 0; 
+        this.$refs.sidebarNav.style.display = 'none';
+      }
+    },
+    // setOpacity
+  },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.onScroll);
   }
 };
 </script>

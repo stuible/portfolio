@@ -1,5 +1,5 @@
 <template>
-  <div id="content" class="container" v-on:scroll="onScroll(event)">
+  <div id="content" class="container">
     <div class="sidebar">
       <div class="absolute-wrapper">
         <!-- LOGO -->
@@ -7,7 +7,7 @@
           <img id="logo" src="~static/logo.svg?data" alt="JS">
         </nuxt-link>
         <!-- /LOGO -->
-        <side-nav :nav="nav" :opacity="sidebarNavOpacity" :display="sidebarNavDisplay" @clicked="scrollTo"/>
+        <side-nav :nav="nav" @clicked="scrollTo"/>
       </div>
     </div>
     <div class="scrollable">
@@ -69,27 +69,8 @@ export default {
           behavior: "smooth"
         });
       }
-    },
-    onScroll(event) {
-      var y = window.scrollY;
-      var startY = 35;
-      if (y > startY) {
-        //$('.container-fluid.SideNav').fadeIn();
-        var scrollPercent = (startY - y + 75) / startY;
-        // $(".container-fluid.SideNav").show();
-        this.sidebarNavOpacity = Math.min(1, Math.max(0, -scrollPercent));
-      } else {
-        //$('.container-fluid.SideNav').fadeOut();
-        this.sidebarNavOpacity = 0;
-      }
     }
-  },
-  mounted() {
-    window.addEventListener("scroll", this.onScroll);
   }
-  // destroyed() {
-  //   window.removeEventListener("scroll", this.onScroll);
-  // }
 };
 </script>
 
