@@ -4,7 +4,7 @@
     padding: 0 25px;
 
     @include breakpoint(phone) {
-        max-width: map-get($breakpoints, phablet) - 300;
+        max-width: 100%;
         padding: 0 25px;
     }
 

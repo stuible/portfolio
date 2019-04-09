@@ -157,6 +157,7 @@ export default {
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: map-get($mainGridGap, tablet);
     }
+
     @include breakpoint(desktop) {
       grid-template-columns: $mainGridColumns;
       grid-gap: map-get($mainGridGap, desktophd);
@@ -346,6 +347,10 @@ export default {
 
       @include breakpoint(phone) {
         grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @include breakpoint(thone) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
       }
 
       @include breakpoint(phablet) {
