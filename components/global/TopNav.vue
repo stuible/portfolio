@@ -2,11 +2,15 @@
   <nav id="top-nav" :class="{open: mobileNavOpen}">
     <button id="hamburger-menu" @click="mobileNavOpen = !mobileNavOpen">
       <!-- <div id="hamburger-icon">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-      </div> -->
-      <div id="hamburger-icon" class="hamburger hamburger--squeeze" :class="{'is-active': mobileNavOpen}">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+      </div>-->
+      <div
+        id="hamburger-icon"
+        class="hamburger hamburger--squeeze"
+        :class="{'is-active': mobileNavOpen}"
+      >
         <span class="hamburger-box">
           <span class="hamburger-inner"></span>
         </span>
@@ -52,27 +56,28 @@ export default {
   ul {
     list-style: none;
     display: block;
-    justify-content: space-between;
+		justify-content: space-between;
+		// visibility: hidden;
 
     position: fixed;
     margin: 0;
-	padding: 2em;
-	padding-top: 7em;
+    padding: 2em;
+    padding-top: 7em;
     height: 100vh;
     top: 0;
-	left: 0;
-	width: 100%;
+    left: 0;
+    width: 100%;
 
     background-color: $colourLight;
     list-style-type: none;
 
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-    z-index: 1;
+		z-index: 1;
   }
   li {
     display: block;
-	padding-bottom: 0.75em;
+    padding-bottom: 0.75em;
     // cursor: pointer;
   }
 
@@ -82,11 +87,11 @@ export default {
     text-transform: uppercase;
     font-size: 20px;
     // font-weight: 700;
-	letter-spacing: 0.06em;
-	
-	@include breakpoint(phone) {
-		font-size: 12px;
-	}
+    letter-spacing: 0.06em;
+
+    @include breakpoint(phone) {
+      font-size: 12px;
+    }
 
     @include breakpoint(phablet) {
       font-size: 14px;
@@ -94,9 +99,9 @@ export default {
 
     @include breakpoint(tablet) {
       font-size: 15px;
-	}
-	
-	@include breakpoint(desktop) {
+    }
+
+    @include breakpoint(desktop) {
       font-size: 15px;
     }
   }
@@ -104,7 +109,9 @@ export default {
   //Mobile Nav Open Class
   &.open {
     ul {
-      transform: translate(0, 0);
+			transform: translate(0, 0);
+			visibility: visible;
+			// transition: visibility 0s linear 0.5s;
     }
   }
 
@@ -112,8 +119,10 @@ export default {
     margin-bottom: 4em;
 
     ul {
-      display: flex;
-      position: unset;
+			display: flex;
+			// visibility: visible;
+			position: unset;
+			transition: none;
       width: unset;
       transform-origin: unset;
       transform: unset;
@@ -124,22 +133,22 @@ export default {
 
     li {
       display: inline-block;
-	  position: relative;
-	  padding-bottom: 0em;
-      &:hover, &:focus-within {
+      position: relative;
+      padding-bottom: 0em;
+      &:hover,
+      &:focus-within {
         &:before {
           content: "";
           border-bottom: 2px solid #edeaea;
           position: absolute;
           width: 100%;
           height: 2px;
-          bottom: -3px;
+          bottom: -6px;
           left: 0;
         }
       }
       //   border-bottom: 5px solid #edeaea;
-	}
-
+    }
   }
 }
 
