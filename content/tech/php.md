@@ -1,5 +1,5 @@
 ---
 title: PHP
-image: /uploads/phplogo.svg
+image: /uploads/php.svg
 ---
 
