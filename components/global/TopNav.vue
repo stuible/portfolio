@@ -1,6 +1,6 @@
 <template>
   <nav id="top-nav" :class="{open: mobileNavOpen}">
-    <button id="hamburger-menu" @click="mobileNavOpen = !mobileNavOpen">
+    <div id="hamburger-menu" @click="mobileNavOpen = !mobileNavOpen">
       <!-- <div id="hamburger-icon">
 				<div class="line"></div>
 				<div class="line"></div>
@@ -17,7 +17,7 @@
       </div>
 
       <div>JOSH STUIBLE</div>
-    </button>
+    </div>
     <ul>
       <li v-for="item in nav" v-bind:key="item.name">
         <nuxt-link
