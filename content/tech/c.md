@@ -1,5 +1,5 @@
 ---
 title: 'C#'
-image: /uploads/csharplogo.svg
+image: /uploads/c-.svg
 ---
 
