@@ -1,4 +1,4 @@
-$breakpoints: (phone: 400px, phablet: 750px, tablet: 950px, desktop: 1080px, desktophd: 1200px);
+$breakpoints: (phone: 450px, phablet: 750px, tablet: 950px, desktop: 1080px, desktophd: 1200px);
 
 @mixin breakpoint($breakpoint) {
     // If the breakpoint exists in the map.

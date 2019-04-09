@@ -111,10 +111,21 @@ export default {
 #services,
 #portfolio {
   h3 {
-    font-size: 2em;
+    font-size: 7.25vw;
     text-transform: uppercase;
     margin-bottom: 1em;
     font-weight: 500;
+
+    @include breakpoint(phone) {
+      font-size: 1em;
+    }
+
+    @include breakpoint(phablet) {
+      font-size: 1.5em;
+    }
+    @include breakpoint(desktop) {
+      font-size: 2em;
+    }
 
     &::before {
       content: "< ";
@@ -122,7 +133,8 @@ export default {
     &::after {
       content: " />";
     }
-    &::before, &::after{
+    &::before,
+    &::after {
       color: #777777;
     }
   }
@@ -156,7 +168,7 @@ export default {
     height: 100%;
   }
 
-  h3{
+  h3 {
     margin-bottom: 2em;
   }
 
