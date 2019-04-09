@@ -110,7 +110,7 @@ export default {
   &.open {
     ul {
 			transform: translate(0, 0);
-			visibility: visible;
+			// visibility: visible;
 			// transition: visibility 0s linear 0.5s;
     }
   }
