@@ -1,11 +1,6 @@
 <template>
   <nav id="top-nav" :class="{open: mobileNavOpen}">
     <div id="hamburger-menu" @click="mobileNavOpen = !mobileNavOpen">
-      <!-- <div id="hamburger-icon">
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
-      </div>-->
       <div
         id="hamburger-icon"
         class="hamburger hamburger--squeeze"
@@ -69,7 +64,7 @@ export default {
     width: 100%;
 
     background-color: $colourLight;
-    list-style-type: none;
+    // list-style-type: none;
 
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -77,7 +72,7 @@ export default {
   }
   li {
     display: block;
-    padding-bottom: 0.75em;
+    padding-bottom: 1.25em;
     // cursor: pointer;
   }
 
@@ -85,7 +80,7 @@ export default {
     text-decoration: none;
     color: $colourDark;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 24px;
     // font-weight: 700;
     letter-spacing: 0.06em;
 
