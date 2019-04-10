@@ -4,6 +4,11 @@ date: '2019-03-09 12:23am'
 order: 2
 icon: /uploads/nightoutlogo.svg
 image: /uploads/nightoutmockup.jpg
+video:
+  id: a-y8VolRekE
+  imageURL: 'https://img.youtube.com/vi/a-y8VolRekE/maxresdefault.jpg'
+  mediaType: video
+  url: 'https://www.youtube.com/watch?v=a-y8VolRekE'
 description: >-
   nightOut is a mobile app that allows users to plan transit and activities
   around concerts and other entertainment experiences With that app you can
