@@ -15,9 +15,7 @@
       <nuxt/>
       <footer>
         {{"Design & Implementation by Josh Stuible in Vancouver"}}
-        <nuxt-link to="/style" @click.native="scrollTo('__layout')">
-          (Style Guide)
-        </nuxt-link>
+        <nuxt-link to="/style" @click.native="scrollTo('__layout')">(Style Guide)</nuxt-link>
       </footer>
     </div>
     <div class="sidebar"></div>
@@ -74,6 +72,14 @@ export default {
           behavior: "smooth"
         });
       }
+    }
+  },
+  mounted() {
+    if (!("scrollBehavior" in document.documentElement.style)) {
+      import("smoothscroll-polyfill")
+        .then(smoothscroll => smoothscroll.polyfill())
+        .catch(e => console.error(e));
+      console.log("No native smooth scroll, grabbing polyfill");
     }
   }
 };
