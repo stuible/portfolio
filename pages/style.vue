@@ -100,7 +100,7 @@
         </p>
       </section>
 
-      <section>
+      <!-- <section>
         <h3>Numbered Lists</h3>
 
         <h4>CSS selector:</h4>
@@ -119,13 +119,51 @@
           <li>Thing</li>
           <li>Thing</li>
         </ol>
-      </section>
+      </section>-->
     </section>
     <!-- // TEXT ELEMENTS SECTION -->
 
     <!-- COMBINED ELEMENTS SECTION // -->
     <section id="combined_elements">
       <h2>Combined Elements</h2>
+
+      <section>
+        <h3>Portfolio Grid</h3>
+        <h4>Sample code:</h4>
+        <pre><code>&lt;section id=&quot;portfolio&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;div class=&quot;info&quot;&gt;
+                &lt;h5&gt;Post&lt;/h5&gt;
+                &lt;h6&gt;Type&lt;/h6&gt;
+              &lt;/div&gt;
+              &lt;nuxt-link to=&quot;#&quot;&gt;
+                &lt;img
+                  src=&quot;image.jpg&quot;
+                  alt=&quot;Alt Text&quot;
+                &gt;
+              &lt;/nuxt-link&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;</code></pre>
+        <h4>Rendered element:</h4>
+        <section id="portfolio">
+          <ul>
+            <li v-for="item in [1, 2, 3, 4 ]">
+              <div class="info">
+                <h5>Post</h5>
+                <h6>Type</h6>
+              </div>
+              <nuxt-link to="#">
+                <img
+                  :src="require(`~/static/images/uploads/vue.svg?data`)"
+                  alt="Alt Text"
+                >
+              </nuxt-link>
+            </li>
+          </ul>
+        </section>
+      </section>
 
       <section>
         <h3>Main Navigation</h3>
@@ -190,8 +228,7 @@ export default {
         },
         {
           name: "Hamburgers",
-          comment:
-            "is a library for animated hamburger menus from ",
+          comment: "is a library for animated hamburger menus from ",
           link: "jonsuh.com/hamburgers",
           url: "https://jonsuh.com/hamburgers/"
         }
@@ -246,7 +283,7 @@ h3 {
 }
 
 h4 {
-    margin-bottom: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 p {
