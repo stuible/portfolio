@@ -61,10 +61,10 @@ export default {
     };
   },
   computed: {
-    sidebarNavDisplay() {
-      if (this.sidebarNavOpacity === 0) return "none";
-      else return "";
-    }
+    // sidebarNavDisplay() {
+    //   if (this.sidebarNavOpacity === 0) return "none";
+    //   else return "";
+    // }
   },
   methods: {
     scrollTo(anchor) {
@@ -134,7 +134,6 @@ $sidebarWidthLarge: 200px;
     width: auto;
     // max-width: 100%;
     height: $topNavHeight;
-    margin-bottom: 1em;
   }
 }
 .scrollable {

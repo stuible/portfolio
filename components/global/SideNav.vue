@@ -23,7 +23,7 @@ export default {
       var y = window.scrollY;
       var startY = 35;
       if (y > startY) {
-        this.$refs.sidebarNav.style.display = 'unset';
+        this.$refs.sidebarNav.style.display = '';
         var scrollPercent = (startY - y + 75) / startY;
         this.$refs.sidebarNav.style.opacity = Math.min(1, Math.max(0, -scrollPercent));
       } else {
