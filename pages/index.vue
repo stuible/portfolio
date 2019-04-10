@@ -1,13 +1,18 @@
 <template>
   <main>
     <section id="about" data-love="nadine">
-      <nuxt-img
+      <!-- <nuxt-img
         v-if="home.body.image"
         :src="home.body.image"
         image-style="thumb"
         alt="Josh Stuible's Beautiful Face"
         class="profile"
-      />
+      />-->
+      <img
+        :src="profPlaceholder"
+        v-lazy="{src: home.body.image, loading: profPlaceholder, preLoad: 1 }"
+        alt="Josh Stuible's Beautiful Face"
+      >
       <div id="titles">
         <h1 class="title">{{ home.body.title }}</h1>
         <h2 class="subtitle">{{ home.body.subtitle }}</h2>
@@ -37,7 +42,10 @@
           >
             <h6>{{getTechByName(techName).title}}</h6>
 
-            <img :src="require(`~/static/images${getTechByName(techName).image}?data`)" :alt="techName + ' Icon'">
+            <img
+              :src="require(`~/static/images${getTechByName(techName).image}?data`)"
+              :alt="techName + ' Icon'"
+            >
           </li>
         </ul>
       </section>
@@ -75,7 +83,8 @@ export default {
       posts: await app.$content("posts").getAll(),
       tech: await app.$content("tech").getAll(),
       home: await app.$content("pages").get("home"),
-      highlightedTech: []
+      highlightedTech: [],
+      profPlaceholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcv33LfwAHkgMr6KeirAAAAABJRU5ErkJggg=='
     };
   },
   computed: {

@@ -37,7 +37,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    // '~/plugins/lazyload'
+    '~/plugins/lazyload'
   ],
 
   /*
@@ -53,7 +53,7 @@ module.exports = {
     ['@reallifedigital/nuxt-image-loader-module', {
       imagesBaseDir: 'static/images',
       imageStyles: {
-        load: { actions: ['scale|10', 'quality|100'] },
+        load: { actions: ['scale|10', 'quality|10'] },
         thumb: { actions: ['scale|320', 'quality|100'] },
         small: { actions: ['scale|512', 'quality|100'] },
         medium: { actions: ['scale|756', 'quality|100'] },
