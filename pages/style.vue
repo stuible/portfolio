@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>Style Guide</h1>
+    <h1 class="title">Style Guide</h1>
     <section id="branding">
       <h2>Branding</h2>
       <section>
@@ -45,43 +45,14 @@
       <section>
         <h3>In-text link</h3>
 
-        <h4>CSS selector:</h4>
-        <p>.link</p>
+        <h4>selector:</h4>
+        <p>N/A</p>
 
         <h4>Sample code:</h4>
-        <pre><code>&lt;a href="#" class="link"&gt;Link&lt;/a&gt;</code></pre>
+        <pre><code>&lt;a href="#" &gt;Link&lt;/a&gt;</code></pre>
 
         <h4>Rendered element:</h4>
-        <a class="link" href="#">Link</a>
-      </section>
-
-      <!-- Default Button styling section -->
-      <section>
-        <h3>Navigation Link</h3>
-
-        <h4>CSS selector:</h4>
-        <p>.link-item</p>
-
-        <h4>Sample code:</h4>
-        <pre><code>&lt;a href="#" class="link-item"&gt;A Nav Link&lt;/a&gt;</code></pre>
-
-        <h4>Rendered element:</h4>
-        <div class="body-style">
-          <a class="link-item" href="#">A Nav Link</a>
-        </div>
-      </section>
-
-      <section>
-        <h3>Submit/Reset Buttons</h3>
-
-        <h4>CSS selector:</h4>
-        <p>.button</p>
-
-        <h4>Sample code:</h4>
-        <pre><code>&lt;a href="#" class="button"&gt;Submit&lt;/a&gt;</code></pre>
-
-        <h4>Rendered element:</h4>
-        <a href="#" class="button">Submit</a>
+        <a href="#">Link</a>
       </section>
     </section>
     <!-- // INTERACTIVE ELEMENTS SECTION -->
@@ -136,7 +107,7 @@
         <p>N/A</p>
 
         <h4>Sample code:</h4>
-        <pre> <code>&lt;ol&gt;
+        <pre><code>&lt;ol&gt;
   &lt;li&gt;Thing&lt;/li&gt;
   &lt;li&gt;Thing&lt;/li&gt;
   &lt;li&gt;Thing&lt;/li&gt;
@@ -205,10 +176,25 @@ export default {
         },
         {
           name: "Nuxt",
-          comment: "is a front-end static site generate using node.js and Vue from",
+          comment:
+            "is a front-end static site generate using node.js and Vue from",
           link: "Nuxtjs.org",
           url: "https://nuxtjs.org/"
         },
+        {
+          name: "Netlify CMS",
+          comment:
+            "is a back-end static CMS that generates Markdown files for static site generation ",
+          link: "netlifycms.org",
+          url: "http://netlifycms.org/"
+        },
+        {
+          name: "Hamburgers",
+          comment:
+            "is a library for animated hamburger menus from ",
+          link: "jonsuh.com/hamburgers",
+          url: "https://jonsuh.com/hamburgers/"
+        }
       ]
     };
   },
@@ -218,11 +204,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a {
+  &:hover {
+    text-decoration: underline;
+  }
+}
 pre {
   background-color: $colourMedium;
   color: $colourDark;
   padding: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 main > section {
@@ -236,8 +227,11 @@ section section {
 }
 
 h1 {
-  margin-bottom: 1em;
   color: $colourDark;
+
+  .title {
+    margin-bottom: 1em;
+  }
 }
 
 h2 {
@@ -249,6 +243,10 @@ h2 {
 
 h3 {
   margin-bottom: 1em;
+}
+
+h4 {
+    margin-bottom: 0.5em;
 }
 
 p {
