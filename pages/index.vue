@@ -13,7 +13,6 @@
         <h2 class="subtitle">{{ home.body.subtitle }}</h2>
         <p id="bio">{{ home.body.bio }}</p>
       </div>
-      
     </section>
     <section id="services">
       <h3 class="hide-visually">Services</h3>
@@ -214,8 +213,12 @@ export default {
       left: 0;
       height: 100%;
       width: 100%;
-      text-align: center;
       background-color: $colourMedium;
+      
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
     }
   }
 }
