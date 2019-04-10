@@ -37,7 +37,7 @@
           >
             <h6>{{getTechByName(techName).title}}</h6>
 
-            <img :src="require(`~/static/images${getTechByName(techName).image}?data`)" alt>
+            <img :src="require(`~/static/images${getTechByName(techName).image}?data`)" :alt="techName + ' Icon'">
           </li>
         </ul>
       </section>
@@ -214,7 +214,7 @@ export default {
       height: 100%;
       width: 100%;
       background-color: $colourMedium;
-      
+
       display: flex;
       justify-content: center;
       flex-direction: column;
