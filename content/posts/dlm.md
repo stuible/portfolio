@@ -22,7 +22,7 @@ content:
       jobs or locations. This means that some get a substantial amount of
       unnecessary email.
     title: Justification
-    image: /uploads/dlmlogo.png
+    image: /uploads/screen-shot-2019-04-09-at-6.52.25-pm.png
   - text: >-
       Because the Fraser Health organization was already utilizing Microsoft
       server technology, I intergrated my solution with Sharepoint.  I developed
@@ -36,5 +36,6 @@ content:
       the Exchange Team and the security team in order to get all the
       information neccesary to make this a functional utility.
     title: Challenges
+    image: /uploads/screen-shot-2019-04-09-at-6.52.51-pm.png
 ---
 
