@@ -13,15 +13,20 @@
     <div class="scrollable">
       <top-nav :nav="nav" @clicked="scrollTo"/>
       <nuxt/>
-      <footer>{{"Design & Implementation by Josh Stuible in Vancouver"}}</footer>
+      <footer>
+        {{"Design & Implementation by Josh Stuible in Vancouver"}}
+        <nuxt-link to="/style" @click.native="scrollTo('__layout')">
+          (Style Guide)
+        </nuxt-link>
+      </footer>
     </div>
     <div class="sidebar"></div>
   </div>
 </template>
 
 <script>
-import sideNav from '~/components/global/SideNav.vue';
-import topNav from '~/components/global/TopNav.vue';
+import sideNav from "~/components/global/SideNav.vue";
+import topNav from "~/components/global/TopNav.vue";
 export default {
   components: {
     sideNav,
@@ -130,11 +135,9 @@ $sidebarWidthLarge: 200px;
     // max-width: 100%;
     height: $topNavHeight;
   }
-
 }
 .scrollable {
   flex-grow: 1;
-
 }
 
 footer {
