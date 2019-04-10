@@ -134,6 +134,7 @@ $sidebarWidthLarge: 200px;
     width: auto;
     // max-width: 100%;
     height: $topNavHeight;
+    margin-bottom: 1em;
   }
 }
 .scrollable {
