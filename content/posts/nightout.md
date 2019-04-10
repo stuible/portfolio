@@ -3,7 +3,7 @@ title: nightOut
 date: '2019-03-09 12:23am'
 order: 2
 icon: /uploads/nightoutlogo.svg
-image: /uploads/screen-shot-2019-04-09-at-5.56.33-pm.png
+image: /uploads/nightoutmockup.jpg
 description: >-
   nightOut is a mobile app that allows users to plan transit and activities
   around concerts and other entertainment experiences With that app you can
@@ -40,12 +40,6 @@ content:
       For the remainder of the project, we refined our initial wireframes and
       style guide, which I then used to assemble a working, high-quality
       prototype of the app using ProtoPie.
-    title: Workflow
-    image: /uploads/workflow-2x.png
-  - text: >-
-      We also created a short promo-video to explain the premise of the app to
-      our professor and fellow classmates, which was written and narrated by
-      Matt and edited by myself.
     title: Wireframes
     image: /uploads/wireframes.png
 ---
