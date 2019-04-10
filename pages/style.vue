@@ -99,27 +99,6 @@
           accusamus dolore nulla numquam vero.
         </p>
       </section>
-
-      <!-- <section>
-        <h3>Numbered Lists</h3>
-
-        <h4>CSS selector:</h4>
-        <p>N/A</p>
-
-        <h4>Sample code:</h4>
-        <pre><code>&lt;ol&gt;
-  &lt;li&gt;Thing&lt;/li&gt;
-  &lt;li&gt;Thing&lt;/li&gt;
-  &lt;li&gt;Thing&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-
-        <h4>Rendered element:</h4>
-        <ol>
-          <li>Thing</li>
-          <li>Thing</li>
-          <li>Thing</li>
-        </ol>
-      </section>-->
     </section>
     <!-- // TEXT ELEMENTS SECTION -->
 
@@ -167,13 +146,43 @@
 
       <section>
         <h3>Main Navigation</h3>
-        <div class="body-style">
-          <nav>
-            <a class="link-item" href="#">Page One</a>
-            <a class="link-item" href="#">Page Two</a>
-            <a class="link-item" href="#">Page Three</a>
-          </nav>
-        </div>
+        <h4>Sample code:</h4>
+        <pre><code>&lt;top-nav :nav=&quot;
+[
+    {
+        name: "Link Name",
+        link: "/pagename",
+        scroll: "IDtoscrollto",
+        hash: "#ID"
+    },
+    {
+        name: "Link Name",
+        link: "/pagename",
+        scroll: "IDtoscrollto",
+        hash: "#ID"
+    },
+]&quot;
+/&gt;</code></pre>
+        <h4>Rendered element:</h4>
+        <top-nav :nav="[
+        {
+          name: 'Link Name',
+          link: '#',
+        },
+        {
+          name: 'Link Name',
+          link: '#',
+        },
+        {
+          name: 'Link Name',
+          link: '#',
+        },
+        {
+          name: 'Link Name',
+          link: '#',
+        }
+        ]"
+        />
       </section>
     </section>
 
@@ -192,10 +201,10 @@
 
 <script>
 // import Logo from '~/components/Logo.vue'
-
+import topNav from "~/components/global/TopNav.vue";
 export default {
   components: {
-    // Logo
+    topNav
   },
   async asyncData({ app }) {
     return {
