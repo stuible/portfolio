@@ -51,5 +51,6 @@ export default {
   text-transform: uppercase;
   font-size: 13px;
   letter-spacing: 0.01em;
+
 }
 </style>
