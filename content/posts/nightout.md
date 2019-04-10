@@ -47,6 +47,6 @@ content:
       our professor and fellow classmates, which was written and narrated by
       Matt and edited by myself.
     title: Wireframes
-    image: /uploads/wireframes1.svg
+    image: /uploads/wireframes.png
 ---
 
