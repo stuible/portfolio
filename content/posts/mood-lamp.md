@@ -2,11 +2,13 @@
 title: Mood Lamp
 date: '2019-03-19 02:27pm'
 order: 4
-icon: /uploads/nuxtlogo.svg
+icon: /uploads/mood-lamp.svg
 description: >-
   Mood Lamp is an interactive ambient lantern. By gathering data from its
   surroundings, the lantern adjusts its colours and brightness to fit the mood
   of the environment.
+technologies:
+  - Java
 content:
   - text: >-
       As a final project of an interaction design course I took at Simon Fraser
