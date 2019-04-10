@@ -1,3 +1,3 @@
-import youtube from "netlify-cms-widget-youtube";
+// import youtube from "netlify-cms-widget-youtube";
 
-CMS.registerWidget("youtube", youtubeControl, youtubePreview);
+// CMS.registerWidget("youtube", youtubeControl, youtubePreview);
