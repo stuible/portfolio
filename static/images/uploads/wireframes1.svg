@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 574.98 499.16">
+  <defs>
+    <style>.cls-1,.cls-11,.cls-2,.cls-6,.cls-9{fill:none;}.cls-11,.cls-2{stroke:#979797;}.cls-11,.cls-2,.cls-6{stroke-width:2px;}.cls-12,.cls-13,.cls-19,.cls-24,.cls-3,.cls-5{fill:#545454;}.cls-12,.cls-13,.cls-19,.cls-24,.cls-4,.cls-5{isolation:isolate;}.cls-5{font-size:13.49px;}.cls-12,.cls-19,.cls-5{font-family:SFProDisplay-Regular, SF Pro Display;}.cls-6,.cls-8{stroke:#8e8e93;}.cls-7,.cls-8{fill:#8e8e93;}.cls-9{stroke:#000;stroke-miterlimit:10;}.cls-10{clip-path:url(#clip-path);}.cls-11{stroke-linecap:square;}.cls-12{font-size:13.47px;letter-spacing:0.01em;}.cls-13{font-size:8.76px;letter-spacing:0.01em;}.cls-13,.cls-24{font-family:SFProDisplay-Light, SF Pro Display;}.cls-14{letter-spacing:0.01em;}.cls-15{letter-spacing:0.01em;}.cls-16{letter-spacing:-0.01em;}.cls-17{letter-spacing:0.01em;}.cls-18{letter-spacing:0.02em;}.cls-19{font-size:6.74px;letter-spacing:-0.08em;}.cls-20{letter-spacing:0.01em;}.cls-21{letter-spacing:0em;}.cls-22{letter-spacing:0.01em;}.cls-23{letter-spacing:0.01em;}.cls-24{font-size:12.13px;letter-spacing:-0.09em;}.cls-25{letter-spacing:0.01em;}</style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" x="320.02" y="1" width="253.97" height="450"></rect>
+    </clipPath>
+  </defs>
+  <title>Wireframes1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g id="Landing-Screen">
+        <rect id="Rectangle" class="cls-2" x="28.84" y="206.77" width="197" height="39.13" rx="4.72" ry="4.72"></rect>
+        <g id="Asset-1">
+          <polygon id="Shape" class="cls-3" points="150.66 57 115.87 57 150.66 91.9 150.66 57"></polygon>
+          <polygon id="Shape-2" data-name="Shape" class="cls-3" points="103.72 104.01 139.37 104.01 103.72 68.47 103.72 104.01"></polygon>
+        </g>
+        <g id="nightOut" class="cls-4">
+          <text class="cls-5" transform="translate(99.72 131.88)">nightOut</text>
+        </g>
+        <rect id="Rectangle-2" class="cls-2" x="39.63" y="216.22" width="175.41" height="20.24"></rect>
+        <g id="Product_-Seo_-Optimization_-Settings_-Gear_-Options_-Preferences" data-name="Product,-Seo,-Optimization,-Settings,-Gear,-Options,-Preferences">
+          <g id="svg2">
+            <g id="layer1">
+              <path id="path19403" class="cls-6" d="M62.46,418.32a.7.7,0,0,0-.68.7v2a5.3,5.3,0,0,0-1.41.6L59,420.2a.67.67,0,0,0-1,0L57,421.34a.71.71,0,0,0,0,1l1.34,1.38a5.74,5.74,0,0,0-.59,1.45H55.83a.7.7,0,0,0-.68.7v1.61a.7.7,0,0,0,.68.7h1.89a6,6,0,0,0,.59,1.46L57,431a.71.71,0,0,0,0,1l1.1,1.13a.67.67,0,0,0,1,0l1.34-1.37a5.62,5.62,0,0,0,1.41.59v2a.7.7,0,0,0,.68.7H64a.69.69,0,0,0,.68-.7v-1.95a5.75,5.75,0,0,0,1.42-.61l1.34,1.38a.67.67,0,0,0,1,0l1.1-1.13a.73.73,0,0,0,0-1l-1.34-1.38a5.93,5.93,0,0,0,.58-1.46h1.9a.7.7,0,0,0,.68-.7v-1.61a.7.7,0,0,0-.68-.7h-1.9a5.93,5.93,0,0,0-.58-1.46l1.34-1.37a.73.73,0,0,0,0-1l-1.1-1.14a.67.67,0,0,0-1,0l-1.34,1.38A5.75,5.75,0,0,0,64.7,421v-2a.69.69,0,0,0-.68-.7Z"></path>
+            </g>
+          </g>
+        </g>
+        <g id="List">
+          <path id="Rectangle-3" class="cls-7" d="M184.68,418.62h16.2a.67.67,0,0,1,.67.67h0a.68.68,0,0,1-.67.68h-16.2a.68.68,0,0,1-.67-.68h0A.67.67,0,0,1,184.68,418.62Z"></path>
+          <path id="Rectangle-3-Copy" class="cls-7" d="M184.68,426h16.2a.67.67,0,0,1,.67.67h0a.67.67,0,0,1-.67.68h-16.2a.67.67,0,0,1-.67-.68h0A.67.67,0,0,1,184.68,426Z"></path>
+          <path id="Rectangle-3-Copy-2" class="cls-7" d="M184.68,433.46h16.2a.67.67,0,0,1,.67.67h0a.67.67,0,0,1-.67.68h-16.2a.67.67,0,0,1-.67-.68h0A.67.67,0,0,1,184.68,433.46Z"></path>
+        </g>
+        <g id="Home">
+          <path id="Shape-3" data-name="Shape" class="cls-8" d="M134.76,435.48h-5.25V431.1h-3v4.38h-5.24V428.4a.37.37,0,0,1,.74,0v6.41h3.75v-4.39h4.5v4.39H134v-6.07a.38.38,0,0,1,.75,0Z"></path>
+          <path id="Shape-4" data-name="Shape" class="cls-8" d="M136.4,427.39a.38.38,0,0,1-.26-.11L127.67,419l-8.46,8.27a.38.38,0,0,1-.54,0,.4.4,0,0,1,0-.55l9-8.78,9,8.78a.41.41,0,0,1,.09.42A.39.39,0,0,1,136.4,427.39Z"></path>
+          <path id="Shape-5" data-name="Shape" class="cls-8" d="M133.78,422a.3.3,0,0,1-.3-.3v-1.8h-1.79a.29.29,0,0,1-.3-.3.3.3,0,0,1,.3-.3h2.39v2.4A.29.29,0,0,1,133.78,422Z"></path>
+        </g>
+      </g>
+      <rect class="cls-9" x="0.5" y="1" width="253" height="450"></rect>
+      <g class="cls-10">
+        <g id="Venue-Search">
+          <rect id="Rectangle-Copy" class="cls-2" x="320.02" y="1" width="253.97" height="55.24"></rect>
+          <rect id="Rectangle-2-Copy" class="cls-2" x="359.76" y="18.51" width="175.15" height="20.21"></rect>
+          <g id="VenueItem">
+            <rect id="Rectangle-4" class="cls-2" x="320.02" y="56.24" width="253.97" height="55.24"></rect>
+            <rect id="Rectangle-2-2" data-name="Rectangle" class="cls-2" x="326.75" y="62.98" width="41.77" height="41.77"></rect>
+            <path id="Line" class="cls-11" d="M367.85,104.07,327,63.23"></path>
+            <path id="Line-2" class="cls-11" d="M327.76,103.73l40.09-40.08"></path>
+            <g id="VENUE" class="cls-4">
+              <text class="cls-12" transform="translate(383.34 75.1)">VENUE</text>
+            </g>
+            <g id="_205-East-Bro-Street" data-name="205-East-Bro-Street" class="cls-4">
+              <text class="cls-13" transform="translate(383.34 87.23)">205 <tspan class="cls-14" x="17.5" y="0">E</tspan><tspan class="cls-15" x="22.28" y="0">ast B</tspan><tspan class="cls-16" x="40.63" y="0">r</tspan><tspan class="cls-17" x="43.13" y="0">o </tspan><tspan class="cls-18" x="49.75" y="0">S</tspan><tspan class="cls-17" x="54.99" y="0">t</tspan><tspan class="cls-16" x="57.6" y="0">r</tspan><tspan class="cls-17" x="60.1" y="0">eet</tspan></text>
+            </g>
+            <g id="You_ve-visited-VENU" data-name="You’ve-visited-VENU" class="cls-4">
+              <text class="cls-19" transform="translate(383.34 102.05)">Y<tspan class="cls-20" x="3.59" y="0">ou’</tspan><tspan class="cls-21" x="12.77" y="0">v</tspan><tspan class="cls-22" x="16.02" y="0">e visi</tspan><tspan class="cls-21" x="30.56" y="0">t</tspan><tspan class="cls-23" x="32.58" y="0">ed VENU 2 times this </tspan><tspan class="cls-21" x="95.4" y="0">y</tspan><tspan class="cls-23" x="98.67" y="0">ear</tspan></text>
+            </g>
+          </g>
+          <g id="VenueItem-2" data-name="VenueItem">
+            <rect id="Rectangle-4-2" data-name="Rectangle-4" class="cls-2" x="320.02" y="111.48" width="253.97" height="55.24"></rect>
+            <rect id="Rectangle-3-2" data-name="Rectangle" class="cls-2" x="326.75" y="118.22" width="41.77" height="41.77"></rect>
+            <path id="Line-2-2" data-name="Line" class="cls-11" d="M367.85,159.31,327,118.47"></path>
+            <path id="Line-2-3" data-name="Line-2" class="cls-11" d="M327.76,159l40.09-40.08"></path>
+            <g id="VENUE-2" data-name="VENUE" class="cls-4">
+              <text class="cls-12" transform="translate(383.34 130.34)">VENUE</text>
+            </g>
+            <g id="_205-East-Bro-Street-2" data-name="205-East-Bro-Street" class="cls-4">
+              <text class="cls-13" transform="translate(383.34 142.47)">205 <tspan class="cls-14" x="17.5" y="0">E</tspan><tspan class="cls-15" x="22.28" y="0">ast B</tspan><tspan class="cls-16" x="40.63" y="0">r</tspan><tspan class="cls-17" x="43.13" y="0">o </tspan><tspan class="cls-18" x="49.75" y="0">S</tspan><tspan class="cls-17" x="54.99" y="0">t</tspan><tspan class="cls-16" x="57.6" y="0">r</tspan><tspan class="cls-17" x="60.1" y="0">eet</tspan></text>
+            </g>
+            <g id="You_ve-visited-VENU-2" data-name="You’ve-visited-VENU" class="cls-4">
+              <text class="cls-19" transform="translate(383.34 157.29)">Y<tspan class="cls-20" x="3.59" y="0">ou’</tspan><tspan class="cls-21" x="12.77" y="0">v</tspan><tspan class="cls-22" x="16.02" y="0">e visi</tspan><tspan class="cls-21" x="30.56" y="0">t</tspan><tspan class="cls-23" x="32.58" y="0">ed VENU 2 times this </tspan><tspan class="cls-21" x="95.4" y="0">y</tspan><tspan class="cls-23" x="98.67" y="0">ear</tspan></text>
+            </g>
+          </g>
+          <g id="VenueItem-3" data-name="VenueItem">
+            <rect id="Rectangle-4-3" data-name="Rectangle-4" class="cls-2" x="320.02" y="166.72" width="253.97" height="55.24"></rect>
+            <rect id="Rectangle-4-4" data-name="Rectangle" class="cls-2" x="326.75" y="173.46" width="41.77" height="41.77"></rect>
+            <path id="Line-3" data-name="Line" class="cls-11" d="M367.85,214.55,327,173.71"></path>
+            <path id="Line-2-4" data-name="Line-2" class="cls-11" d="M327.76,214.21l40.09-40.08"></path>
+            <g id="VENUE-3" data-name="VENUE" class="cls-4">
+              <text class="cls-12" transform="translate(383.34 185.58)">VENUE</text>
+            </g>
+            <g id="_205-East-Bro-Street-3" data-name="205-East-Bro-Street" class="cls-4">
+              <text class="cls-13" transform="translate(383.34 197.71)">205 <tspan class="cls-14" x="17.5" y="0">E</tspan><tspan class="cls-15" x="22.28" y="0">ast B</tspan><tspan class="cls-16" x="40.63" y="0">r</tspan><tspan class="cls-17" x="43.13" y="0">o </tspan><tspan class="cls-18" x="49.75" y="0">S</tspan><tspan class="cls-17" x="54.99" y="0">t</tspan><tspan class="cls-16" x="57.6" y="0">r</tspan><tspan class="cls-17" x="60.1" y="0">eet</tspan></text>
+            </g>
+            <g id="You_ve-visited-VENU-3" data-name="You’ve-visited-VENU" class="cls-4">
+              <text class="cls-19" transform="translate(383.34 212.53)">Y<tspan class="cls-20" x="3.59" y="0">ou’</tspan><tspan class="cls-21" x="12.77" y="0">v</tspan><tspan class="cls-22" x="16.02" y="0">e visi</tspan><tspan class="cls-21" x="30.56" y="0">t</tspan><tspan class="cls-23" x="32.58" y="0">ed VENU 2 times this </tspan><tspan class="cls-21" x="95.4" y="0">y</tspan><tspan class="cls-23" x="98.67" y="0">ear</tspan></text>
+            </g>
+          </g>
+          <g id="VenueItem-4" data-name="VenueItem">
+            <rect id="Rectangle-4-5" data-name="Rectangle-4" class="cls-2" x="320.02" y="221.96" width="253.97" height="55.24"></rect>
+            <rect id="Rectangle-5" data-name="Rectangle" class="cls-2" x="326.75" y="228.69" width="41.77" height="41.77"></rect>
+            <path id="Line-4" data-name="Line" class="cls-11" d="M367.85,269.79,327,229"></path>
+            <path id="Line-2-5" data-name="Line-2" class="cls-11" d="M327.76,269.45l40.09-40.08"></path>
+            <g id="VENUE-4" data-name="VENUE" class="cls-4">
+              <text class="cls-12" transform="translate(383.34 240.82)">VENUE</text>
+            </g>
+            <g id="_205-East-Bro-Street-4" data-name="205-East-Bro-Street" class="cls-4">
+              <text class="cls-13" transform="translate(383.34 252.95)">205 <tspan class="cls-14" x="17.5" y="0">E</tspan><tspan class="cls-15" x="22.28" y="0">ast B</tspan><tspan class="cls-16" x="40.63" y="0">r</tspan><tspan class="cls-17" x="43.13" y="0">o </tspan><tspan class="cls-18" x="49.75" y="0">S</tspan><tspan class="cls-17" x="54.99" y="0">t</tspan><tspan class="cls-16" x="57.6" y="0">r</tspan><tspan class="cls-17" x="60.1" y="0">eet</tspan></text>
+            </g>
+            <g id="You_ve-visited-VENU-4" data-name="You’ve-visited-VENU" class="cls-4">
+              <text class="cls-19" transform="translate(383.34 267.77)">Y<tspan class="cls-20" x="3.59" y="0">ou’</tspan><tspan class="cls-21" x="12.77" y="0">v</tspan><tspan class="cls-22" x="16.02" y="0">e visi</tspan><tspan class="cls-21" x="30.56" y="0">t</tspan><tspan class="cls-23" x="32.58" y="0">ed VENU 2 times this </tspan><tspan class="cls-21" x="95.4" y="0">y</tspan><tspan class="cls-23" x="98.67" y="0">ear</tspan></text>
+            </g>
+          </g>
+          <g id="VenueItem-5" data-name="VenueItem">
+            <rect id="Rectangle-4-6" data-name="Rectangle-4" class="cls-2" x="320.02" y="277.2" width="253.97" height="55.24"></rect>
+            <rect id="Rectangle-6" data-name="Rectangle" class="cls-2" x="326.75" y="283.93" width="41.77" height="41.77"></rect>
+            <path id="Line-5" data-name="Line" class="cls-11" d="M367.85,325,327,284.19"></path>
+            <path id="Line-2-6" data-name="Line-2" class="cls-11" d="M327.76,324.69l40.09-40.08"></path>
+            <g id="VENUE-5" data-name="VENUE" class="cls-4">
+              <text class="cls-12" transform="translate(383.34 296.06)">VENUE</text>
+            </g>
+            <g id="_205-East-Bro-Street-5" data-name="205-East-Bro-Street" class="cls-4">
+              <text class="cls-13" transform="translate(383.34 308.19)">205 <tspan class="cls-14" x="17.5" y="0">E</tspan><tspan class="cls-15" x="22.28" y="0">ast B</tspan><tspan class="cls-16" x="40.63" y="0">r</tspan><tspan class="cls-17" x="43.13" y="0">o </tspan><tspan class="cls-18" x="49.75" y="0">S</tspan><tspan class="cls-17" x="54.99" y="0">t</tspan><tspan class="cls-16" x="57.6" y="0">r</tspan><tspan class="cls-17" x="60.1" y="0">eet</tspan></text>
+            </g>
+            <g id="You_ve-visited-VENU-5" data-name="You’ve-visited-VENU" class="cls-4">
+              <text class="cls-19" transform="translate(383.34 323.01)">Y<tspan class="cls-20" x="3.59" y="0">ou’</tspan><tspan class="cls-21" x="12.77" y="0">v</tspan><tspan class="cls-22" x="16.02" y="0">e visi</tspan><tspan class="cls-21" x="30.56" y="0">t</tspan><tspan class="cls-23" x="32.58" y="0">ed VENU 2 times this </tspan><tspan class="cls-21" x="95.4" y="0">y</tspan><tspan class="cls-23" x="98.67" y="0">ear</tspan></text>
+            </g>
+          </g>
+          <g id="VenueItem-6" data-name="VenueItem">
+            <rect id="Rectangle-4-7" data-name="Rectangle-4" class="cls-2" x="320.02" y="332.44" width="253.97" height="55.24"></rect>
+            <rect id="Rectangle-7" data-name="Rectangle" class="cls-2" x="326.75" y="339.17" width="41.77" height="41.77"></rect>
+            <path id="Line-6" data-name="Line" class="cls-11" d="M367.85,380.27,327,339.43"></path>
+            <path id="Line-2-7" data-name="Line-2" class="cls-11" d="M327.76,379.93l40.09-40.08"></path>
+            <g id="VENUE-6" data-name="VENUE" class="cls-4">
+              <text class="cls-12" transform="translate(383.34 351.3)">VENUE</text>
+            </g>
+            <g id="_205-East-Bro-Street-6" data-name="205-East-Bro-Street" class="cls-4">
+              <text class="cls-13" transform="translate(383.34 363.43)">205 <tspan class="cls-14" x="17.5" y="0">E</tspan><tspan class="cls-15" x="22.28" y="0">ast B</tspan><tspan class="cls-16" x="40.63" y="0">r</tspan><tspan class="cls-17" x="43.13" y="0">o </tspan><tspan class="cls-18" x="49.75" y="0">S</tspan><tspan class="cls-17" x="54.99" y="0">t</tspan><tspan class="cls-16" x="57.6" y="0">r</tspan><tspan class="cls-17" x="60.1" y="0">eet</tspan></text>
+            </g>
+            <g id="You_ve-visited-VENU-6" data-name="You’ve-visited-VENU" class="cls-4">
+              <text class="cls-19" transform="translate(383.34 378.25)">Y<tspan class="cls-20" x="3.59" y="0">ou’</tspan><tspan class="cls-21" x="12.77" y="0">v</tspan><tspan class="cls-22" x="16.02" y="0">e visi</tspan><tspan class="cls-21" x="30.56" y="0">t</tspan><tspan class="cls-23" x="32.58" y="0">ed VENU 2 times this </tspan><tspan class="cls-21" x="95.4" y="0">y</tspan><tspan class="cls-23" x="98.67" y="0">ear</tspan></text>
+            </g>
+          </g>
+          <g id="VenueItem-7" data-name="VenueItem">
+            <rect id="Rectangle-4-8" data-name="Rectangle-4" class="cls-2" x="320.02" y="387.68" width="253.97" height="55.24"></rect>
+            <rect id="Rectangle-8" data-name="Rectangle" class="cls-2" x="326.75" y="394.41" width="41.77" height="41.77"></rect>
+            <path id="Line-7" data-name="Line" class="cls-11" d="M367.85,435.51,327,394.67"></path>
+            <path id="Line-2-8" data-name="Line-2" class="cls-11" d="M327.76,435.17l40.09-40.08"></path>
+            <g id="VENUE-7" data-name="VENUE" class="cls-4">
+              <text class="cls-12" transform="translate(383.34 406.54)">VENUE</text>
+            </g>
+            <g id="_205-East-Bro-Street-7" data-name="205-East-Bro-Street" class="cls-4">
+              <text class="cls-13" transform="translate(383.34 418.67)">205 <tspan class="cls-14" x="17.5" y="0">E</tspan><tspan class="cls-15" x="22.28" y="0">ast B</tspan><tspan class="cls-16" x="40.63" y="0">r</tspan><tspan class="cls-17" x="43.13" y="0">o </tspan><tspan class="cls-18" x="49.75" y="0">S</tspan><tspan class="cls-17" x="54.99" y="0">t</tspan><tspan class="cls-16" x="57.6" y="0">r</tspan><tspan class="cls-17" x="60.1" y="0">eet</tspan></text>
+            </g>
+            <g id="You_ve-visited-VENU-7" data-name="You’ve-visited-VENU" class="cls-4">
+              <text class="cls-19" transform="translate(383.34 433.49)">Y<tspan class="cls-20" x="3.59" y="0">ou’</tspan><tspan class="cls-21" x="12.77" y="0">v</tspan><tspan class="cls-22" x="16.02" y="0">e visi</tspan><tspan class="cls-21" x="30.56" y="0">t</tspan><tspan class="cls-23" x="32.58" y="0">ed VENU 2 times this </tspan><tspan class="cls-21" x="95.4" y="0">y</tspan><tspan class="cls-23" x="98.67" y="0">ear</tspan></text>
+            </g>
+          </g>
+          <g id="VenueItem-8" data-name="VenueItem">
+            <rect id="Rectangle-4-9" data-name="Rectangle-4" class="cls-2" x="320.02" y="442.92" width="253.97" height="55.24"></rect>
+            <rect id="Rectangle-9" data-name="Rectangle" class="cls-2" x="326.75" y="449.65" width="41.77" height="41.77"></rect>
+            <path id="Line-8" data-name="Line" class="cls-11" d="M367.85,490.75,327,449.91"></path>
+            <path id="Line-2-9" data-name="Line-2" class="cls-11" d="M327.76,490.41l40.09-40.08"></path>
+            <g id="VENUE-8" data-name="VENUE" class="cls-4">
+              <text class="cls-12" transform="translate(383.34 461.78)">VENUE</text>
+            </g>
+            <g id="_205-East-Bro-Street-8" data-name="205-East-Bro-Street" class="cls-4">
+              <text class="cls-13" transform="translate(383.34 473.9)">205 <tspan class="cls-14" x="17.5" y="0">E</tspan><tspan class="cls-15" x="22.28" y="0">ast B</tspan><tspan class="cls-16" x="40.63" y="0">r</tspan><tspan class="cls-17" x="43.13" y="0">o </tspan><tspan class="cls-18" x="49.75" y="0">S</tspan><tspan class="cls-17" x="54.99" y="0">t</tspan><tspan class="cls-16" x="57.6" y="0">r</tspan><tspan class="cls-17" x="60.1" y="0">eet</tspan></text>
+            </g>
+            <g id="You_ve-visited-VENU-8" data-name="You’ve-visited-VENU" class="cls-4">
+              <text class="cls-19" transform="translate(383.34 488.72)">Y<tspan class="cls-20" x="3.59" y="0">ou’</tspan><tspan class="cls-21" x="12.77" y="0">v</tspan><tspan class="cls-22" x="16.02" y="0">e visi</tspan><tspan class="cls-21" x="30.56" y="0">t</tspan><tspan class="cls-23" x="32.58" y="0">ed VENU 2 times this </tspan><tspan class="cls-21" x="95.4" y="0">y</tspan><tspan class="cls-23" x="98.67" y="0">ear</tspan></text>
+            </g>
+          </g>
+          <g id="Type-something" class="cls-4">
+            <text class="cls-24" transform="translate(364.48 31.99)">T<tspan class="cls-25" x="5.75" y="0">ype something</tspan></text>
+          </g>
+        </g>
+      </g>
+      <rect class="cls-9" x="320.5" y="1" width="253" height="450"></rect>
+    </g>
+  </g>
+</svg>
