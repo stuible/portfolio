@@ -19,6 +19,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Order", name: "order", widget: "number"}
       - {label: "Icon", name: "icon", widget: "image", required: false}
       - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - { name: video, label: Video, widget: youtube, extraInfo: false, APIkey: "<KEY>" }
       - {label: Description, name: description, widget: "markdown"}
       - label: "Technologies"
         name: "technologies"
