@@ -1,18 +1,18 @@
 <template>
   <main>
     <section id="about" data-love="nadine">
-      <!-- <nuxt-img
+      <nuxt-img
         v-if="home.body.image"
         :src="home.body.image"
         image-style="thumb"
         alt="Josh Stuible's Beautiful Face"
         class="profile"
-      />-->
-      <img
+      />
+      <!-- <img
         :src="profPlaceholder"
         v-lazy="{src: home.body.image, loading: profPlaceholder, preLoad: 1 }"
         alt="Josh Stuible's Beautiful Face"
-      >
+      > -->
       <div id="titles">
         <h1 class="title">{{ home.body.title }}</h1>
         <h2 class="subtitle">{{ home.body.subtitle }}</h2>
