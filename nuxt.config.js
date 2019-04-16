@@ -118,17 +118,17 @@ module.exports = {
     masterPicture: 'static/logo.svg',
     // rfg: <faviconDescription.json from realfavicongenerator.net>
   },
+  styleResources: {
+    scss: [
+      './assets/scss/variables.scss',
+      './assets/scss/breakpoints.scss'
+    ],
+  },
 
   /*
   ** Build configuration
   */
   build: {
-    styleResources: {
-      scss: [
-        './assets/scss/variables.scss',
-        './assets/scss/breakpoints.scss'
-      ],
-    },
     /*
     ** You can extend webpack config here
     */
