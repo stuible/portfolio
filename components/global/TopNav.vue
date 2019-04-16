@@ -14,6 +14,11 @@
       <div>JOSH STUIBLE</div>
     </div>
     <ul>
+      <li class="logo">
+        <nuxt-link to="/">
+          <img src="~static/logo.svg?data" alt="JS">
+        </nuxt-link>
+      </li>
       <li v-for="item in nav" v-bind:key="item.name">
         <nuxt-link
           v-if="item.scroll != undefined"
@@ -48,11 +53,29 @@ export default {
   flex-direction: column;
   margin-bottom: 1em;
 
+  .logo {
+    img {
+      height: 5em;
+    }
+
+    // margin-right: 0em;
+    // display: none;
+
+    @include breakpoint(thone) {
+      margin-right: -1.5em;
+    }
+
+    @include breakpoint(phablet) {
+      display: none;
+    }
+  }
+
   ul {
     list-style: none;
     display: block;
-		justify-content: space-between;
-		// visibility: hidden;
+    justify-content: space-between;
+    align-items: center;
+    // visibility: hidden;
 
     position: fixed;
     margin: 0;
@@ -68,7 +91,7 @@ export default {
 
     transform: translate(-100%, 0);
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-		z-index: 1;
+    z-index: 1;
   }
   li {
     display: block;
@@ -104,9 +127,9 @@ export default {
   //Mobile Nav Open Class
   &.open {
     ul {
-			transform: translate(0, 0);
-			// visibility: visible;
-			// transition: visibility 0s linear 0.5s;
+      transform: translate(0, 0);
+      // visibility: visible;
+      // transition: visibility 0s linear 0.5s;
     }
   }
 
@@ -114,10 +137,10 @@ export default {
     margin-bottom: 4em;
 
     ul {
-			display: flex;
-			// visibility: visible;
-			position: unset;
-			transition: none;
+      display: flex;
+      // visibility: visible;
+      position: unset;
+      transition: none;
       width: unset;
       transform-origin: unset;
       transform: unset;
@@ -130,8 +153,7 @@ export default {
       display: inline-block;
       position: relative;
       padding-bottom: 0em;
-      &:hover,
-      &:focus-within {
+      &:hover{
         &:before {
           content: "";
           border-bottom: 2px solid #edeaea;
