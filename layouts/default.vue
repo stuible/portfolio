@@ -15,7 +15,6 @@
       <nuxt/>
       <footer>
         {{"Design & Implementation by Josh Stuible in Vancouver"}}
-        <nuxt-link to="/style" @click.native="scrollTo('__layout')">(Style Guide)</nuxt-link>
       </footer>
     </div>
     <div class="sidebar"></div>
