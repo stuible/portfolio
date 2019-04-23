@@ -68,15 +68,19 @@
         </li>
       </ul>
     </section>
+    <section id="doing">
+      <h3>What I'm Doing</h3>
+      <doing />
+    </section>
   </main>
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
+import Doing from '~/components/home/Doing.vue'
 
 export default {
   components: {
-    // Logo
+    Doing
   },
   async asyncData({ app }) {
     return {
@@ -117,6 +121,7 @@ export default {
 </script>
 
 <style lang="scss">
+#doing,
 #services,
 #portfolio {
   h3 {
@@ -431,5 +436,9 @@ export default {
       }
     }
   }
+}
+
+#doing {
+  padding-top: map-get($mainGridGap, desktophd);
 }
 </style>
