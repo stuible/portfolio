@@ -7,8 +7,8 @@ description: >-
   Aldergrove Langley Taxi is taxi company located in the  Langley and Aldergrove area.  With over 25 cars and expanding, langleytaxi.ca is a modern and fast way to book a cab online.
 technologies:
   - Sketch
-  # - Nuxt
-  # - Sass
+  - Nuxt.js
+  - Sass
 content:
   - text: >-
       Langely Taxi's site was not responsive or mobile friendly when I was first approached.  The priorities were a modern looking site with good SEO and an emphasis on their new mobile app.  Additionally, they had created an external web form that would allow customers to order taxies online.
