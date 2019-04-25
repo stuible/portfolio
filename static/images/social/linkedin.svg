@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="768px" height="768px" viewBox="0 0 768 768" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>linkedin</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons" transform="translate(-1784.000000, -1363.000000)">
+            <g id="linkedin" transform="translate(1802.000000, 1360.000000)">
+                <path d="M677.8625,21 L54.0155,21 C24.156,21 0,44.607 0,73.7345 L0,700.2655 C0,729.4235 24.156,753 54.0155,753 L677.771,753 C707.6,753 732,729.4235 732,700.2655 L732,73.7345 C732,44.607 707.6,21 677.771,21 L677.8625,21 Z" id="Path" stroke="#000000" stroke-width="35" fill-rule="nonzero"></path>
+                <text id="in" font-family="HelveticaNeue-Light, Helvetica Neue" font-size="650" font-weight="300" letter-spacing="65" fill="#000000">
+                    <tspan x="108.35" y="629">in</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
