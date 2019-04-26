@@ -4,7 +4,7 @@ subtitle: UX / UI
 date: '2019-03-09 12:23am'
 order: 2
 icon: /uploads/nightoutlogo.svg
-image: /uploads/nightOutPromo.mp4
+image: /uploads/nightOutPromo-small.mp4
 video:
   id: a-y8VolRekE
   imageURL: 'https://img.youtube.com/vi/a-y8VolRekE/maxresdefault.jpg'

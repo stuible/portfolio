@@ -11,7 +11,7 @@
       <div id="profile-wrapper">
         <div
           id="profile-pic"
-          v-lazy:background-image="{src: home.body.image, loading: profPlaceholder, preLoad: 1 }"
+          v-lazy:background-image="{src: '/images' + home.body.image, loading: profPlaceholder, preLoad: 1 }"
         ></div>
 
         <!-- <img
