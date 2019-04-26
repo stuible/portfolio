@@ -64,7 +64,7 @@
         <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
           <div class="info">
             <h5>{{ post.title }}</h5>
-            <h6>Web Design</h6>
+            <h6>{{ post.subtitle }}</h6>
           </div>
           <nuxt-link :to="post.permalink">
             <img

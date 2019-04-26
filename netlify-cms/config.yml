@@ -20,7 +20,7 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Link to Website / Piece", name: "link", widget: "string"}
       - {label: "Order", name: "order", widget: "number"}
       - {label: "Icon", name: "icon", widget: "image", required: false}
-      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Cover Image / Video", name: "image", widget: "file", required: false, tagname: ""}
       - {label: Description, name: description, widget: "markdown"}
       - label: "Technologies"
         name: "technologies"

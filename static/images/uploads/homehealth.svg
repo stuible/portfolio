@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="898px" height="900px" viewBox="0 0 898 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="959px" height="531px" viewBox="0 0 959 531" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
     <title>Home Health</title>
     <desc>Created with Sketch.</desc>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Artboard" transform="translate(-102.000000, -1600.000000)">
-            <g id="Home-Health" transform="translate(102.000000, 1600.000000)">
-                <path d="M450,0 L450,900" id="Line-2" stroke="#000000" stroke-width="35"></path>
-                <path d="M880.5,450 L17.5,450" id="Line-3" stroke="#000000" stroke-width="35"></path>
-                <rect id="Rectangle" fill="#000000" x="0" y="0" width="35" height="900"></rect>
-                <rect id="Rectangle-Copy" fill="#000000" x="863" y="0" width="35" height="900"></rect>
+        <g id="Projects" transform="translate(-3839.000000, -2474.000000)" stroke="#000000" stroke-width="35">
+            <g id="Home-Health" transform="translate(3852.000000, 2499.000000)">
+                <polyline id="Path-2" points="5.68434189e-14 471.481802 466.5 0 933 471.481802"></polyline>
+                <circle id="Oval" cx="464" cy="383" r="105.5"></circle>
             </g>
         </g>
     </g>

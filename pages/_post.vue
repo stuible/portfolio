@@ -8,11 +8,12 @@
       >
       <div class="titles">
         <h1>{{ post.title }}</h1>
-        <h2>Web Design</h2>
+        <h2>{{ post.subtitle }}</h2>
       </div>
       <div class="content">
         <a v-if="true" class="post-link" href="#">View Thing</a>
-        <nuxt-img v-if="post.image" :src="post.image" responsive-style="medium" :alt="post.title"/>
+        <nuxt-img v-if="isImage(post.image)" :src="post.image" responsive-style="medium" :alt="post.title"/>
+        <video v-else-if="isVideo(post.image)" :src="'/images' + post.image" muted autoplay></video>
         <p>{{post.description}}</p>
       </div>
     </section>
@@ -62,6 +63,38 @@ export default {
       return this.tech.find(obj => {
         return obj.title === name;
       });
+    },
+    isImage(image){
+      if(!image) return false;
+      const ext = image.split('.').pop();
+
+      switch (ext) {
+        case 'jpg':
+        case 'jpeg':
+        case 'svg':
+        case 'png':
+        case 'webp':
+        case 'gif':
+          return true;
+          break;
+        default:
+          return false;
+          break;
+      }
+    },
+    isVideo(image){
+      if(!image) return false;
+      const ext = image.split('.').pop();
+
+      switch (ext) {
+        case 'mp4':
+        case 'mov':
+          return true;
+          break;
+        default:
+          return false;
+          break;
+      }
     }
   },
   mounted() {
@@ -98,6 +131,10 @@ export default {
     margin-bottom: 2em;
   }
 
+  video {
+    margin-bottom: 1em;
+  }
+
   section.intro {
     // display: grid;
     // grid-template-columns: 1fr 6fr;
@@ -107,7 +144,7 @@ export default {
 
     .icon {
       grid-area: icon;
-      height: 5em;
+      height: 4.5em;
       padding-right: 2em;
     }
 
