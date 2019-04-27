@@ -11,7 +11,7 @@
         <h2>{{ post.subtitle }}</h2>
       </div>
       <div class="content">
-        <a v-if="true" class="post-link" href="#">View Thing</a>
+        <a v-if="post.link" class="post-link" :href="post.link.url" target="_blank">{{post.link.title}}</a>
         <nuxt-img v-if="isImage(post.image)" :src="post.image" responsive-style="medium" :alt="post.title"/>
         <video v-else-if="isVideo(post.image)" :src="'/images' + post.image" muted autoplay></video>
         <p>{{post.description}}</p>
@@ -192,8 +192,8 @@ export default {
       // display: inline;
     }
     img {
-      width: 70%;
-      height: 55px;
+      // width: 70%;
+      height: 40px;
       // height: 100%;
     }
     figcaption {
