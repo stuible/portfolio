@@ -16,7 +16,7 @@ content:
       University, we were required to use Arduino and Processing to create a
       smart device. In a team of four, we decided to create a device that could
       be used to improve the home experience.
-    title: Justification
+    title: Background
   - text: >-
       Our project uses three main sensors to map out the colour changes. Sound
       and motion sensors provide automatic changes in the mood lighting
