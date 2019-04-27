@@ -2,7 +2,7 @@
 title: Mood Lamp
 subtitle: Development
 date: '2019-03-19 02:27pm'
-order: 3
+order: 8
 icon: /uploads/mood-lamp.svg
 description: >-
   Mood Lamp is an interactive ambient lantern. By gathering data from its

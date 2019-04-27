@@ -2,7 +2,7 @@
 title: Fauxbook
 subtitle: Web Dev
 date: '2019-03-09 12:23am'
-order: 4
+order: 6
 icon: /uploads/fauxbooklogo.svg
 image: ''
 description: >-

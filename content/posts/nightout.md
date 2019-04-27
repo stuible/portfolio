@@ -2,7 +2,7 @@
 title: nightOut
 subtitle: UX / UI
 date: '2019-03-09 12:23am'
-order: 2
+order: 7
 icon: /uploads/nightoutlogo.svg
 image: /uploads/nightOutPromo-small.mp4
 video:
