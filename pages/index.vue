@@ -328,7 +328,7 @@ export default {
   grid-area: titles;
 
   // font-size: 1em;
-  font-size: 0.75em;
+  font-size: 3vw;
 
   .title {
     // color: $colourDark;
