@@ -16,7 +16,7 @@ technologies:
   - Sass
 content:
   - text: >-
-      Langely Taxi's site was not responsive or mobile friendly when I was first approached.  The priorities were a modern looking site with good SEO and an emphasis on their new mobile app.  Additionally, they had created an external web form that would allow customers to order taxies online.
+      Langely Taxi approached me with the need for a website redesign in the Fall of 2018.  The priorities were a modern looking site with good SEO and an emphasis on their new mobile app.  Additionally, they had created an external web form that would allow customers to order taxies online.
     title: Background
   - text: >-
       I began by looking at the current state of taxi websites across Vancouver.  Because people that need taxis are often on the go, I really wanted to focus on the mobile layout of this site, making it truly "mobile first".   After comparing what worked and what I didn't provided the client with both desktop and mobile mockups.
