@@ -2,9 +2,9 @@
     <main>
         <h1>Freelance</h1>
         <br>
-        <p>I am currently seaking employment as a web developer and designer at an exciting startup.</p>
+        <p>If you need a web-based solution for your business, let's talk.</p>
         <br><br>
-        <p>Please contact me at joshstuible at gmail dot com.</p>
+        <p>Contact me via email by clicking "Contact".</p>
     </main>
 </template>
 
@@ -14,6 +14,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+h1{
+    font-size: 3em;
+}
 </style>
