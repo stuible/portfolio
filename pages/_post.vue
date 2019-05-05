@@ -11,8 +11,18 @@
         <h2>{{ post.subtitle }}</h2>
       </div>
       <div class="content">
-        <a v-if="post.link" class="post-link" :href="post.link.url" target="_blank">{{post.link.title}}</a>
-        <nuxt-img v-if="isImage(post.image)" :src="post.image" responsive-style="medium" :alt="post.title"/>
+        <a
+          v-if="post.link"
+          class="post-link"
+          :href="post.link.url"
+          target="_blank"
+        >{{post.link.title}}</a>
+        <nuxt-img
+          v-if="isImage(post.image)"
+          :src="post.image"
+          responsive-style="medium"
+          :alt="post.title"
+        />
         <video v-else-if="isVideo(post.image)" :src="'/images' + post.image" muted autoplay></video>
         <p>{{post.description}}</p>
       </div>
@@ -64,17 +74,17 @@ export default {
         return obj.title === name;
       });
     },
-    isImage(image){
-      if(!image) return false;
-      const ext = image.split('.').pop();
+    isImage(image) {
+      if (!image) return false;
+      const ext = image.split(".").pop();
 
       switch (ext) {
-        case 'jpg':
-        case 'jpeg':
-        case 'svg':
-        case 'png':
-        case 'webp':
-        case 'gif':
+        case "jpg":
+        case "jpeg":
+        case "svg":
+        case "png":
+        case "webp":
+        case "gif":
           return true;
           break;
         default:
@@ -82,13 +92,13 @@ export default {
           break;
       }
     },
-    isVideo(image){
-      if(!image) return false;
-      const ext = image.split('.').pop();
+    isVideo(image) {
+      if (!image) return false;
+      const ext = image.split(".").pop();
 
       switch (ext) {
-        case 'mp4':
-        case 'mov':
+        case "mp4":
+        case "mov":
           return true;
           break;
         default:
@@ -137,8 +147,8 @@ export default {
 
   section.intro {
     // display: grid;
-    // grid-template-columns: 1fr 6fr;
-    grid-template-areas: "icon title" ". content";
+    grid-template-columns: auto;
+    grid-template-areas: "icon" "title" "content";
     // row-gap: 1em;
     // margin-bottom: 2em;
 
@@ -146,6 +156,23 @@ export default {
       grid-area: icon;
       height: 4.5em;
       padding-right: 2em;
+      width: 7em;
+    }
+
+    @include breakpoint(phone) {
+      grid-template-columns: 5em 6fr;
+      grid-template-areas: "icon title" "content content";
+      .icon {
+        width: 100%;
+      }
+    }
+
+    @include breakpoint(thone) {
+      grid-template-areas: "icon title" ". content";
+
+      // .icon {
+      //   width: 100%;
+      // }
     }
 
     .titles {
@@ -154,11 +181,16 @@ export default {
   }
   section {
     display: grid;
-    grid-template-columns: 1fr 6fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    grid-template-areas: "title title" ". content";
+    grid-template-areas: "title" "content";
     row-gap: 1em;
     margin-bottom: 2em;
+
+    @include breakpoint(thone) {
+      grid-template-columns: 5em 6fr;
+      grid-template-areas: "title title" ". content";
+    }
 
     img {
       margin-bottom: 1em;
@@ -197,7 +229,7 @@ export default {
       // height: 100%;
     }
     figcaption {
-      // align-self: 
+      // align-self:
     }
   }
 }

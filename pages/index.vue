@@ -136,9 +136,17 @@ export default {
 
     @include breakpoint(phone) {
       font-size: 1em;
+      // margin-bottom: 2em;
     }
 
+    @include breakpoint(thone) {
+      font-size: 1.5em;
+      // margin-bottom: 1em;
+    }
     @include breakpoint(phablet) {
+      font-size: 1.5em;
+    }
+    @include breakpoint(tablet) {
       font-size: 1.5em;
     }
     @include breakpoint(desktop) {
