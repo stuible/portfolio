@@ -82,7 +82,7 @@ export default {
     }
 
     //Update contact link to be my email once javascript has loaded
-    this.nav.find(item => item.name === 'Contact').email = atob('am9zaHN0dWlibGVAZ21haWwuY29t');
+    this.nav.find(item => item.name === 'Contact').email = atob('am9za'+'HN0dWlibG'+'VAZ21ha'+'WwuY29t');
     this.nav.find(item => item.name === 'Contact').link = false;
   }
 };
