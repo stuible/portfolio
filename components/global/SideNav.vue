@@ -2,8 +2,9 @@
   <nav id="side-nav" ref="sidebarNav">
     <ul>
       <li v-for="item in nav" v-bind:key="item.name">
+        <a v-if="item.email" :href="'mailto:' + item.email">{{item.name}}</a>
         <nuxt-link
-          v-if="item.scroll != undefined"
+          v-else-if="item.scroll != undefined"
           :to="item.link + item.hash"
           @click.native="$emit('clicked', item.scroll)"
         >{{item.name}}</nuxt-link>
