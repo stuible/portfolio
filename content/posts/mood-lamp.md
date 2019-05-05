@@ -9,7 +9,7 @@ description: >-
   surroundings, the lantern adjusts its colours and brightness to fit the mood
   of the environment.
 technologies:
-  - Java
+  - Processing
 content:
   - text: >-
       As a final project of an interaction design course I took at Simon Fraser
