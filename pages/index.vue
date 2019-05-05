@@ -8,11 +8,19 @@
         alt="Josh Stuible's Beautiful Face"
         class="profile"
       />-->
-      <img
-        :src="profPlaceholder"
-        v-lazy="{src: home.body.image, loading: profPlaceholder, preLoad: 1 }"
-        alt="Josh Stuible's Beautiful Face"
-      >
+      <div id="profile-wrapper">
+        <div
+          id="profile-pic"
+          v-lazy:background-image="{src: '/images' + home.body.image, loading: profPlaceholder, preLoad: 1 }"
+        ></div>
+
+        <!-- <img
+          :src="profPlaceholder"
+          v-lazy="{src: home.body.image, loading: profPlaceholder, preLoad: 1 }"
+          alt="Josh Stuible's Beautiful Face"
+        >-->
+      </div>
+
       <div id="titles">
         <h1 class="title">{{ home.body.title }}</h1>
         <h2 class="subtitle">{{ home.body.subtitle }}</h2>
@@ -56,7 +64,7 @@
         <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
           <div class="info">
             <h5>{{ post.title }}</h5>
-            <h6>Web Design</h6>
+            <h6>{{ post.subtitle }}</h6>
           </div>
           <nuxt-link :to="post.permalink">
             <img
@@ -88,7 +96,8 @@ export default {
       tech: await app.$content("tech").getAll(),
       home: await app.$content("pages").get("home"),
       highlightedTech: [],
-      profPlaceholder: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcv33LfwAHkgMr6KeirAAAAABJRU5ErkJggg=='
+      profPlaceholder:
+        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcv33LfwAHkgMr6KeirAAAAABJRU5ErkJggg=="
     };
   },
   computed: {
@@ -274,11 +283,57 @@ export default {
   }
 }
 
+#profile-pic {
+  // overflow: hidden;
+  background-color: #bab3b2;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  // width: 50%;
+  // transition: box-shadow 300ms linear, opacity 200ms linear;
+
+  width: 100%;
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+  }
+
+  &::after {
+    position: absolute;
+    background-color: #bab3b2;
+    content: "";
+    display: block;
+    // padding-bottom: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 200ms linear;
+    opacity: 0;
+  }
+
+  &[lazy="loading"] {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &[lazy="loaded"] {
+    // filter: blur(0px);
+    // box-shadow: inset 0 0 0 1000px rgba(186, 179, 178, 0);
+    // opacity: 1;
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
 #titles {
   grid-area: titles;
 
   // font-size: 1em;
-  font-size: 0.75em;
+  font-size: 3vw;
 
   .title {
     // color: $colourDark;

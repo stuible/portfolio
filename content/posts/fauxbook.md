@@ -1,9 +1,13 @@
 ---
 title: Fauxbook
+subtitle: Web Dev
 date: '2019-03-09 12:23am'
-order: 4
+order: 6
 icon: /uploads/fauxbooklogo.svg
-image: ''
+link:
+  url: https://stuible.github.io/Fauxbook/
+  title: Visit Site
+image: '/uploads/fauxbookScreenshot.jpg'
 description: >-
   Fauxbook.co is a satirical narrative about fake news told through interactions
   with the fictional social network “fauxbook”. Visitors of the site are

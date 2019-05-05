@@ -20,8 +20,9 @@
         </nuxt-link>
       </li>
       <li v-for="item in nav" v-bind:key="item.name">
+        <a v-if="item.email" :href="'mailto:' + item.email">{{item.name}}</a>
         <nuxt-link
-          v-if="item.scroll != undefined"
+          v-else-if="item.scroll != undefined"
           :to="item.link + item.hash"
           @click.native="$emit('clicked', item.scroll);mobileNavOpen = false"
         >{{item.name}}</nuxt-link>
@@ -35,6 +36,14 @@
 export default {
   props: {
     nav: Array
+  },
+  watch: {
+    nav: {
+      handler(newVal, oldVal) {
+        console.log('nav has been changed: ' + newVal);
+      },
+      deep: true
+    }
   },
   data() {
     return {

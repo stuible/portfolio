@@ -39,7 +39,12 @@ body {
 }
 
 p {
-    font-family: "Helvetica Neue", "Helvetica" , sans-serif;
+    // font-family: "Helvetica Neue", "Helvetica" , sans-serif;
+    line-height: 1.33em;
+}
+
+video {
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {

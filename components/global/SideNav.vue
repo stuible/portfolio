@@ -2,8 +2,9 @@
   <nav id="side-nav" ref="sidebarNav">
     <ul>
       <li v-for="item in nav" v-bind:key="item.name">
+        <a v-if="item.email" :href="'mailto:' + item.email">{{item.name}}</a>
         <nuxt-link
-          v-if="item.scroll != undefined"
+          v-else-if="item.scroll != undefined"
           :to="item.link + item.hash"
           @click.native="$emit('clicked', item.scroll)"
         >{{item.name}}</nuxt-link>
@@ -23,14 +24,17 @@ export default {
       var y = window.scrollY;
       var startY = 35;
       if (y > startY) {
-        this.$refs.sidebarNav.style.display = '';
+        this.$refs.sidebarNav.style.display = "";
         var scrollPercent = (startY - y + 75) / startY;
-        this.$refs.sidebarNav.style.opacity = Math.min(1, Math.max(0, -scrollPercent));
+        this.$refs.sidebarNav.style.opacity = Math.min(
+          1,
+          Math.max(0, -scrollPercent)
+        );
       } else {
-        this.$refs.sidebarNav.style.opacity = 0; 
-        this.$refs.sidebarNav.style.display = 'none';
+        this.$refs.sidebarNav.style.opacity = 0;
+        this.$refs.sidebarNav.style.display = "none";
       }
-    },
+    }
     // setOpacity
   },
   mounted() {
@@ -49,8 +53,11 @@ export default {
   transition: opacity 200ms;
   line-height: 1.75em;
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.01em;
 
+  @include breakpoint(tablet) {
+    font-size: 13px;
+  }
 }
 </style>

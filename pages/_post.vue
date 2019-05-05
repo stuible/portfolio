@@ -1,14 +1,24 @@
 <template>
   <main id="post">
-    <section>
-      <h1>{{ post.title }}</h1>
+    <section class="intro">
+      <img
+        :src="require(`~/static/images${post.icon}?data`)"
+        :alt="`${post.title} Icon`"
+        class="icon"
+      >
+      <div class="titles">
+        <h1>{{ post.title }}</h1>
+        <h2>{{ post.subtitle }}</h2>
+      </div>
       <div class="content">
-        <nuxt-img v-if="post.image" :src="post.image" image-style="medium" :alt="post.title"/>
+        <a v-if="post.link" class="post-link" :href="post.link.url" target="_blank">{{post.link.title}}</a>
+        <nuxt-img v-if="isImage(post.image)" :src="post.image" responsive-style="medium" :alt="post.title"/>
+        <video v-else-if="isVideo(post.image)" :src="'/images' + post.image" muted autoplay></video>
         <p>{{post.description}}</p>
       </div>
     </section>
     <section>
-      <h2>Tools</h2>
+      <h3>Tools</h3>
       <div class="content">
         <ul class="tools">
           <li v-for="techName in post.technologies" v-bind:key="techName">
@@ -24,12 +34,12 @@
       </div>
     </section>
     <section v-for="content in post.content" v-bind:key="content.title">
-      <h2>{{content.title}}</h2>
+      <h3>{{content.title}}</h3>
       <div class="content">
         <nuxt-img
           v-if="content.image"
           :src="content.image"
-          image-style="medium"
+          responsive-style="medium"
           :alt="content.title"
         />
         <p v-html="content.text"/>
@@ -44,7 +54,8 @@ export default {
   async asyncData({ app, route }) {
     return {
       post: await app.$content("posts").get(route.path),
-      tech: await app.$content("tech").getAll()
+      tech: await app.$content("tech").getAll(),
+      techIcons: {}
     };
   },
   methods: {
@@ -52,9 +63,47 @@ export default {
       return this.tech.find(obj => {
         return obj.title === name;
       });
+    },
+    isImage(image){
+      if(!image) return false;
+      const ext = image.split('.').pop();
+
+      switch (ext) {
+        case 'jpg':
+        case 'jpeg':
+        case 'svg':
+        case 'png':
+        case 'webp':
+        case 'gif':
+          return true;
+          break;
+        default:
+          return false;
+          break;
+      }
+    },
+    isVideo(image){
+      if(!image) return false;
+      const ext = image.split('.').pop();
+
+      switch (ext) {
+        case 'mp4':
+        case 'mov':
+          return true;
+          break;
+        default:
+          return false;
+          break;
+      }
     }
   },
-  mounted(){
+  mounted() {
+    this.tech.forEach((item, index) => {
+      this.techIcons[item.title] = require(`~/static/images${
+        item.image
+      }?inline`);
+      // console.log(this.techIcons[item.title]);
+    });
     // require(`~/static/images${getTechByName('CSS3').image}?inline`)
   }
 };
@@ -62,6 +111,47 @@ export default {
 
 <style lang="scss">
 #post {
+  h1 {
+    font-size: 3.5em;
+    line-height: 1em;
+  }
+
+  h2 {
+    line-height: 1em;
+    font-size: 1.25em;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+
+  .post-link {
+    display: inline-block;
+    font-weight: 600;
+    padding-bottom: 0.4em;
+    border-bottom: 2px solid gray;
+    margin-bottom: 2em;
+  }
+
+  video {
+    margin-bottom: 1em;
+  }
+
+  section.intro {
+    // display: grid;
+    // grid-template-columns: 1fr 6fr;
+    grid-template-areas: "icon title" ". content";
+    // row-gap: 1em;
+    // margin-bottom: 2em;
+
+    .icon {
+      grid-area: icon;
+      height: 4.5em;
+      padding-right: 2em;
+    }
+
+    .titles {
+      grid-area: title;
+    }
+  }
   section {
     display: grid;
     grid-template-columns: 1fr 6fr;
@@ -75,9 +165,13 @@ export default {
       width: 100%;
     }
 
-    h1,
-    h2 {
+    // h1,
+    h3 {
       grid-area: title;
+      text-transform: uppercase;
+      font-size: 0.8em;
+      letter-spacing: 0.1em;
+      font-weight: 600;
     }
 
     .content,
@@ -92,12 +186,18 @@ export default {
     justify-content: center;
     li {
       width: 75px;
+      // height: 75px;
       margin: 0 1em;
       text-align: center;
       // display: inline;
     }
     img {
-      width: 70%;
+      // width: 70%;
+      height: 40px;
+      // height: 100%;
+    }
+    figcaption {
+      // align-self: 
     }
   }
 }

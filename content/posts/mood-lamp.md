@@ -1,21 +1,22 @@
 ---
 title: Mood Lamp
+subtitle: Development
 date: '2019-03-19 02:27pm'
-order: 3
+order: 8
 icon: /uploads/mood-lamp.svg
 description: >-
   Mood Lamp is an interactive ambient lantern. By gathering data from its
   surroundings, the lantern adjusts its colours and brightness to fit the mood
   of the environment.
 technologies:
-  - Java
+  - Processing
 content:
   - text: >-
       As a final project of an interaction design course I took at Simon Fraser
       University, we were required to use Arduino and Processing to create a
       smart device. In a team of four, we decided to create a device that could
       be used to improve the home experience.
-    title: Justification
+    title: Background
   - text: >-
       Our project uses three main sensors to map out the colour changes. Sound
       and motion sensors provide automatic changes in the mood lighting

@@ -49,8 +49,8 @@ export default {
           link: "/freelance"
         },
         {
-          name: "Resume",
-          link: "/resume"
+          name: "Contact",
+          link: "#"
         }
       ],
       sidebarNavOpacity: 0,
@@ -80,6 +80,10 @@ export default {
         .catch(e => console.error(e));
       console.log("No native smooth scroll, grabbing polyfill");
     }
+
+    //Update contact link to be my email once javascript has loaded
+    this.nav.find(item => item.name === 'Contact').email = atob('am9zaHN0dWlibGVAZ21haWwuY29t');
+    this.nav.find(item => item.name === 'Contact').link = false;
   }
 };
 </script>
