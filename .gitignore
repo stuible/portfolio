@@ -88,3 +88,6 @@ static/image-styles
 
 # Favicons
 static/_favicons
+
+#VSCode Settings
+.vscode/
