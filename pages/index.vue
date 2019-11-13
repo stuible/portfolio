@@ -32,29 +32,31 @@
       <section id="what">
         <h3>What I do</h3>
         <ul>
-          <!-- <li
+          <li
             v-for="service in home.services"
-            v-bind:key="service.name"
+            v-bind:key="service.title"
             @mouseover="setTechHighlights(service.technology)"
             @mouseleave="setTechHighlights([])"
-          >{{service.name}}</li> -->
+          >{{service.title}}</li>
         </ul>
       </section>
       <section id="how">
         <h3>How I do</h3>
         <ul>
-          <!-- <li
-            v-for="techName in home.technologies"
-            v-bind:key="techName.title"
-            :class="{ fade: !isHighlighted(getTechByName(techName).title)  }"
+          <li
+            v-for="tech in home.technology"
+            v-bind:key="tech.title"
+            :class="{ fade: !isHighlighted(tech.id)  }"
           >
-            <h6>{{getTechByName(techName).title}}</h6>
+            <h6>{{tech.title}}</h6>
 
-            <img
+            <div class="icon" v-html="tech.icon"></div>
+
+            <!-- <img
               :src=""
               :alt="techName + ' Icon'"
-            >
-          </li> -->
+            > -->
+          </li>
         </ul>
       </section>
     </section>
@@ -487,13 +489,18 @@ export default {
         opacity: 0.4;
       }
 
-      img {
+      .icon {
         position: absolute;
         top: 25%;
         left: 25%;
         height: 50%;
         width: 50%;
         text-align: center;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
       }
     }
   }
