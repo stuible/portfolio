@@ -9,16 +9,16 @@
         class="profile"
       />-->
       <div id="profile-wrapper">
-        <!-- <div
+        <div
           id="profile-pic"
-          v-lazy:background-image="{src: '/images' + home.body.image, loading: profPlaceholder, preLoad: 1 }"
-        ></div> -->
+          v-lazy:background-image="{src: '/images' + '/uploads/tempprofpic.png', loading: profPlaceholder, preLoad: 1 }"
+        ></div>
 
         <!-- <img
           :src="profPlaceholder"
-          v-lazy="{src: home.body.image, loading: profPlaceholder, preLoad: 1 }"
+          v-lazy="{src: '/uploads/tempprofpic.png', loading: profPlaceholder, preLoad: 1 }"
           alt="Josh Stuible's Beautiful Face"
-        >-->
+        > -->
       </div>
 
       <div id="titles">
