@@ -9,10 +9,10 @@
         class="profile"
       />-->
       <div id="profile-wrapper">
-        <div
+        <!-- <div
           id="profile-pic"
           v-lazy:background-image="{src: '/images' + home.body.image, loading: profPlaceholder, preLoad: 1 }"
-        ></div>
+        ></div> -->
 
         <!-- <img
           :src="profPlaceholder"
@@ -22,9 +22,9 @@
       </div>
 
       <div id="titles">
-        <h1 class="title">{{ home.body.title }}</h1>
-        <h2 class="subtitle">{{ home.body.subtitle }}</h2>
-        <p id="bio">{{ home.body.bio }}</p>
+        <h1 class="title">{{ home.portfolioName }}</h1>
+        <h2 class="subtitle">{{ home.subtitle }}</h2>
+        <p id="bio">{{ home.bio }}</p>
       </div>
     </section>
     <section id="services">
@@ -32,46 +32,46 @@
       <section id="what">
         <h3>What I do</h3>
         <ul>
-          <li
-            v-for="service in home.body.services"
+          <!-- <li
+            v-for="service in home.services"
             v-bind:key="service.name"
             @mouseover="setTechHighlights(service.technology)"
             @mouseleave="setTechHighlights([])"
-          >{{service.name}}</li>
+          >{{service.name}}</li> -->
         </ul>
       </section>
       <section id="how">
         <h3>How I do</h3>
         <ul>
-          <li
-            v-for="techName in home.body.technologies"
+          <!-- <li
+            v-for="techName in home.technologies"
             v-bind:key="techName.title"
             :class="{ fade: !isHighlighted(getTechByName(techName).title)  }"
           >
             <h6>{{getTechByName(techName).title}}</h6>
 
             <img
-              :src="require(`~/static/images${getTechByName(techName).image}?data`)"
+              :src=""
               :alt="techName + ' Icon'"
             >
-          </li>
+          </li> -->
         </ul>
       </section>
     </section>
     <section id="portfolio">
       <h3>What I've Done</h3>
       <ul>
-        <li v-for="post in orderedPosts" v-bind:key="post.meta.index">
+        <li v-for="post in posts" v-bind:key="post.id">
           <div class="info">
             <h5>{{ post.title }}</h5>
-            <h6>{{ post.subtitle }}</h6>
+            <h6>{{ post.postType }}</h6>
           </div>
-          <nuxt-link :to="post.permalink">
-            <img
+          <nuxt-link :to="post.slug" v-html="post.icon">
+            <!-- <img
               v-if="post.icon"
-              :src="require(`~/static/images${post.icon}?data`)"
+              :src=""
               :alt="post.title"
-            >
+            > -->
           </nuxt-link>
         </li>
       </ul>
@@ -86,20 +86,23 @@ export default {
   components: {
     // Logo
   },
-  async asyncData({ app }) {
+  async asyncData({ $axios, app }) {
+    const posts = await $axios.$get('/posts')
+    const home = await $axios.$get('/pages/home')
     return {
-      posts: await app.$content("posts").getAll(),
-      tech: await app.$content("tech").getAll(),
-      home: await app.$content("pages").get("home"),
+      posts: posts.data,
+      // tech: await app.$content("tech").getAll(),
+      home:  home,
       highlightedTech: [],
       profPlaceholder:
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcv33LfwAHkgMr6KeirAAAAABJRU5ErkJggg=="
     };
   },
   computed: {
-    orderedPosts() {
-      return this.posts.sort((a, b) => (a.order > b.order ? 1 : -1));
-    }
+    // orderedPosts() {
+    //   console.log( this.posts);
+    //   return this.posts.sort((a, b) => (a.order > b.order ? 1 : -1));
+    // }
   },
   methods: {
     isHighlighted(tech) {
@@ -190,7 +193,7 @@ export default {
     }
   }
 
-  img {
+  svg {
     width: 100%;
     height: 100%;
   }

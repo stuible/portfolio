@@ -2,7 +2,7 @@
   <main id="post">
     <section class="intro">
       <img
-        :src="require(`~/static/images${post.icon}?data`)"
+        :src=""
         :alt="`${post.title} Icon`"
         class="icon"
       >
@@ -34,7 +34,7 @@
           <li v-for="techName in post.technologies" v-bind:key="techName">
             <figure>
               <img
-                :src="require(`~/static/images${getTechByName(techName).image}?data`)"
+                :src=""
                 :alt="techName"
               >
               <figcaption>{{techName}}</figcaption>
@@ -109,9 +109,9 @@ export default {
   },
   mounted() {
     this.tech.forEach((item, index) => {
-      this.techIcons[item.title] = require(`~/static/images${
-        item.image
-      }?inline`);
+      // this.techIcons[item.title] = require(`~/static/images${
+      //   item.image
+      // }?inline`);
       // console.log(this.techIcons[item.title]);
     });
     // require(`~/static/images${getTechByName('CSS3').image}?inline`)
