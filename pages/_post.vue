@@ -1,29 +1,29 @@
 <template>
   <main id="post">
     <section class="intro">
-      <img
-        :src=""
+      <div
         :alt="`${post.title} Icon`"
         class="icon"
-      >
+        v-html="post.icon"
+      />
       <div class="titles">
         <h1>{{ post.title }}</h1>
-        <h2>{{ post.subtitle }}</h2>
+        <h2>{{ post.postType }}</h2>
       </div>
       <div class="content">
         <a
           v-if="post.link"
           class="post-link"
-          :href="post.link.url"
+          :href="post.link"
           target="_blank"
-        >{{post.link.title}}</a>
-        <nuxt-img
-          v-if="isImage(post.image)"
-          :src="post.image"
+        >View Project</a>
+        <!-- <nuxt-img
+          v-if="isImage(post.hero)"
+          :src="post.hero"
           responsive-style="medium"
           :alt="post.title"
         />
-        <video v-else-if="isVideo(post.image)" :src="'/images' + post.image" muted autoplay></video>
+        <video v-else-if="isVideo(post.image)" :src="'/images' + post.image" muted autoplay></video> -->
         <p>{{post.description}}</p>
       </div>
     </section>
@@ -34,7 +34,7 @@
           <li v-for="techName in post.technologies" v-bind:key="techName">
             <figure>
               <img
-                :src=""
+                src="google.com"
                 :alt="techName"
               >
               <figcaption>{{techName}}</figcaption>
@@ -61,19 +61,18 @@
 
 <script>
 export default {
-  async asyncData({ app, route }) {
+  async asyncData({ app, route, $axios }) {
     return {
-      post: await app.$content("posts").get(route.path),
-      tech: await app.$content("tech").getAll(),
+      post: await $axios.$get('/posts/' + route.path),
       techIcons: {}
     };
   },
   methods: {
-    getTechByName(name) {
-      return this.tech.find(obj => {
-        return obj.title === name;
-      });
-    },
+    // getTechByName(name) {
+    //   return this.tech.find(obj => {
+    //     return obj.title === name;
+    //   });
+    // },
     isImage(image) {
       if (!image) return false;
       const ext = image.split(".").pop();
@@ -108,12 +107,12 @@ export default {
     }
   },
   mounted() {
-    this.tech.forEach((item, index) => {
-      // this.techIcons[item.title] = require(`~/static/images${
-      //   item.image
-      // }?inline`);
-      // console.log(this.techIcons[item.title]);
-    });
+    // this.tech.forEach((item, index) => {
+    //   // this.techIcons[item.title] = require(`~/static/images${
+    //   //   item.image
+    //   // }?inline`);
+    //   // console.log(this.techIcons[item.title]);
+    // });
     // require(`~/static/images${getTechByName('CSS3').image}?inline`)
   }
 };
@@ -157,6 +156,11 @@ export default {
       height: 4.5em;
       padding-right: 2em;
       width: 7em;
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
     }
 
     @include breakpoint(phone) {
