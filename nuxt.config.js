@@ -47,6 +47,7 @@ module.exports = {
   modules: [
     'nuxt-rfg-icon',
     '@nuxtjs/manifest',
+    'nuxt-payload-extractor',
     ['@nuxtjs/axios', {baseURL: 'https://api.stuible.com'}],
     // '@dinamomx/nuxtent',
     // 'nuxt-netlify-cms',

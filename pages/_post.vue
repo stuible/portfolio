@@ -1,27 +1,14 @@
 <template>
   <main id="post">
     <section class="intro">
-      <div
-        :alt="`${post.title} Icon`"
-        class="icon"
-        v-html="post.icon"
-      />
+      <div :alt="`${post.title} Icon`" class="icon" v-html="post.icon" />
       <div class="titles">
         <h1>{{ post.title }}</h1>
         <h2>{{ post.postType }}</h2>
       </div>
       <div class="content">
-        <a
-          v-if="post.link"
-          class="post-link"
-          :href="post.link"
-          target="_blank"
-        >View Project</a>
-        <img
-          v-if="post.hero.type == 'image'"
-          :src="post.hero.url"
-          :alt="post.title"
-        />
+        <a v-if="post.link" class="post-link" :href="post.link" target="_blank">View Project</a>
+        <img v-if="post.hero.type == 'image'" :src="post.hero.url" :alt="post.title" />
         <video v-else-if="post.hero.type == 'video'" :src="post.hero.url" muted autoplay></video>
         <p>{{post.description}}</p>
       </div>
@@ -31,8 +18,8 @@
       <div class="content">
         <ul class="tools">
           <li v-for="tech in post.technology" v-bind:key="tech.id" class="tool">
-              <div class="icon" v-html="tech.icon"></div>
-              <div class="title">{{tech.title}}</div>
+            <div class="icon" v-html="tech.icon"></div>
+            <div class="title">{{tech.title}}</div>
           </li>
         </ul>
       </div>
@@ -40,12 +27,8 @@
     <section v-for="content in post.content" v-bind:key="content.title">
       <h3>{{content.title}}</h3>
       <div class="content">
-        <img
-          v-if="content.image"
-          :src="content.image"
-          :alt="content.title"
-        />
-        <p v-html="content.body"/>
+        <img v-if="content.image" :src="content.image" :alt="content.title" />
+        <p v-html="content.body" />
       </div>
     </section>
     <!-- {{post}} -->
@@ -54,21 +37,26 @@
 
 <script>
 export default {
-  async fetch({ store, route }) {
-    if (!store.getters.posts.find(post => post.slug == route.params.post)) {
-      await store.dispatch("post", route.params.post);
-    }
+  async asyncData({ route, $payloadURL, $axios }) {
+
+    //if generated and works as client navigation, fetch previously saved static JSON payload
+    if (process.static && process.client && $payloadURL)
+      return await $axios.$get($payloadURL(route));
+
+    //your request logic
+    const post = await $axios.$get("/posts/" + route.params.post);
+    return {
+      post
+    };
+
+    
   },
   computed: {
-    post() {
-      return this.$store.getters.posts.find(post => post.slug == this.$route.params.post)
-    }
-  },
-  methods: {
 
   },
+  methods: {},
   mounted() {
-    console.log(this.post)
+    console.log(this.post);
     // this.tech.forEach((item, index) => {
     //   // this.techIcons[item.title] = require(`~/static/images${
     //   //   item.image
