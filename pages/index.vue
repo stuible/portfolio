@@ -26,7 +26,6 @@
         <h2 class="subtitle">{{ home.info.subtitle }}</h2>
         <p id="bio">{{ home.info.bio }}</p>
       </div>
-      <p>Test: {{$store.state.test}}</p>
     </section>
     <section id="services">
       <h3 class="hide-visually">Services</h3>
@@ -91,7 +90,7 @@ export default {
       await store.dispatch("home");
     }
 
-    
+
   },
   async asyncData({ $axios, app }) {
     // const posts = await $axios.$get("/posts");
