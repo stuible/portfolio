@@ -40,13 +40,12 @@
     <section v-for="content in post.content" v-bind:key="content.title">
       <h3>{{content.title}}</h3>
       <div class="content">
-        <nuxt-img
+        <img
           v-if="content.image"
           :src="content.image"
-          responsive-style="medium"
           :alt="content.title"
         />
-        <p v-html="content.text"/>
+        <p v-html="content.body"/>
       </div>
     </section>
     <!-- {{post}} -->
@@ -180,6 +179,7 @@ export default {
 
     .titles {
       grid-area: title;
+      margin-bottom: 1em;
     }
   }
   section {
