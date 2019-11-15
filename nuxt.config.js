@@ -1,4 +1,5 @@
 const pkg = require('./package')
+import axios from 'axios'
 
 module.exports = {
   mode: 'universal',
@@ -114,6 +115,21 @@ module.exports = {
         //   exclude: /(node_modules)/
         // })
       }
+    }
+  },
+  generate: {
+    interval: 500,
+    routes () {
+      return axios.get('https://api.stuible.com/posts')
+        .then((res) => {
+          return res.data.data.map((post) => {
+            return '/' + post.slug
+          })
+        })
+        .catch(() => {
+          console.error("MESSAGE FROM JOSH: FAILED TO REACH STUIBLE API")
+          return []
+        })
     }
   }
 }
