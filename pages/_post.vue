@@ -65,43 +65,7 @@ export default {
     }
   },
   methods: {
-    // getTechByName(name) {
-    //   return this.tech.find(obj => {
-    //     return obj.title === name;
-    //   });
-    // },
-    isImage(image) {
-      if (!image) return false;
-      const ext = image.split(".").pop();
 
-      switch (ext) {
-        case "jpg":
-        case "jpeg":
-        case "svg":
-        case "png":
-        case "webp":
-        case "gif":
-          return true;
-          break;
-        default:
-          return false;
-          break;
-      }
-    },
-    isVideo(image) {
-      if (!image) return false;
-      const ext = image.split(".").pop();
-
-      switch (ext) {
-        case "mp4":
-        case "mov":
-          return true;
-          break;
-        default:
-          return false;
-          break;
-      }
-    }
   },
   mounted() {
     console.log(this.post)
