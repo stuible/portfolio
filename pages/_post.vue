@@ -17,13 +17,12 @@
           :href="post.link"
           target="_blank"
         >View Project</a>
-        <!-- <nuxt-img
-          v-if="isImage(post.hero)"
-          :src="post.hero"
-          responsive-style="medium"
+        <img
+          v-if="post.hero.type == 'image'"
+          :src="post.hero.url"
           :alt="post.title"
         />
-        <video v-else-if="isVideo(post.image)" :src="'/images' + post.image" muted autoplay></video> -->
+        <video v-else-if="post.hero.type == 'video'" :src="post.hero.url" muted autoplay></video>
         <p>{{post.description}}</p>
       </div>
     </section>
@@ -31,14 +30,9 @@
       <h3>Tools</h3>
       <div class="content">
         <ul class="tools">
-          <li v-for="techName in post.technologies" v-bind:key="techName">
-            <figure>
-              <img
-                src="google.com"
-                :alt="techName"
-              >
-              <figcaption>{{techName}}</figcaption>
-            </figure>
+          <li v-for="tech in post.technology" v-bind:key="tech.id" class="tool">
+              <div class="icon" v-html="tech.icon"></div>
+              <div class="title">{{tech.title}}</div>
           </li>
         </ul>
       </div>
@@ -164,7 +158,7 @@ export default {
 
       svg {
         width: 100%;
-        height: auto;
+        height: 100%;
       }
     }
 
@@ -232,12 +226,17 @@ export default {
       text-align: center;
       // display: inline;
     }
-    img {
+    .icon {
       // width: 70%;
       height: 40px;
-      // height: 100%;
+      margin-bottom: 1em;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
     }
-    figcaption {
+    .title {
       // align-self:
     }
   }
