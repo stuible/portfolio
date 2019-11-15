@@ -61,11 +61,15 @@
 
 <script>
 export default {
-  async asyncData({ app, route, $axios }) {
-    return {
-      post: await $axios.$get('/posts/' + route.path),
-      techIcons: {}
-    };
+  async fetch({ store, route }) {
+    if (!store.getters.posts.find(post => post.slug == route.params.post)) {
+      await store.dispatch("post", route.params.post);
+    }
+  },
+  computed: {
+    post() {
+      return this.$store.getters.posts.find(post => post.slug == this.$route.params.post)
+    }
   },
   methods: {
     // getTechByName(name) {
@@ -107,6 +111,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.post)
     // this.tech.forEach((item, index) => {
     //   // this.techIcons[item.title] = require(`~/static/images${
     //   //   item.image

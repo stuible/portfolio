@@ -1,27 +1,51 @@
 export const state = () => ({
-    portfolioItems: [],
-    technology: []
-  });
-  
-  export const mutations = {
-    setPortfolioItems(state, list) {
-      state.portfolioItems = list;
+    home: undefined, // Object
+    postList: undefined, // Object Array
+
+    posts: [], // Object Array
+    technology: [], // Object Array
+    test: undefined // String
+});
+
+export const mutations = {
+    home(state, {home, postList}) {
+        state.home = home;
+        state.postList = postList;
     },
-    setTechnologies(state, list) {
-        state.technology = list;
-      },
-  };
-  
-  export const actions = {
+    post(state, post) {
+        console.log(post.slug)
+        state.posts.push(post)
+    },
+};
+
+export const getters = {
+
+    home: state => {
+        return state.home && state.postList ? {
+            info: state.home,
+            posts: state.postList
+        } : undefined
+    },
+
+    posts: state => {
+        return state.posts
+    },
+
+};
+
+export const actions = {
     async nuxtServerInit({ commit }) {
-
-
-    //   let techFiles = await require.context('~/content/tech/', false, /\.md$/);
-    //   let techItems = techFiles.keys().map(key => {
-    //     let res = files(key);
-    //     res.slug = key.slice(2, -5);
-    //     return res;
-    //   });
-    //   await commit('setTechnologies', techItems);
     },
-  };
+    async home({ commit }) {
+        const posts = await this.$axios.$get("/posts");
+        const home = await this.$axios.$get("/pages/home");
+
+        await commit('home', {home: home, postList: posts.data});
+    },
+    async post({ commit }, slug) {
+        const post = await this.$axios.$get('/posts/' + slug)
+
+        await commit('post', post);
+    }
+    
+};

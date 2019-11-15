@@ -18,14 +18,15 @@
           :src="profPlaceholder"
           v-lazy="{src: '/uploads/tempprofpic.png', loading: profPlaceholder, preLoad: 1 }"
           alt="Josh Stuible's Beautiful Face"
-        > -->
+        >-->
       </div>
 
       <div id="titles">
-        <h1 class="title">{{ home.portfolioName }}</h1>
-        <h2 class="subtitle">{{ home.subtitle }}</h2>
-        <p id="bio">{{ home.bio }}</p>
+        <h1 class="title">{{ home.info.portfolioName }}</h1>
+        <h2 class="subtitle">{{ home.info.subtitle }}</h2>
+        <p id="bio">{{ home.info.bio }}</p>
       </div>
+      <p>Test: {{$store.state.test}}</p>
     </section>
     <section id="services">
       <h3 class="hide-visually">Services</h3>
@@ -33,7 +34,7 @@
         <h3>What I do</h3>
         <ul>
           <li
-            v-for="service in home.services"
+            v-for="service in home.info.services"
             v-bind:key="service.title"
             @mouseover="setTechHighlights(service.technology)"
             @mouseleave="setTechHighlights([])"
@@ -44,7 +45,7 @@
         <h3>How I do</h3>
         <ul>
           <li
-            v-for="tech in home.technology"
+            v-for="tech in home.info.technology"
             v-bind:key="tech.title"
             :class="{ fade: !isHighlighted(tech.id)  }"
           >
@@ -55,7 +56,7 @@
             <!-- <img
               :src=""
               :alt="techName + ' Icon'"
-            > -->
+            >-->
           </li>
         </ul>
       </section>
@@ -63,17 +64,13 @@
     <section id="portfolio">
       <h3>What I've Done</h3>
       <ul>
-        <li v-for="post in posts" v-bind:key="post.id">
+        <li v-for="post in home.posts" v-bind:key="post.id">
           <div class="info">
             <h5>{{ post.title }}</h5>
             <h6>{{ post.postType }}</h6>
           </div>
           <nuxt-link :to="post.slug" v-html="post.icon">
-            <!-- <img
-              v-if="post.icon"
-              :src=""
-              :alt="post.title"
-            > -->
+
           </nuxt-link>
         </li>
       </ul>
@@ -82,25 +79,36 @@
 </template>
 
 <script>
-// import Logo from '~/components/Logo.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   components: {
     // Logo
   },
+  async fetch({ store }) {
+
+    if (!store.getters.home) {
+      await store.dispatch("home");
+    }
+
+    
+  },
   async asyncData({ $axios, app }) {
-    const posts = await $axios.$get('/posts')
-    const home = await $axios.$get('/pages/home')
+    // const posts = await $axios.$get("/posts");
+    // const home = await $axios.$get("/pages/home");
     return {
-      posts: posts.data,
+      // posts: posts.data,
       // tech: await app.$content("tech").getAll(),
-      home:  home,
+      // home: home,
       highlightedTech: [],
       profPlaceholder:
         "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPcv33LfwAHkgMr6KeirAAAAABJRU5ErkJggg=="
     };
   },
   computed: {
+    ...mapGetters([
+      'home',
+    ])
     // orderedPosts() {
     //   console.log( this.posts);
     //   return this.posts.sort((a, b) => (a.order > b.order ? 1 : -1));
