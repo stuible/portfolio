@@ -68,9 +68,7 @@
             <h5>{{ post.title }}</h5>
             <h6>{{ post.postType }}</h6>
           </div>
-          <nuxt-link :to="post.slug" v-html="post.icon">
-
-          </nuxt-link>
+          <nuxt-link :to="post.slug" v-html="post.icon"></nuxt-link>
         </li>
       </ul>
     </section>
@@ -78,23 +76,16 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     // Logo
   },
-  async fetch({ store }) {
-
+  async asyncData({ $axios, app, store }) {
     if (!store.getters.home) {
       await store.dispatch("home");
     }
-
-
-  },
-  async asyncData({ $axios, app }) {
-    // const posts = await $axios.$get("/posts");
-    // const home = await $axios.$get("/pages/home");
     return {
       // posts: posts.data,
       // tech: await app.$content("tech").getAll(),
@@ -105,9 +96,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
-      'home',
-    ])
+    ...mapGetters(["home"])
     // orderedPosts() {
     //   console.log( this.posts);
     //   return this.posts.sort((a, b) => (a.order > b.order ? 1 : -1));

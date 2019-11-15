@@ -54,7 +54,7 @@
 
 <script>
 export default {
-  async fetch({ store, route }) {
+  async asyncData({ store, route }) {
     if (!store.getters.posts.find(post => post.slug == route.params.post)) {
       await store.dispatch("post", route.params.post);
     }
