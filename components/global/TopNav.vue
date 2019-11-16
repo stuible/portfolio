@@ -40,7 +40,7 @@ export default {
   watch: {
     nav: {
       handler(newVal, oldVal) {
-        console.log('nav has been changed: ' + newVal);
+        // console.log('nav has been changed: ' + newVal);
       },
       deep: true
     }

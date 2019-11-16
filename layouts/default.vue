@@ -78,7 +78,7 @@ export default {
       import("smoothscroll-polyfill")
         .then(smoothscroll => smoothscroll.polyfill())
         .catch(e => console.error(e));
-      console.log("No native smooth scroll, grabbing polyfill");
+      // console.log("No native smooth scroll, grabbing polyfill");
     }
 
     //Update contact link to be my email once javascript has loaded
