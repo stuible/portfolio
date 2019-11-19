@@ -8,7 +8,8 @@
       </div>
       <div class="content">
         <a v-if="post.link" class="post-link" :href="post.link" target="_blank">View Project</a>
-        <img v-if="post.hero.type == 'image'" :src="post.hero.url" :alt="post.title" />
+        <!-- <img v-if="post.hero.type == 'image'" :src="post.hero.url" :alt="post.title" /> -->
+        <stuible-img v-if="post.hero.type == 'image'" :src="post.hero.url" :alt="post.title" :aspect-ratio="post.hero.aspect_ratio" />
         <video v-else-if="post.hero.type == 'video'" :src="post.hero.url" muted autoplay></video>
         <p>{{post.description}}</p>
       </div>
@@ -27,7 +28,7 @@
     <section v-for="content in post.content" v-bind:key="content.title">
       <h3>{{content.title}}</h3>
       <div class="content">
-        <img v-if="content.image" :src="content.image" :alt="content.title" />
+        <stuible-img  v-if="content.image" :src="content.image.url" :alt="content.title" :aspect-ratio="content.image.aspect_ratio" />
         <p v-html="content.body" />
       </div>
     </section>
@@ -36,9 +37,12 @@
 </template>
 
 <script>
+import StuibleImg from "~/components/StuibleImg.vue"
 export default {
+  components: {
+    StuibleImg
+  },
   async asyncData({ route, $payloadURL, $axios }) {
-
     //if generated and works as client navigation, fetch previously saved static JSON payload
     if (process.static && process.client && $payloadURL)
       return await $axios.$get($payloadURL(route));
@@ -48,12 +52,8 @@ export default {
     return {
       post
     };
-
-    
   },
-  computed: {
-
-  },
+  computed: {},
   methods: {},
   mounted() {
     console.log(this.post);
