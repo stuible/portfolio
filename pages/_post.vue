@@ -9,7 +9,13 @@
       <div class="content">
         <a v-if="post.link" class="post-link" :href="post.link" target="_blank">View Project</a>
         <!-- <img v-if="post.hero.type == 'image'" :src="post.hero.url" :alt="post.title" /> -->
-        <stuible-img v-if="post.hero.type == 'image'" :src="post.hero.url" :alt="post.title" :aspect-ratio="post.hero.aspect_ratio" />
+        <stuible-img
+          v-if="post.hero.type == 'image'"
+          :src="post.hero.url"
+          :alt="post.title"
+          :aspect-ratio="post.hero.aspect_ratio"
+          :colour="post.hero.colour"
+        />
         <video v-else-if="post.hero.type == 'video'" :src="post.hero.url" muted autoplay></video>
         <p>{{post.description}}</p>
       </div>
@@ -28,7 +34,13 @@
     <section v-for="content in post.content" v-bind:key="content.title">
       <h3>{{content.title}}</h3>
       <div class="content">
-        <stuible-img  v-if="content.image" :src="content.image.url" :alt="content.title" :aspect-ratio="content.image.aspect_ratio" />
+        <stuible-img
+          v-if="content.image"
+          :src="content.image.url"
+          :alt="content.title"
+          :aspect-ratio="content.image.aspect_ratio"
+          :colour="content.image.colour"
+        />
         <p v-html="content.body" />
       </div>
     </section>
@@ -37,7 +49,7 @@
 </template>
 
 <script>
-import StuibleImg from "~/components/StuibleImg.vue"
+import StuibleImg from "~/components/StuibleImg.vue";
 export default {
   components: {
     StuibleImg
