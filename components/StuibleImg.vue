@@ -1,6 +1,9 @@
 <template>
   <div class="stuible-image">
-    <div class="stuible-image-wrapper" :style="{'padding-bottom': aspectRatioPadding, 'background-color': colour}">
+    <div
+      class="stuible-image-wrapper"
+      :style="{'padding-bottom': aspectRatioPadding, 'background-color': colour}"
+    >
       <img :src="$props.src" :alt="$props.alt" ref="image" :class="{loading: loading}" />
     </div>
   </div>
@@ -15,16 +18,20 @@ export default {
         ? this.aspectRatio * 100 + "%"
         : false,
       loading: false,
-      loaded: false,
-    //   colour: this.colour
+      loaded: false
+      //   colour: this.colour
     };
   },
   mounted() {
-    this.loading = true;
-    this.$refs.image.onload = () => {
-      this.loading = false;
+    if (this.$refs.image.complete) {
       this.loaded = true;
-    };
+    } else {
+      this.loading = true;
+      this.$refs.image.onload = () => {
+        this.loading = false;
+        this.loaded = true;
+      };
+    }
   }
 };
 </script>
@@ -41,7 +48,7 @@ export default {
   }
 }
 .stuible-image-wrapper {
-//   background-color: #f1f1f1;
+  //   background-color: #f1f1f1;
 
   img {
     position: absolute;
@@ -49,7 +56,7 @@ export default {
     left: 0;
     width: 100%;
     height: auto;
-    z-index: 1;
+    // z-index: 1;
     transition-duration: 0.3s;
     transition-property: all;
     transition-timing-function: ease-out;
