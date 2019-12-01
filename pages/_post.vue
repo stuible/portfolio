@@ -39,7 +39,7 @@
           :src="content.image.url"
           :alt="content.title"
           :aspect-ratio="content.image.aspect_ratio"
-          :colour="content.image.colour"
+          :colour="content.image.extension != 'png' ? content.image.colour : ''"
         />
         <p v-html="content.body" />
       </div>
