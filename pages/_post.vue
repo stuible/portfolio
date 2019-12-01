@@ -14,7 +14,7 @@
           :src="post.hero.url"
           :alt="post.title"
           :aspect-ratio="post.hero.aspect_ratio"
-          :colour="post.hero.colour"
+          :colour="post.hero.extension != 'png' ? post.hero.colour : ''"
         />
         <video v-else-if="post.hero.type == 'video'" :src="post.hero.url" muted autoplay></video>
         <p>{{post.description}}</p>
@@ -68,7 +68,7 @@ export default {
   computed: {},
   methods: {},
   mounted() {
-    console.log(this.post);
+    // console.log(this.post);
     // this.tech.forEach((item, index) => {
     //   // this.techIcons[item.title] = require(`~/static/images${
     //   //   item.image
