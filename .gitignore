@@ -91,3 +91,4 @@ static/_favicons
 
 #VSCode Settings
 .vscode/
+.DS_Store
