@@ -26,7 +26,7 @@
         <h4>Instagram</h4>
       </a>
     </li> -->
-    
+
     <!-- <ul>
           <li v-for="commit in commits" v-bind:key="commit.id">{{commit.payload.commits[0].message}}</li>
     </ul>-->
@@ -125,7 +125,7 @@ export default {
     // border-right: 1px solid $colourMedium;
     // padding-right: 1em;
     background-color: $colourMedium;
-    padding: 1.5em;
+    padding: 30%;
     
   }
 
