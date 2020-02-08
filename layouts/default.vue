@@ -45,8 +45,10 @@ export default {
           hash: "#portfolio"
         },
         {
-          name: "Freelance",
-          link: "/freelance"
+          name: "Activity",
+          link: "/",
+          scroll: "doing",
+          hash: "#doing"
         },
         {
           name: "Contact",

@@ -72,14 +72,19 @@
         </li>
       </ul>
     </section>
+    <section id="doing">
+      <h3>What I'm Doing</h3>
+      <doing />
+    </section>
   </main>
 </template>
 
 <script>
+import Doing from '~/components/home/Doing.vue'
 
 export default {
   components: {
-    // Logo
+    Doing
   },
   async asyncData({ $axios, $payloadURL, route }) {
     //if generated and works as client navigation, fetch previously saved static JSON payload
@@ -135,12 +140,13 @@ export default {
 </script>
 
 <style lang="scss">
+#doing,
 #services,
 #portfolio {
   h3 {
     font-size: 7.25vw;
     text-transform: uppercase;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     font-weight: 500;
 
     @include breakpoint(phone) {
@@ -204,9 +210,7 @@ export default {
     height: 100%;
   }
 
-  h3 {
-    margin-bottom: 2em;
-  }
+  
 
   li {
     position: relative;
@@ -408,6 +412,10 @@ export default {
     grid-template-areas: "what what how how";
   }
 
+  h3 {
+    margin-bottom: 1.5em;
+  }
+
   #what {
     grid-area: what;
     ul {
@@ -508,5 +516,9 @@ export default {
       }
     }
   }
+}
+
+#doing {
+  padding-top: map-get($mainGridGap, desktophd) + 1em;
 }
 </style>
