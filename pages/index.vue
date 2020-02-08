@@ -13,14 +13,7 @@
           id="profile-pic"
           v-lazy:background-image="{src: '/images' + '/uploads/tempprofpic.png', loading: profPlaceholder, preLoad: 1 }"
         ></div>
-
-        <!-- <img
-          :src="profPlaceholder"
-          v-lazy="{src: '/uploads/tempprofpic.png', loading: profPlaceholder, preLoad: 1 }"
-          alt="Josh Stuible's Beautiful Face"
-        >-->
       </div>
-
       <div id="titles">
         <h1 class="title">{{ home.portfolioName }}</h1>
         <h2 class="subtitle">{{ home.subtitle }}</h2>

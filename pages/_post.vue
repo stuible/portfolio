@@ -68,14 +68,7 @@ export default {
   computed: {},
   methods: {},
   mounted() {
-    // console.log(this.post);
-    // this.tech.forEach((item, index) => {
-    //   // this.techIcons[item.title] = require(`~/static/images${
-    //   //   item.image
-    //   // }?inline`);
-    //   // console.log(this.techIcons[item.title]);
-    // });
-    // require(`~/static/images${getTechByName('CSS3').image}?inline`)
+
   }
 };
 </script>
