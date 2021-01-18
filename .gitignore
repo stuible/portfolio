@@ -86,9 +86,6 @@ sw.*
 # Image styles
 static/image-styles
 
-# Favicons
-static/_favicons
-
 #VSCode Settings
 .vscode/
 .DS_Store

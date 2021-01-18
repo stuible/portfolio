@@ -54,12 +54,7 @@ export default {
   components: {
     StuibleImg
   },
-  async asyncData({ route, $payloadURL, $axios }) {
-    //if generated and works as client navigation, fetch previously saved static JSON payload
-    if (process.static && process.client && $payloadURL)
-      return await $axios.$get($payloadURL(route));
-
-    //your request logic
+  async asyncData({ route, $axios }) {
     const post = await $axios.$get("/posts/" + route.params.post);
     return {
       post

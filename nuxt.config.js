@@ -2,7 +2,7 @@ const pkg = require('./package')
 import axios from 'axios'
 
 module.exports = {
-  mode: 'universal',
+  target: 'static',
 
   /*
   ** Headers of the page
@@ -15,10 +15,18 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
+      { name: 'msapplication-TileColor', content: '#ffffff'},
+      { name: 'msapplication-TileImage', content: '/favicons/mstile-144x144.png'},
+      { name: 'msapplication-config', content: '/favicons/browserconfig.xml'},
+      { name: 'theme-color', content: '#ffffff'},
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: "apple-touch-icon", type: "image/x-icon", sizes: "180x180", href: "/favicons/apple-touch-icon.png" },
+      { rel: "icon", type: "image/x-icon", sizes: "32x32", href: "/favicons/favicon-32x32.png" },
+      { rel: "icon", type: "image/x-icon", sizes: "16x16", href: "/favicons/favicon-16x16.png" },
+      { rel: "manifest", type: "image/x-icon", href: "/favicons/site.webmanifest" },
     ]
   },
 
@@ -45,47 +53,11 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    'nuxt-rfg-icon',
-    '@nuxtjs/manifest',
-    'nuxt-payload-extractor',
-    ['@nuxtjs/axios', {baseURL: 'https://api.stuible.com'}],
-    // '@dinamomx/nuxtent',
-    // 'nuxt-netlify-cms',
+    ['@nuxtjs/axios', { baseURL: 'https://api.stuible.com' }],
     '@nuxtjs/style-resources',
-    "nuxt-svg",
-    // ['@reallifedigital/nuxt-image-loader-module', {
-    //   imagesBaseDir: 'static/images',
-    //   imageStyles: {
-    //     load: { actions: ['scale|10', 'quality|10'] },
-    //     thumb: { actions: ['scale|320', 'quality|100'] },
-    //     small: { actions: ['scale|512', 'quality|100'] },
-    //     medium: { actions: ['scale|756', 'quality|100'] },
-    //     large: { actions: ['scale|1080', 'quality|100'] },
-    //   },
-    //   // Optional responsive style profiles:
-    //   responsiveStyles: {
-    //     medium: {
-    //       srcset: 'load 10w, medium 756w',
-    //       sizes: '100vw',
-    //     },
-    //   },
-    //   forceGenerateImages: {
-    //     // imageStyle: globPattern
-    //     load: '**/*',
-    //     thumb: '**/*',
-    //     small: '**/*',
-    //     medium: '**/*',
-    //     large: '**/*'
-    //   }
-    // }]
+    "@nuxtjs/svg",
   ],
 
-  'rfg-icon': {
-    static: true,
-    staticPath: '/_favicons/',
-    masterPicture: 'static/logo.svg',
-    // rfg: <faviconDescription.json from realfavicongenerator.net>
-  },
   styleResources: {
     scss: [
       './assets/scss/variables.scss',
@@ -101,12 +73,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      // config.module.rules.push({
-      //   test: /\.svg$/,
-      //   loader: 'vue-svg-loader',
-      // });
-
-
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         // config.module.rules.push({
@@ -120,7 +86,7 @@ module.exports = {
   },
   generate: {
     interval: 500,
-    routes () {
+    routes() {
       return axios.get('https://api.stuible.com/posts')
         .then((res) => {
           return res.data.data.map((post) => {

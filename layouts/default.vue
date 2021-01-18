@@ -4,17 +4,17 @@
       <div class="absolute-wrapper">
         <!-- LOGO -->
         <nuxt-link to="/" @click.native="scrollTo('__layout')">
-          <img id="logo" src="~static/logo.svg?data" alt="JS">
+          <img id="logo" src="~static/logo.svg?data" alt="JS" />
         </nuxt-link>
         <!-- /LOGO -->
-        <side-nav :nav="nav" @clicked="scrollTo"/>
+        <side-nav :nav="nav" @clicked="scrollTo" />
       </div>
     </div>
     <div class="scrollable">
-      <top-nav :nav="nav" @clicked="scrollTo"/>
-      <nuxt/>
+      <top-nav :nav="nav" @clicked="scrollTo" />
+      <nuxt />
       <footer>
-        {{"Design & Implementation by Josh Stuible in Vancouver"}}
+        {{ "Design & Implementation by Josh Stuible in Vancouver" }}
       </footer>
     </div>
     <div class="sidebar"></div>
@@ -27,7 +27,7 @@ import topNav from "~/components/global/TopNav.vue";
 export default {
   components: {
     sideNav,
-    topNav
+    topNav,
   },
   data() {
     return {
@@ -36,27 +36,27 @@ export default {
           name: "Josh Stuible",
           link: "/",
           scroll: "__layout",
-          hash: ""
+          hash: "",
         },
         {
           name: "Portfolio",
           link: "/",
           scroll: "portfolio",
-          hash: "#portfolio"
+          hash: "#portfolio",
         },
         {
           name: "Activity",
           link: "/",
           scroll: "doing",
-          hash: "#doing"
+          hash: "#doing",
         },
         {
           name: "Contact",
-          link: "#"
-        }
+          link: "#",
+        },
       ],
       sidebarNavOpacity: 0,
-      mobileNavOpen: false
+      mobileNavOpen: false,
     };
   },
   computed: {
@@ -70,23 +70,25 @@ export default {
       // Scroll to a certain element
       if (document.querySelector("#" + anchor)) {
         document.querySelector("#" + anchor).scrollIntoView({
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
-    }
+    },
   },
   mounted() {
     if (!("scrollBehavior" in document.documentElement.style)) {
       import("smoothscroll-polyfill")
-        .then(smoothscroll => smoothscroll.polyfill())
-        .catch(e => console.error(e));
+        .then((smoothscroll) => smoothscroll.polyfill())
+        .catch((e) => console.error(e));
       // console.log("No native smooth scroll, grabbing polyfill");
     }
 
     //Update contact link to be my email once javascript has loaded
-    this.nav.find(item => item.name === 'Contact').email = atob('am9za'+'HN0dWlibG'+'VAZ21ha'+'WwuY29t');
-    this.nav.find(item => item.name === 'Contact').link = false;
-  }
+    this.nav.find((item) => item.name === "Contact").email = atob(
+      "am9za" + "HN0dWlibG" + "VAZ21ha" + "WwuY29t"
+    );
+    this.nav.find((item) => item.name === "Contact").link = false;
+  },
 };
 </script>
 
