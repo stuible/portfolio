@@ -7,7 +7,9 @@
         <h2>{{ post.postType }}</h2>
       </div>
       <div class="content">
-        <a v-if="post.link" class="post-link" :href="post.link" target="_blank">View Project</a>
+        <a v-if="post.link" class="post-link" :href="post.link" target="_blank"
+          >View Project</a
+        >
         <!-- <img v-if="post.hero.type == 'image'" :src="post.hero.url" :alt="post.title" /> -->
         <stuible-img
           v-if="post.hero.type == 'image'"
@@ -16,23 +18,29 @@
           :aspect-ratio="post.hero.aspect_ratio"
           :colour="post.hero.extension != 'png' ? post.hero.colour : ''"
         />
-        <video v-else-if="post.hero.type == 'video'" :src="post.hero.url" muted autoplay></video>
-        <p>{{post.description}}</p>
+        <video
+          v-else-if="post.hero.type == 'video'"
+          :src="post.hero.url"
+          muted
+          autoplay
+          loop
+        ></video>
+        <p>{{ post.description }}</p>
       </div>
     </section>
-    <section>
+    <section style="margin-bottom: 0em;">
       <h3>Tools</h3>
       <div class="content">
         <ul class="tools">
           <li v-for="tech in post.technology" v-bind:key="tech.id" class="tool">
             <div class="icon" v-html="tech.icon"></div>
-            <div class="title">{{tech.title}}</div>
+            <div class="title">{{ tech.title }}</div>
           </li>
         </ul>
       </div>
     </section>
     <section v-for="content in post.content" v-bind:key="content.title">
-      <h3>{{content.title}}</h3>
+      <h3>{{ content.title }}</h3>
       <div class="content">
         <stuible-img
           v-if="content.image"
@@ -52,19 +60,17 @@
 import StuibleImg from "~/components/StuibleImg.vue";
 export default {
   components: {
-    StuibleImg
+    StuibleImg,
   },
   async asyncData({ route, $axios }) {
     const post = await $axios.$get("/posts/" + route.params.post);
     return {
-      post
+      post,
     };
   },
   computed: {},
   methods: {},
-  mounted() {
-
-  }
+  mounted() {},
 };
 </script>
 
@@ -147,7 +153,8 @@ export default {
       grid-template-areas: "title title" ". content";
     }
 
-    img {
+    img,
+    .stuible-image-wrapper {
       margin-bottom: 1em;
       width: 100%;
     }
@@ -171,11 +178,14 @@ export default {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    flex-wrap: wrap;
+
     li {
       width: 75px;
       // height: 75px;
       margin: 0 1em;
       text-align: center;
+      margin-bottom: 2em;
       // display: inline;
     }
     .icon {
