@@ -1,7 +1,6 @@
-const pkg = require('./package')
 import axios from 'axios'
 
-module.exports = {
+export default {
   target: 'static',
 
   /*
@@ -15,7 +14,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'description', name: 'description', content: "My personal portfolio website" },
       { name: 'msapplication-TileColor', content: '#ffffff'},
       { name: 'msapplication-TileImage', content: '/favicons/mstile-144x144.png'},
       { name: 'msapplication-config', content: '/favicons/browserconfig.xml'},
